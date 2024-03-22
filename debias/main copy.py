@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-from transformers import BertTokenizer, BertForSequenceClassification, get_linear_schedule_with_warmup
+from transformers import BertTokenizer, BertModel, get_linear_schedule_with_warmup
 from sklearn.metrics import precision_recall_fscore_support
 
 try:
@@ -15,35 +15,26 @@ except:
     from ..util import log, dataset
 
 class Unbiased_model(nn.Module):
-    def __init__(self, args):
+    def __init__(self, args, bert_model):
         super(Unbiased_model, self).__init__()
-        self.classifier_ce_pair = BertForSequenceClassification.from_pretrained(
-            args.cache_dir,
-            num_labels=args.num_classes,
-            output_attentions=False,
-            output_hidden_states=False
-        )
-        self.classifier_claim = BertForSequenceClassification.from_pretrained(
-            args.cache_dir,
-            num_labels=args.num_classes,
-            output_attentions=False,
-            output_hidden_states=False
-        )
+        self.encoder = bert_model
+        self.classifier_ce_pair = nn.Linear(args.hidden_size, args.num_classes)
+        self.classifier_claim = nn.Linear(args.hidden_size, args.num_classes)
     
-    def forward(self, claim_ids, claim_msks, ce_ids, ce_msks, labels):
-        out_c = self.classifier_claim(
+    def forward(self, claim_ids, claim_msks, ce_ids, ce_msks):
+        encoded_c = self.encoder(
             claim_ids, 
             token_type_ids=None, 
             attention_mask=claim_msks,
-            labels=labels
         )
+        out_c = self.classifier_claim(encoded_c.last_hidden_state[:, 0, :])
 
-        out_ce = self.classifier_ce_pair(
+        encoded_ce = self.encoder(
             ce_ids,
             token_type_ids=None,
             attention_mask=ce_msks,
-            labels=labels
         )
+        out_ce = self.classifier_ce_pair(encoded_ce.last_hidden_state[:, 0, :])
         return out_c, out_ce
 
 def train(args, model, train_loader, dev_loader, logger):
@@ -61,6 +52,7 @@ def train(args, model, train_loader, dev_loader, logger):
     best_micro_f1 = 0.0
     best_macro_f1 = 0.0
 
+    loss_fn = nn.CrossEntropyLoss()
     for epoch in range(args.epoch_num):
         model.train()
         for i, (claim_ids, claim_msks, ce_ids, ce_msks, labels) in tqdm(enumerate(train_loader),
@@ -74,14 +66,14 @@ def train(args, model, train_loader, dev_loader, logger):
 
             optimizer.zero_grad()
             out_c, out_ce = model(
-                claim_ids, claim_msks, ce_ids, ce_msks, labels
+                claim_ids, claim_msks, ce_ids, ce_msks
             )
-            loss_c, logits_c = out_c[0], out_c[1]
-            loss_ce, logits_ce = out_ce[0], out_ce[1]
+            loss_c = loss_fn(out_c, labels)
+            loss_ce = loss_fn(out_ce, labels)
             
             # for calculating KL-divergence
-            pce = F.softmax(logits_ce, dim=0)
-            pc = F.softmax(logits_c, dim=0)
+            pce = F.softmax(out_ce, dim=0)
+            pc = F.softmax(out_c, dim=0)
             zeros_tensor = torch.zeros(labels.size(0), 3).cuda()
             label_distribution = zeros_tensor.scatter_(1, labels.unsqueeze(1), 1)
             loss_constraint = F.kl_div(pce.log(), label_distribution, reduction='sum') + F.kl_div(pc.log(), label_distribution, reduction='sum')
@@ -107,12 +99,12 @@ def train(args, model, train_loader, dev_loader, logger):
 
             with torch.no_grad():
                 out_c, out_ce = model(
-                    claim_ids, claim_msks, ce_ids, ce_msks, labels
+                    claim_ids, claim_msks, ce_ids, ce_msks
                 )
-                prob_ce = F.softmax(out_ce[1], dim=-1)
-                prob_c = F.softmax(out_c[1], dim=-1)
+                prob_ce = F.softmax(out_ce, dim=-1)
+                prob_c = F.softmax(out_c, dim=-1)
                 logits = prob_ce - prob_c
-
+                
                 prob = F.softmax(logits, dim=-1)
                 prediction = torch.argmax(prob, dim=-1)
                 label_ids = labels.to('cpu').numpy()
@@ -207,7 +199,9 @@ def main(args):
     )
 
     # load model
-    model = Unbiased_model(args)
+    bert_model = BertModel.from_pretrained(args.cache_dir)
+    bert_model = bert_model.cuda()
+    model = Unbiased_model(args, bert_model)
     model = model.cuda()
 
     # for test
@@ -223,7 +217,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--log_path", type=str, default='./logs/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model.pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model.pt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
 
@@ -241,7 +235,7 @@ if __name__ == '__main__':
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
     parser.add_argument("--claim_loss_weight", type=float, default=1.0)
-    parser.add_argument("--constraint_loss_weight", type=float, default=0)
+    parser.add_argument("--constraint_loss_weight", type=float, default=0.01)
 
     args = parser.parse_args()
     main(args)
