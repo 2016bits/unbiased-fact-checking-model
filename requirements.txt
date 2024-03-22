@@ -2,3 +2,5 @@ attention
 classifier
 fc
 tqdm
+transformers
+scikit_learn==0.24.2

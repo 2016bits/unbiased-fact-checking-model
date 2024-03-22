@@ -10,7 +10,16 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": true,
+            "args":[
+                "--batch_size", "32",
+                "--epoch_num", "5",
+                "--num_sample", "-1",
+                "--mode", "train"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "3"
+            }
         }
     ]
 }

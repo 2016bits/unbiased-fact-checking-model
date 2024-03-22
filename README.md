@@ -13,4 +13,6 @@ conda activate tor113
 pip install torch-1.13.1+cu117-cp38-cp38-linux_x86_64.whl
 pip install torchaudio-0.13.1+cu117-cp38-cp38-linux_x86_64.whl
 pip install torchvision-0.14.1+cu117-cp38-cp38-linux_x86_64.whl
+
+pip install -r requirements.txt
 ```
