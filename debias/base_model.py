@@ -56,7 +56,8 @@ def train(args, model, train_loader, dev_loader, logger):
 
             optimizer.zero_grad()
             out = model(ids, msks)
-            loss = F.cross_entropy(out, labels.long(), weight=weight)
+            # loss = F.cross_entropy(out, labels.long(), weight=weight)
+            loss = F.cross_entropy(out, labels.long())
             
             loss.sum().backward()
 
@@ -99,29 +100,25 @@ def train(args, model, train_loader, dev_loader, logger):
             torch.save(model.state_dict(), args.saved_model_path)
             
 
-def test(model, logger, dev_loader):
+def test(model, logger, test_loader):
+    logger.info("start testing......")
     all_prediction = np.array([])
     all_target = np.array([])
-    for i, (claim_ids, claim_msks, ce_ids, ce_msks, labels) in tqdm(enumerate(dev_loader),
-                                                                        ncols=100, total=len(dev_loader)):
-        claim_ids = Variable(claim_ids).cuda()
-        claim_msks = Variable(claim_msks).cuda()
-        ce_ids = Variable(ce_ids).cuda()
-        ce_msks = Variable(ce_msks).cuda()
+    for i, (ids, msks, labels) in tqdm(enumerate(test_loader),
+                                        ncols=100, total=len(test_loader)):
+        ids = Variable(ids).cuda()
+        msks = Variable(msks).cuda()
         labels = Variable(labels).cuda()
 
         with torch.no_grad():
-            out_c, out_ce = model(
-                claim_ids, claim_msks, ce_ids, ce_msks
-            )
-            logits = out_ce - out_c
-            prob = F.softmax(logits, dim=-1)
-            prediction = torch.argmax(prob, dim=-1)
+            out = model(ids, msks)
+            scores = F.softmax(out, dim=-1)
+            pred_prob, pred_label = torch.max(scores, dim=-1)
+            
             label_ids = labels.to('cpu').numpy()
 
             labels_flat = label_ids.flatten()
-            prediction_flat = prediction.to('cpu').numpy().flatten()
-            all_prediction = np.concatenate((all_prediction, prediction_flat), axis=None)
+            all_prediction = np.concatenate((all_prediction, np.array(pred_label.to('cpu'))), axis=None)
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
     # Measure how long the validation run took.
@@ -134,7 +131,10 @@ def test(model, logger, dev_loader):
 
 def main(args):
     # init logger
-    log_path = args.log_path + "base_model.log"
+    if args.mode == "train":
+        log_path = args.log_path + "train_base_model.log"
+    elif args.mode == "test":
+        log_path = args.log_path + "test_base_model.log"
     logger = log.get_logger(log_path)
 
     # load data
@@ -143,6 +143,8 @@ def main(args):
     train_raw = dataset.read_data(train_data_path, "gold_evidence")
     dev_data_path = args.data_path.replace("[DATA]", "dev")
     dev_raw = dataset.read_data(dev_data_path, "gold_evidence")
+    test_data_path = args.data_path.replace("[DATA]", "test")
+    test_raw = dataset.read_data(test_data_path, "gold_evidence")
 
     # tokenizer
     logger.info("loading tokenizer......")
@@ -152,6 +154,7 @@ def main(args):
     logger.info("batching data")
     train_batched = dataset.batch_ce_data(train_raw[:args.num_sample], args.max_len, tokenizer)
     dev_batched = dataset.batch_ce_data(dev_raw[:args.num_sample], args.max_len, tokenizer)
+    test_batched = dataset.batch_ce_data(test_raw[:args.num_sample], args.max_len, tokenizer)
 
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
@@ -166,6 +169,11 @@ def main(args):
         sampler=SequentialSampler(dev_batched),
         batch_size=args.batch_size
     )
+    test_loader = DataLoader(
+        test_batched,
+        sampler=SequentialSampler(test_batched),
+        batch_size=args.batch_size
+    )
 
     # load model
     model = Base_model(args)
@@ -173,12 +181,12 @@ def main(args):
 
     # for test
     if args.mode == 'test':
-        checkpoint = "/data/yangjun/fact/debias/models/unbiased_model.ptdebias_gold_evidence.pth"
+        checkpoint = "/data/yangjun/fact/debias/models/base_model.pth"
         state_dict = torch.load(checkpoint)
         model.load_state_dict(state_dict)
-        test(model, logger, dev_loader)
     elif args.mode == 'train':
         train(args, model, train_loader, dev_loader, logger)
+    test(model, logger, test_loader)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -190,7 +198,7 @@ if __name__ == '__main__':
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=3)
-    parser.add_argument("--mode", type=str, default="train")
+    parser.add_argument("--mode", type=str, default="test")
 
     # train parameters
     parser.add_argument("--batch_size", type=int, default=64)
