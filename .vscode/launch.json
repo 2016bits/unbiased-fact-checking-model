@@ -12,9 +12,9 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args":[
-                "--batch_size", "32",
-                "--epoch_num", "5",
-                "--num_sample", "-1",
+                "--batch_size", "5",
+                "--epoch_num", "2",
+                "--num_sample", "10",
                 "--mode", "train"
             ],
             "env": {

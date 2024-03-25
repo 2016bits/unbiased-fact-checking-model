@@ -34,7 +34,8 @@ def read_data(data_path, evidence_type):
 
     return data_list
 
-def BatchedData(data_loader, max_len, tokenizer):
+def batch_c_ce_data(data_loader, max_len, tokenizer):
+    # batch claim, claim-evidence data, for debiased model
     claim_ids = []
     claim_msks = []
     ce_pair_ids = []
@@ -75,4 +76,31 @@ def BatchedData(data_loader, max_len, tokenizer):
     labels = torch.tensor(labels, device='cuda')
 
     batched_dataset = TensorDataset(claim_ids, claim_msks, ce_pair_ids, ce_pair_msks, labels)
+    return batched_dataset
+
+def batch_ce_data(data_loader, max_len, tokenizer):
+    # batch claim-evidence data, for base model
+    ids = []
+    msks = []
+    labels = []
+
+    for data in data_loader:
+        encoded_claim_dict = tokenizer.encode_plus(
+            data["ce_pair"],
+            max_length=max_len,
+            padding='max_length',
+            return_attention_mask=True,
+            return_tensors='pt',
+            truncation=True
+        )
+        ids.append(encoded_claim_dict['input_ids'])
+        msks.append(encoded_claim_dict['attention_mask'])
+
+        labels.append(data['label'])
+    
+    ids = torch.cat(ids, dim=0).cuda()
+    msks = torch.cat(msks, dim=0).cuda()
+    labels = torch.tensor(labels, device='cuda')
+
+    batched_dataset = TensorDataset(ids, msks, labels)
     return batched_dataset
