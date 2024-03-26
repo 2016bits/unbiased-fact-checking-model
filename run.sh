@@ -1,2 +1,2 @@
-export CUDA_VISIBLE_DEVICES=4
-python debias/main.py
+export CUDA_VISIBLE_DEVICES=3
+python debias/unbiased_model.py

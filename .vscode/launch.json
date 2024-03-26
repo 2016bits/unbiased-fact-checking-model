@@ -14,11 +14,11 @@
             "args":[
                 "--batch_size", "5",
                 "--epoch_num", "2",
-                "--num_sample", "10",
-                "--mode", "train"
+                "--num_sample", "-1",
+                "--mode", "test"
             ],
             "env": {
-                "CUDA_VISIBLE_DEVICES": "3"
+                "CUDA_VISIBLE_DEVICES": "2"
             }
         }
     ]
