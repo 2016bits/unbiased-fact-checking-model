@@ -119,7 +119,7 @@ def train(args, model, train_loader, dev_loader, logger):
         logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
         if macro_f1 > best_macro_f1:
-            model_path = args.saved_model_path.replace("[weight]", args.claim_loss_weight)
+            model_path = args.saved_model_path.replace("[weight]", str(args.claim_loss_weight))
             best_macro_f1 = macro_f1
             torch.save(model.state_dict(), model_path)
     
