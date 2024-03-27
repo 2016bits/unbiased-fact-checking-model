@@ -32,7 +32,7 @@ class Unbiased_model(nn.Module):
         out_ce = self.ce_classifier(ce_cls_hidden_states)
         return out_c, out_ce
 
-def train(args, model, train_loader, dev_loader, logger, best_macro_f1, constraint_loss_weight):
+def train(args, model, train_loader, dev_loader, logger):
     # train
     logger.info("start training......")
     optimizer = AdamW(
@@ -47,6 +47,8 @@ def train(args, model, train_loader, dev_loader, logger, best_macro_f1, constrai
         num_warmup_steps = 0,
         num_training_steps = total_steps
     )
+
+    best_macro_f1 = 0.0
 
     for epoch in range(args.epoch_num):
         model.train()
@@ -73,7 +75,7 @@ def train(args, model, train_loader, dev_loader, logger, best_macro_f1, constrai
             label_distribution = zeros_tensor.scatter_(1, labels.unsqueeze(1), 1)
             loss_constraint = F.kl_div(pce.log(), label_distribution, reduction='sum') + F.kl_div(pc.log(), label_distribution, reduction='sum')
 
-            loss = loss_ce.sum() + args.claim_loss_weight * loss_c.sum() - constraint_loss_weight * loss_constraint
+            loss = loss_ce.sum() + args.claim_loss_weight * loss_c.sum() - args.constraint_loss_weight * loss_constraint
 
             loss.backward()
 
@@ -117,11 +119,9 @@ def train(args, model, train_loader, dev_loader, logger, best_macro_f1, constrai
         logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
         if macro_f1 > best_macro_f1:
+            model_path = args.saved_model_path.replace("[weight]", args.constraint_loss_weight)
             best_macro_f1 = macro_f1
-            torch.save(model.state_dict(), args.saved_model_path)
-    
-    return best_macro_f1
-            
+            torch.save(model.state_dict(), model_path)            
 
 def test(model, logger, test_loader):
     logger.info("start testing......")
@@ -162,7 +162,7 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "train_unbiased_model.log"
+        log_path = args.log_path + "train_unbiased_model_{}.log".format(args.constraint_loss_weight)
     elif args.mode == "test":
         log_path = args.log_path + "test_unbiased_model.log"
     logger = log.get_logger(log_path)
@@ -217,22 +217,22 @@ def main(args):
     # elif args.mode == 'train':
     #     train(args, model, train_loader, dev_loader, logger)
 
-    with open(args.test_results, 'w') as f:
-        best_macro_f1 = 0.0
-        for constraint_loss_weight in [0.01, 0.15, 0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05]:
-            print("constraint_loss_weight: {}".format(constraint_loss_weight), file=f)
-            best_macro_f1 = train(args, model, train_loader, dev_loader, logger, best_macro_f1, constraint_loss_weight)
-            micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
-            print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-            print("Precision (macro): {:.3%}".format(pre), file=f)
-            print("   Recall (macro): {:.3%}".format(recall), file=f)
-            print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    logger.info("constraint_loss_weight: {}".format(args.constraint_loss_weight))
+    train(args, model, train_loader, dev_loader, logger)
+    micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
+
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}".format(args.constraint_loss_weight, file=f))
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--log_path", type=str, default='./logs/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model_best.pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model_best[weight].pth")
     parser.add_argument("--test_results", type=str, default="./logs/test_result.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
@@ -242,8 +242,8 @@ if __name__ == '__main__':
     parser.add_argument("--mode", type=str, default="train")
 
     # train parameters
-    parser.add_argument("--batch_size", type=int, default=16)
-    parser.add_argument("--epoch_num", type=int, default=5)
+    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--epoch_num", type=int, default=15)
     parser.add_argument("--max_len", type=int, default=512)
     parser.add_argument("--bert_hidden_dim", type=int, default=768)
     parser.add_argument('--initial_lr', type=float, default=5e-6, help='initial learning rate')
