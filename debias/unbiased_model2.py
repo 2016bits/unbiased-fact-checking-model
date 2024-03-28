@@ -111,6 +111,7 @@ def train(args, model, train_loader, dev_loader, logger):
             
         # Measure how long the validation run took.
         logger.info("Epoch {}".format(epoch + 1))
+        logger.info("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight))
         pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
         logger.info("       F1 (micro): {:.3%}".format(micro_f1))
         pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -165,7 +166,7 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "train_unbiased_model_{}.log".format(args.claim_loss_weight)
+        log_path = args.log_path + "model_constraint_{}_claim_{}.log".format(args.constraint_loss_weight, args.claim_loss_weight)
     elif args.mode == "test":
         log_path = args.log_path + "test_unbiased_model2.log"
     logger = log.get_logger(log_path)
@@ -225,7 +226,7 @@ def main(args):
     micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
     with open(args.test_results, 'a+') as f:
-        print("claim_loss_weight: {}".format(args.claim_loss_weight, file=f))
+        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
         print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
         print("Precision (macro): {:.3%}".format(pre), file=f)
         print("   Recall (macro): {:.3%}".format(recall), file=f)
@@ -233,9 +234,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/')
+    parser.add_argument("--log_path", type=str, default='./logs/parameter2/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model_best[weight].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/parameter2/unbiased_model_best[weight].pth")
     parser.add_argument("--test_results", type=str, default="./logs/test_result2.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")

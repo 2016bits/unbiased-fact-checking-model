@@ -120,9 +120,12 @@ def train(args, model, train_loader, dev_loader, logger):
         logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
         if macro_f1 > best_macro_f1:
-            model_path = args.saved_model_path.replace("[weight]", str(args.constraint_loss_weight))
+            model_path = args.saved_model_path.replace("[weight]", str(args.claim_loss_weight))
             best_macro_f1 = macro_f1
-            torch.save(model.state_dict(), model_path)            
+            torch.save(model.state_dict(), model_path)
+    
+    return best_macro_f1
+            
 
 def test(model, logger, test_loader):
     logger.info("start testing......")
@@ -165,7 +168,7 @@ def main(args):
     if args.mode == "train":
         log_path = args.log_path + "model_constraint_{}_claim_{}.log".format(args.constraint_loss_weight, args.claim_loss_weight)
     elif args.mode == "test":
-        log_path = args.log_path + "test_unbiased_model.log"
+        log_path = args.log_path + "test_unbiased_model3.log"
     logger = log.get_logger(log_path)
 
     # load data
@@ -218,7 +221,7 @@ def main(args):
     # elif args.mode == 'train':
     #     train(args, model, train_loader, dev_loader, logger)
 
-    logger.info("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight))
+    logger.info("constraint_loss_weight: {}".format(args.constraint_loss_weight))
     train(args, model, train_loader, dev_loader, logger)
     micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
@@ -231,10 +234,10 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/parameter0/')
+    parser.add_argument("--log_path", type=str, default='./logs/parameter3/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/parameter0/unbiased_model_best[weight].pth")
-    parser.add_argument("--test_results", type=str, default="./logs/test_result.txt")
+    parser.add_argument("--saved_model_path", type=str, default="./models/parameter3/unbiased_model_best[weight].pth")
+    parser.add_argument("--test_results", type=str, default="./logs/test_result3.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
 
@@ -253,7 +256,7 @@ if __name__ == '__main__':
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
     parser.add_argument("--claim_loss_weight", type=float, default=1)
-    parser.add_argument("--constraint_loss_weight", type=float, default=0)
+    parser.add_argument("--constraint_loss_weight", type=float, default=0.002)
 
     args = parser.parse_args()
     main(args)
