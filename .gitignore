@@ -1,6 +1,7 @@
 /data/raw
 /data/processed
 /data/yangjun
+/data/gpt
 /reference
 /hfl/chinese-roberta-wwm-ext-large
 /bert-base-chinese

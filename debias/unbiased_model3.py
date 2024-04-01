@@ -221,7 +221,7 @@ def main(args):
     # elif args.mode == 'train':
     #     train(args, model, train_loader, dev_loader, logger)
 
-    logger.info("constraint_loss_weight: {}".format(args.constraint_loss_weight))
+    logger.info("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight))
     train(args, model, train_loader, dev_loader, logger)
     micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
