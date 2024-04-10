@@ -1,2 +1,2 @@
 export CUDA_VISIBLE_DEVICES=3
-python debias/base_model.py
+python scripts/base_model.py

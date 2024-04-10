@@ -1,36 +1,15 @@
 import argparse
 import torch
 import numpy as np
-import torch.nn as nn
 import torch.nn.functional as F
 from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
-from transformers import BertTokenizer, BertModel, get_linear_schedule_with_warmup, AdamW
+from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
 from sklearn.metrics import precision_recall_fscore_support
 
-try:
-    from util import log, dataset
-except:
-    from ..util import log, dataset
-
-class Unbiased_model(nn.Module):
-    def __init__(self, args):
-        super(Unbiased_model, self).__init__()
-        self.claim_encoder = BertModel.from_pretrained(args.cache_dir)
-        self.claim_classifier = nn.Linear(args.bert_hidden_dim, 3)
-        self.ce_encoder = BertModel.from_pretrained(args.cache_dir)
-        self.ce_classifier = nn.Linear(args.bert_hidden_dim, 3)
-        
-    def forward(self, claim_ids, claim_msks, ce_ids, ce_msks):
-        claim_hidden_states = self.claim_encoder(claim_ids, attention_mask=claim_msks)[0]
-        claim_cls_hidden_states = claim_hidden_states[:, 0, :]
-        out_c = self.claim_classifier(claim_cls_hidden_states)
-
-        ce_hidden_states = self.ce_encoder(ce_ids, attention_mask=ce_msks)[0]
-        ce_cls_hidden_states = ce_hidden_states[:, 0, :]
-        out_ce = self.ce_classifier(ce_cls_hidden_states)
-        return out_c, out_ce
+from util import log, dataset
+from util.model import Unbiased_model
 
 def train(args, model, train_loader, dev_loader, logger):
     # train
@@ -162,18 +141,12 @@ def test(model, logger, test_loader):
 
 def main(args):
     # init logger
-    if args.mode == "train":
-        log_path = args.log_path + "model_constraint_{}_claim_{}.log".format(args.constraint_loss_weight, args.claim_loss_weight)
-    elif args.mode == "test":
-        log_path = args.log_path + "test_unbiased_model.log"
+    log_path = args.log_path + "test_unbiased_data_model.log"
     logger = log.get_logger(log_path)
 
     # load data
     logger.info("loading dataset......")
-    train_data_path = args.data_path.replace("[DATA]", "train")
-    train_raw = dataset.read_data(train_data_path, "gold_evidence")
-    dev_data_path = args.data_path.replace("[DATA]", "dev")
-    dev_raw = dataset.read_data(dev_data_path, "gold_evidence")
+    
     test_data_path = args.data_path.replace("[DATA]", "test")
     test_raw = dataset.read_data(test_data_path, "gold_evidence")
 
@@ -183,23 +156,11 @@ def main(args):
 
     # batch data
     logger.info("batching data")
-    train_batched = dataset.batch_c_ce_data(train_raw[:args.num_sample], args.max_len, tokenizer)
-    dev_batched = dataset.batch_c_ce_data(dev_raw[:args.num_sample], args.max_len, tokenizer)
     test_batched = dataset.batch_c_ce_data(test_raw[:args.num_sample], args.max_len, tokenizer)
 
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
 
-    train_loader = DataLoader(
-        train_batched,
-        sampler=RandomSampler(train_batched),
-        batch_size=args.batch_size
-    )
-    dev_loader = DataLoader(
-        dev_batched,
-        sampler=SequentialSampler(dev_batched),
-        batch_size=args.batch_size
-    )
     test_loader = DataLoader(
         test_batched,
         sampler=SequentialSampler(test_batched),
@@ -211,32 +172,20 @@ def main(args):
     model = model.cuda()
 
     # for test
-    # if args.mode == 'test':
-    #     checkpoint = "/data/yangjun/fact/debias/models/unbiased_model.pth"
-    #     state_dict = torch.load(checkpoint)
-    #     model.load_state_dict(state_dict)
-    # elif args.mode == 'train':
-    #     train(args, model, train_loader, dev_loader, logger)
-
-    logger.info("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight))
-    train(args, model, train_loader, dev_loader, logger)
-    micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
-
-    with open(args.test_results, 'a+') as f:
-        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
-        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-        print("Precision (macro): {:.3%}".format(pre), file=f)
-        print("   Recall (macro): {:.3%}".format(recall), file=f)
-        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    checkpoint = args.checkpoint
+    state_dict = torch.load(checkpoint)
+    model.load_state_dict(state_dict)
+    test(model, logger, test_loader)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/parameter0/')
+    parser.add_argument("--log_path", type=str, default='./logs/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/parameter0/unbiased_model_best[weight].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model_best.pth")
     parser.add_argument("--test_results", type=str, default="./logs/test_result.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
+    parser.add_argument("--checkpoint", type=str, default="./models/unbiased_model_best.pth")
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=3)
@@ -252,8 +201,8 @@ if __name__ == '__main__':
 
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
-    parser.add_argument("--claim_loss_weight", type=float, default=1)
-    parser.add_argument("--constraint_loss_weight", type=float, default=0)
+    parser.add_argument("--claim_loss_weight", type=float, default=0.5)
+    parser.add_argument("--constraint_loss_weight", type=float, default=0.008)
 
     args = parser.parse_args()
     main(args)
