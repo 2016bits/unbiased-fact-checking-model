@@ -22,6 +22,7 @@ def count_null_evidence(data_path, data_type):
     # count numbers of examples with null evidence
     s_count = 0
     r_count = 0
+    n_count = 0
     for data in dataset:
         total_len += 1
         evidence = process_evidence(data['gold evidence'])
@@ -35,12 +36,14 @@ def count_null_evidence(data_path, data_type):
                 r_count += 1
         elif data['label'] == 2:
             n_num += 1
+            if evidence:
+                n_count += 1
 
     print(data_type)
     print("total_len: ", total_len)
     print("s_num: {}, s_count: {}, s_rate: {:.3%}".format(s_num, s_count, (s_count / s_num)))
     print("r_num: {}, r_count: {}, r_rate: {:.3%}".format(r_num, r_count, (r_count / r_num)))
-    print("n_num: {}".format(n_num))
+    print("n_num: {}, n_count: {}, n_rate: {:.3%}".format(n_num, n_count, (n_count / n_num)))
 
 def count_gpt_null_evidence(data_path, data_type):
     data_path = data_path.replace("[DATA]", data_type)
@@ -76,9 +79,9 @@ def count_gpt_null_evidence(data_path, data_type):
     print("n_num: {}".format(n_num))
 
 def main(args):
-    count_gpt_null_evidence(args.gpt_data_path, "train")
-    # count_gpt_null_evidence(args.data_path, "dev")
-    count_gpt_null_evidence(args.gpt_data_path, "test")
+    count_null_evidence(args.data_path, "train")
+    count_null_evidence(args.data_path, "dev")
+    count_null_evidence(args.data_path, "test")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
