@@ -11,15 +11,15 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args":[
-                "--batch_size", "5",
-                "--epoch_num", "2",
-                "--num_sample", "-1",
-                "--mode", "test"
-            ],
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "2"
-            }
+            // "args":[
+            //     "--batch_size", "5",
+            //     "--epoch_num", "2",
+            //     "--num_sample", "-1",
+            //     "--mode", "test"
+            // ],
+            // "env": {
+            //     "CUDA_VISIBLE_DEVICES": "2"
+            // }
         }
     ]
 }

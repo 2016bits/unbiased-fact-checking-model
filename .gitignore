@@ -9,6 +9,9 @@
 /logs
 /results
 1.py
+out.txt
+out2.txt
+out3.txt
 /bert
 /util/__pycache__
 /MoritzLaurer
