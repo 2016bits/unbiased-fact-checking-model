@@ -9,10 +9,10 @@
 /logs
 /results
 1.py
-out.txt
-out2.txt
-out3.txt
+/tmp
+/run_scripts
 /bert
+/scripts/__pycache__
 /util/__pycache__
 /MoritzLaurer
 /.vscode
