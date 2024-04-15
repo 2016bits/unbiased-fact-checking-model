@@ -2,6 +2,7 @@
 /data/processed
 /data/yangjun
 /data/gpt
+/data/improved_CHEF
 /reference
 /hfl/chinese-roberta-wwm-ext-large
 /bert-base-chinese
@@ -9,6 +10,7 @@
 /logs
 /results
 1.py
+2.py
 /tmp
 /run_scripts
 /bert

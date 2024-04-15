@@ -17,9 +17,9 @@
             //     "--num_sample", "-1",
             //     "--mode", "test"
             // ],
-            // "env": {
-            //     "CUDA_VISIBLE_DEVICES": "2"
-            // }
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "7"
+            }
         }
     ]
 }
