@@ -6,7 +6,7 @@ class Base_model(nn.Module):
     def __init__(self, args):
         super(Base_model, self).__init__()
         self.encoder = BertModel.from_pretrained(args.cache_dir)
-        self.classifier = nn.Linear(args.bert_hidden_dim, 3)
+        self.classifier = nn.Linear(args.bert_hidden_dim, args.num_classes)
         
     def forward(self, ids, msks):
         hidden_states = self.encoder(ids, attention_mask=msks)[0]

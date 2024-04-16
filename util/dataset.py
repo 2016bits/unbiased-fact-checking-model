@@ -25,11 +25,14 @@ def read_data(data_path, evidence_type):
         
         ce_pair = "[CLS] {} [SEP] {}".format(claim, evidence)
 
+        label = data['label']
+        if not isinstance(label, int):
+            label = label_dict[label]
         data_list.append({
             "id": data['id'],
             "claim": claim,
             "ce_pair": ce_pair,
-            "label": label_dict[data['label']]
+            "label": label
         })
 
     return data_list
