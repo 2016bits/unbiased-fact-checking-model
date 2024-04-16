@@ -143,18 +143,18 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "model_{}_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
+        log_path = args.log_path + "{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
     elif args.mode == "test":
         log_path = args.log_path + "test_unbiased_model.log"
     logger = log.get_logger(log_path)
 
     # load data
     logger.info("loading dataset......")
-    train_data_path = args.data_path.replace("[DATA]", "train_{}".format(args.num_classes))
+    train_data_path = args.data_path.replace("[DATA]", "train")
     train_raw = dataset.read_data(train_data_path, "gold_evidence")
-    dev_data_path = args.data_path.replace("[DATA]", "dev_{}".format(args.num_classes))
+    dev_data_path = args.data_path.replace("[DATA]", "dev")
     dev_raw = dataset.read_data(dev_data_path, "gold_evidence")
-    test_data_path = args.data_path.replace("[DATA]", "test_{}".format(args.num_classes))
+    test_data_path = args.data_path.replace("[DATA]", "test")
     test_raw = dataset.read_data(test_data_path, "gold_evidence")
 
     # tokenizer
@@ -209,12 +209,12 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--log_path", type=str, default='./logs/parameter/')
-    parser.add_argument("--data_path", type=str, default="./data/processed/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/unbiased_model_[constraint]_[claim].pth")
-    parser.add_argument("--test_results", type=str, default="./logs/test_result_2.txt")
+    parser.add_argument("--data_path", type=str, default="./data/improved_CHEF_3/[DATA].json")
+    parser.add_argument("--saved_model_path", type=str, default="./models/parameter/three_unbiased_model_[constraint]_[claim].pth")
+    parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_3_class.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
-    parser.add_argument("--checkpoint", type=str, default="./models/unbiased_model_best.pth")
+    parser.add_argument("--checkpoint", type=str, default="./models/three_unbiased_model_[constraint]_[claim].pth")
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=3)

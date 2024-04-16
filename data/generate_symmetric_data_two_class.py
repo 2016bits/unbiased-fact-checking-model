@@ -45,13 +45,12 @@ def main(args):
     # control example number
     s_num = 0
     r_num = 0
-    n_num = 0
     max_num = 10
 
     processed = []
     count = 0
     for data in raws:
-        if s_num > max_num and r_num > max_num and n_num > max_num:
+        if s_num > max_num and r_num > max_num:
             break
 
         original_id = data['id']
@@ -76,12 +75,6 @@ def main(args):
             original_label = 1
             rewritten_label = 0
             r_num += 1
-        elif original_label == "NOT ENOUGH INFO":
-            if n_num > max_num:
-                continue
-            original_label = 2
-            rewritten_label = 2
-            n_num += 1
         
         # prepare prompt
         claim_text = claim_prompt.replace("[CLAIM]", original_claim)
@@ -131,7 +124,7 @@ def main(args):
             processed.append(data_ro)
             count += 1
 
-        if write_evidence_flag and original_label != 2:
+        if write_evidence_flag:
             # original claim + rewritten evidence
             data_or = {
                 'id': 300000 + original_id,
@@ -143,7 +136,7 @@ def main(args):
             processed.append(data_or)
             count += 1
 
-        if write_claim_flag and write_evidence_flag and original_label != 2:
+        if write_claim_flag and write_evidence_flag:
             # rewritten claim + rewritten evidence
             data_rr = {
                 'id': 400000 + original_id,
@@ -162,8 +155,8 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_3/test.json')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_test_3.json')
+    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_2/test.json')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_test_2.json')
 
     args = parser.parse_args()
     main(args)

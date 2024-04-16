@@ -1,4 +1,4 @@
-# 在symmetric CHEF上测试unbiased model，三分类
+# 在symmetric CHEF上测试unbiased model，二分类
 import argparse
 import torch
 import numpy as np
@@ -88,13 +88,13 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--log_path", type=str, default='./logs/')
-    parser.add_argument("--data_path", type=str, default="./data/gpt/symmetric_test_3.json")
+    parser.add_argument("--data_path", type=str, default="./data/gpt/symmetric_test_2.json")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
-    parser.add_argument("--checkpoint", type=str, default="./models/three_unbiased_model_0.004_0.5.pth")
+    parser.add_argument("--checkpoint", type=str, default="./models/two_class_unbiased_model.pth")
 
     parser.add_argument("--num_sample", type=int, default=-1)
-    parser.add_argument("--num_classes", type=int, default=3)
+    parser.add_argument("--num_classes", type=int, default=2)
 
     # train parameters
     parser.add_argument("--batch_size", type=int, default=32)
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
     parser.add_argument("--claim_loss_weight", type=float, default=0.5)
-    parser.add_argument("--constraint_loss_weight", type=float, default=0.004)
+    parser.add_argument("--constraint_loss_weight", type=float, default=0.008)
 
     args = parser.parse_args()
     main(args)

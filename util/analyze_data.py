@@ -58,14 +58,14 @@ def draw_constraint(figure_path):
     plt.savefig(figure_path)
 
 def main(args):
-    # draw_constraint_claim(args.in_path, args.out_path, args.figure_path)
-    draw_constraint(args.figure_path)
+    draw_constraint_claim(args.in_path, args.out_path, args.figure_path)
+    # draw_constraint(args.figure_path)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/logs/test_result.txt')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/results/parameter_results.xlsx')
-    parser.add_argument("--figure_path", type=str, default='/data/yangjun/fact/debias/results/parameter_results.png')
+    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/logs/test_result_2.txt')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/results/parameter_results2.xlsx')
+    parser.add_argument("--figure_path", type=str, default='/data/yangjun/fact/debias/results/parameter_results2.png')
 
     args = parser.parse_args()
     main(args)
