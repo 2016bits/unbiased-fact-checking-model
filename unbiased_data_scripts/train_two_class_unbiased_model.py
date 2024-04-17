@@ -103,7 +103,6 @@ def train(args, model, train_loader, dev_loader, logger):
         if macro_f1 > best_macro_f1:
             model_path = args.saved_model_path.replace("[constraint]", str(args.constraint_loss_weight))
             model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
-            model_path = args.save_model_path
             best_macro_f1 = macro_f1
             torch.save(model.state_dict(), model_path)
 
@@ -212,7 +211,7 @@ if __name__ == '__main__':
     parser.add_argument("--train_dev_data_path", type=str, default="./data/gpt/symmetric_dev_2_all.json")
     parser.add_argument("--test_data_path", type=str, default="./data/gpt/symmetric_test_2_all.json")
 
-    parser.add_argument("--save_model_path", type=str, default="./models/symmetric/train_two_unbiased_[constraint]_[claim].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/symmetric/train_two_unbiased_[constraint]_[claim].pth")
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
     parser.add_argument("--checkpoint", type=str, default="./models/two_class_unbiased_model.pth")
     parser.add_argument("--test_results", type=str, default="./para_results/train_two_symmetric_unbiased.txt")
