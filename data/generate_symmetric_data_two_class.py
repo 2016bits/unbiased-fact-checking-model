@@ -3,6 +3,7 @@ import json
 import argparse
 import random
 import openai
+from tqdm import tqdm
 
 claim_prompt = """根据证据改写声明，使得改写后的新声明与证据之间表达主题和原声明与证据之间表达的主题相反
 原声明: [CLAIM]
@@ -36,11 +37,12 @@ def llm(prompt, stop=["\n"]):
     return response.choices[0].message.content
 
 def main(args):
+    f_tmp = open(args.tmp_path, 'w', encoding='utf-8')
     define_gpt()
 
     with open(args.in_path, 'r', encoding='utf-8') as f:
         raws = json.load(f)
-    random.shuffle(raws)
+    # random.shuffle(raws)
 
     # control example number
     s_num = 0
@@ -49,7 +51,7 @@ def main(args):
 
     processed = []
     count = 0
-    for data in raws:
+    for data in tqdm(raws):
         if s_num > max_num and r_num > max_num:
             break
 
@@ -108,7 +110,7 @@ def main(args):
             'label': original_label,
             'gold_evidence': original_evidence
         }
-        print(data_oo)
+        print(data_oo, file=f_tmp)
         processed.append(data_oo)
         count += 1
 
@@ -120,7 +122,7 @@ def main(args):
                 'label': rewritten_label,
                 'gold_evidence': original_evidence
             }
-            print(data_ro)
+            print(data_ro, file=f_tmp)
             processed.append(data_ro)
             count += 1
 
@@ -132,7 +134,7 @@ def main(args):
                 'label': rewritten_label,
                 'gold_evidence': rewritten_evidence
             }
-            print(data_or)
+            print(data_or, file=f_tmp)
             processed.append(data_or)
             count += 1
 
@@ -144,9 +146,11 @@ def main(args):
                 'label': original_label,
                 'gold_evidence': rewritten_evidence
             }
-            print(data_rr)
+            print(data_rr, file=f_tmp)
             processed.append(data_rr)
             count += 1
+    
+    f_tmp.close()
     
     with open(args.out_path, 'w', encoding='utf-8') as fout:
         json.dump(processed, fout, indent=2, ensure_ascii=False)
@@ -155,8 +159,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_2/dev.json')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/symmetric_dev_2.json')
+    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_2/test.json')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/symmetric_test_2_all.json')
+    parser.add_argument("--tmp_path", type=str, default="./tmp/out_two_class_test_all.txt")
 
     args = parser.parse_args()
     main(args)
