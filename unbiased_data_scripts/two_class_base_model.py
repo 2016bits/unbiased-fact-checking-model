@@ -78,7 +78,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--log_path", type=str, default='./logs/')
-    parser.add_argument("--data_path", type=str, default="./data/gpt/symmetric_test_2.json")
+    parser.add_argument("--data_path", type=str, default="./data/gpt/symmetric_test_2_all.json")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
     parser.add_argument("--checkpoint", type=str, default="./models/two_class_base_model.pth")

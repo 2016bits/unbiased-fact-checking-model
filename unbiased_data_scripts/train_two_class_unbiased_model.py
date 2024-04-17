@@ -101,8 +101,8 @@ def train(args, model, train_loader, dev_loader, logger):
         logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
         if macro_f1 > best_macro_f1:
-            # model_path = args.saved_model_path.replace("[constraint]", str(args.constraint_loss_weight))
-            # model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
+            model_path = args.saved_model_path.replace("[constraint]", str(args.constraint_loss_weight))
+            model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
             model_path = args.save_model_path
             best_macro_f1 = macro_f1
             torch.save(model.state_dict(), model_path)
@@ -143,11 +143,11 @@ def test(model, logger, test_loader):
     logger.info("   Recall (macro): {:.3%}".format(recall))
     logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
-    return micro_f1, pre, recall, macro_f1
+    return acc, micro_f1, pre, recall, macro_f1
 
 def main(args):
     # init logger
-    log_path = args.log_path + "train_two_class_unbiased_symmetric_data.log"
+    log_path = args.log_path + "{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
     logger = log.get_logger(log_path)
 
     # load data
@@ -196,17 +196,26 @@ def main(args):
         model.load_state_dict(state_dict)
     elif args.mode == 'train':
         train(args, model, train_loader, dev_loader, logger)
-    test(model, logger, test_loader)
+    acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
+
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+        print("         Accuracy: {:.3%}".format(acc))
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/')
-    parser.add_argument("--train_dev_data_path", type=str, default="./data/gpt/symmetric_dev_2.json")
-    parser.add_argument("--test_data_path", type=str, default="./data/gpt/symmetric_test_2.json")
+    parser.add_argument("--log_path", type=str, default='./logs/symmetric2/')
+    parser.add_argument("--train_dev_data_path", type=str, default="./data/gpt/symmetric_dev_2_all.json")
+    parser.add_argument("--test_data_path", type=str, default="./data/gpt/symmetric_test_2_all.json")
 
-    parser.add_argument("--save_model_path", type=str, default="./models/train_two_class_unbiased_model.pth")
+    parser.add_argument("--save_model_path", type=str, default="./models/symmetric/train_two_unbiased_[constraint]_[claim].pth")
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
     parser.add_argument("--checkpoint", type=str, default="./models/two_class_unbiased_model.pth")
+    parser.add_argument("--test_results", type=str, default="./para_results/train_two_symmetric_unbiased.txt")
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=2)
@@ -214,7 +223,7 @@ if __name__ == '__main__':
 
     # train parameters
     parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument("--epoch_num", type=int, default=5)
+    parser.add_argument("--epoch_num", type=int, default=8)
     parser.add_argument("--max_len", type=int, default=512)
     parser.add_argument("--bert_hidden_dim", type=int, default=768)
     parser.add_argument('--initial_lr', type=float, default=5e-6, help='initial learning rate')

@@ -6,7 +6,7 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 from util import log, dataset
 from util.model import Unbiased_model
@@ -90,6 +90,8 @@ def train(args, model, train_loader, dev_loader, logger):
             
         # Measure how long the validation run took.
         logger.info("Epoch {}".format(epoch + 1))
+        acc = accuracy_score(all_target, all_prediction)
+        logger.info("         Accuracy: {:.3%}".format(acc))
         pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
         logger.info("       F1 (micro): {:.3%}".format(micro_f1))
         pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -129,7 +131,8 @@ def test(model, logger, test_loader):
             all_prediction = np.concatenate((all_prediction, np.array(pred_label.to('cpu'))), axis=None)
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
-    # Measure how long the validation run took.
+    acc = accuracy_score(all_target, all_prediction)
+    logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
     logger.info("       F1 (micro): {:.3%}".format(micro_f1))
     pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -137,7 +140,7 @@ def test(model, logger, test_loader):
     logger.info("   Recall (macro): {:.3%}".format(recall))
     logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
-    return micro_f1, pre, recall, macro_f1
+    return acc, micro_f1, pre, recall, macro_f1
 
 def main(args):
     # init logger
@@ -196,10 +199,11 @@ def main(args):
         model.load_state_dict(state_dict)
     elif args.mode == 'train':
         train(args, model, train_loader, dev_loader, logger)
-    micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
+    acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
     with open(args.test_results, 'a+') as f:
         print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+        print("         Accuracy: {:.3%}".format(acc))
         print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
         print("Precision (macro): {:.3%}".format(pre), file=f)
         print("   Recall (macro): {:.3%}".format(recall), file=f)
@@ -210,7 +214,7 @@ if __name__ == '__main__':
     parser.add_argument("--log_path", type=str, default='./logs/parameter2/')
     parser.add_argument("--data_path", type=str, default="./data/improved_CHEF_2/[DATA].json")
     parser.add_argument("--saved_model_path", type=str, default="./models/parameter2/two_unbiased_model_[constraint]_[claim].pth")
-    parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_3_class.txt")
+    parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_2_class.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
     parser.add_argument("--checkpoint", type=str, default="./models/two_class_unbiased_model.pth")
