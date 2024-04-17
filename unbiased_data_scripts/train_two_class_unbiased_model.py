@@ -7,7 +7,7 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, SequentialSampler, RandomSampler
 from transformers import BertTokenizer, AdamW, get_linear_schedule_with_warmup
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 from sklearn.model_selection import train_test_split
 
 from util import log, dataset
@@ -90,8 +90,9 @@ def train(args, model, train_loader, dev_loader, logger):
                 all_prediction = np.concatenate((all_prediction, np.array(pred_label.to('cpu'))), axis=None)
                 all_target = np.concatenate((all_target, labels_flat), axis=None)
             
-        # Measure how long the validation run took.
         logger.info("Epoch {}".format(epoch + 1))
+        acc = accuracy_score(all_target, all_prediction)
+        logger.info("         Accuracy: {:.3%}".format(acc))
         pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
         logger.info("       F1 (micro): {:.3%}".format(micro_f1))
         pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -133,6 +134,8 @@ def test(model, logger, test_loader):
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
     # Measure how long the validation run took.
+    acc = accuracy_score(all_target, all_prediction)
+    logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
     logger.info("       F1 (micro): {:.3%}".format(micro_f1))
     pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -211,7 +214,7 @@ if __name__ == '__main__':
 
     # train parameters
     parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument("--epoch_num", type=int, default=15)
+    parser.add_argument("--epoch_num", type=int, default=5)
     parser.add_argument("--max_len", type=int, default=512)
     parser.add_argument("--bert_hidden_dim", type=int, default=768)
     parser.add_argument('--initial_lr', type=float, default=5e-6, help='initial learning rate')

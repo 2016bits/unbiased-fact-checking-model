@@ -6,7 +6,7 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertTokenizer
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 from util import log, dataset
 from util.model import Base_model
@@ -33,6 +33,8 @@ def test(model, logger, test_loader):
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
     # Measure how long the validation run took.
+    acc = accuracy_score(all_target, all_prediction)
+    logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
     logger.info("       F1 (micro): {:.3%}".format(micro_f1))
     pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
