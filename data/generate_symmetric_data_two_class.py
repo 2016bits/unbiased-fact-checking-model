@@ -45,7 +45,7 @@ def main(args):
     # control example number
     s_num = 0
     r_num = 0
-    max_num = 10
+    max_num = 333
 
     processed = []
     count = 0
@@ -155,8 +155,8 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_2/test.json')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_test_2.json')
+    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_2/dev.json')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/symmetric_dev_2.json')
 
     args = parser.parse_args()
     main(args)
