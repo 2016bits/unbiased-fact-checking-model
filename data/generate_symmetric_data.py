@@ -3,6 +3,7 @@ import json
 import argparse
 import random
 import openai
+from tqdm import tqdm
 
 claim_prompt = """根据证据改写声明，使得改写后的新声明与证据之间表达主题和原声明与证据之间表达的主题相反
 原声明: [CLAIM]
@@ -36,6 +37,7 @@ def llm(prompt, stop=["\n"]):
     return response.choices[0].message.content
 
 def main(args):
+    f_tmp = open(args.tmp_path, 'w', encoding='utf-8')
     define_gpt()
 
     with open(args.in_path, 'r', encoding='utf-8') as f:
@@ -43,17 +45,11 @@ def main(args):
     random.shuffle(raws)
 
     # control example number
-    s_num = 0
-    r_num = 0
-    n_num = 0
-    max_num = 10
-
+    
     processed = []
     count = 0
-    for data in raws:
-        if s_num > max_num and r_num > max_num and n_num > max_num:
-            break
-
+    for data in tqdm(raws):
+        
         original_id = data['id']
         if type(original_id) == str:
             original_id = eval(original_id)
@@ -64,24 +60,12 @@ def main(args):
             continue
         original_label = data['label']
 
-        if original_label == "SUPPORTS":
-            if s_num > max_num:
-                continue
-            original_label = 0
-            rewritten_label = 1
-            s_num += 1
-        elif original_label == "REFUTES":
-            if r_num > max_num:
-                continue
-            original_label = 1
-            rewritten_label = 0
-            r_num += 1
+        if original_label == "SUPPORTS" or original_label == "REFUTES":
+            continue
+
         elif original_label == "NOT ENOUGH INFO":
-            if n_num > max_num:
-                continue
             original_label = 2
             rewritten_label = 2
-            n_num += 1
         
         # prepare prompt
         claim_text = claim_prompt.replace("[CLAIM]", original_claim)
@@ -97,11 +81,6 @@ def main(args):
         except:
             write_claim_flag = False
             print("generate claim {} failed".format(original_id))
-        try:
-            rewritten_evidence = llm(evidence_text)
-        except:
-            write_evidence_flag = False
-            print("generate evidence {} failed".format(original_id))
         
         if not write_claim_flag or not write_evidence_flag:
             # failed
@@ -115,7 +94,7 @@ def main(args):
             'label': original_label,
             'gold_evidence': original_evidence
         }
-        print(data_oo)
+        print(data_oo, file=f_tmp)
         processed.append(data_oo)
         count += 1
 
@@ -127,32 +106,8 @@ def main(args):
                 'label': rewritten_label,
                 'gold_evidence': original_evidence
             }
-            print(data_ro)
+            print(data_ro, file=f_tmp)
             processed.append(data_ro)
-            count += 1
-
-        if write_evidence_flag and original_label != 2:
-            # original claim + rewritten evidence
-            data_or = {
-                'id': 300000 + original_id,
-                'claim': original_claim,
-                'label': rewritten_label,
-                'gold_evidence': rewritten_evidence
-            }
-            print(data_or)
-            processed.append(data_or)
-            count += 1
-
-        if write_claim_flag and write_evidence_flag and original_label != 2:
-            # rewritten claim + rewritten evidence
-            data_rr = {
-                'id': 400000 + original_id,
-                'claim': rewritten_claim,
-                'label': original_label,
-                'gold_evidence': rewritten_evidence
-            }
-            print(data_rr)
-            processed.append(data_rr)
             count += 1
     
     with open(args.out_path, 'w', encoding='utf-8') as fout:
@@ -163,7 +118,8 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_3/test.json')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_test_3.json')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_test_3_nei.json')
+    parser.add_argument("--tmp_path", type=str, default="./tmp/out_three_class_test_nei.txt")
 
     args = parser.parse_args()
     main(args)

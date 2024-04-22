@@ -1,7 +1,6 @@
 import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 def draw_constraint_claim(in_path, out_path, figure_path):
     # 读取文本文件
@@ -63,9 +62,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/logs/test_result_2.txt')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/results/parameter_results2.xlsx')
-    parser.add_argument("--figure_path", type=str, default='/data/yangjun/fact/debias/results/parameter_results2.png')
+    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/logs/test_result_unbiased_2_class.txt')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/results/train_two_improved_unbiased.xlsx')
+    parser.add_argument("--figure_path", type=str, default='/data/yangjun/fact/debias/results/train_two_improved_unbiased.png')
 
     args = parser.parse_args()
     main(args)
