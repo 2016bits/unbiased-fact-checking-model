@@ -6,7 +6,7 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 from util import log, dataset
 from util.model import Base_model
@@ -72,6 +72,8 @@ def train(args, model, train_loader, dev_loader, logger):
             
         # Measure how long the validation run took.
         logger.info("Epoch {}".format(epoch + 1))
+        acc = accuracy_score(all_target, all_prediction)
+        logger.info("         Accuracy: {:.3%}".format(acc))
         pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
         logger.info("       F1 (micro): {:.3%}".format(micro_f1))
         pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -106,6 +108,8 @@ def test(model, logger, test_loader):
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
     # Measure how long the validation run took.
+    acc = accuracy_score(all_target, all_prediction)
+    logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
     logger.info("       F1 (micro): {:.3%}".format(micro_f1))
     pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -116,9 +120,9 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "train_base_model.log"
+        log_path = args.log_path + "train_two_class_CHEF_base.log"
     elif args.mode == "test":
-        log_path = args.log_path + "test_base_model.log"
+        log_path = args.log_path + "test_two_class_CHEF_base.log"
     logger = log.get_logger(log_path)
 
     # load data
@@ -174,12 +178,12 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/two_class_')
-    parser.add_argument("--data_path", type=str, default="./data/improved_CHEF_2/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/two_class_base_model.pth")
+    parser.add_argument("--log_path", type=str, default='./logs/')
+    parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
+    parser.add_argument("--saved_model_path", type=str, default="./models/two_class_CHEF_base.pth")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
-    parser.add_argument("--checkpoint", type=str, default="/data/yangjun/fact/debias/models/two_class_base_model.pth")
+    parser.add_argument("--checkpoint", type=str, default="/data/yangjun/fact/debias/models/two_class_CHEF_base.pth")
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=2)

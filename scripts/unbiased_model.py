@@ -6,7 +6,7 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 from util import log, dataset
 from util.model import Unbiased_model
@@ -91,6 +91,8 @@ def train(args, model, train_loader, dev_loader, logger):
         # Measure how long the validation run took.
         logger.info("Epoch {}".format(epoch + 1))
         logger.info("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight))
+        acc = accuracy_score(all_target, all_prediction)
+        logger.info("         Accuracy: {:.3%}".format(acc))
         pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
         logger.info("       F1 (micro): {:.3%}".format(micro_f1))
         pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -131,6 +133,8 @@ def test(model, logger, test_loader):
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
     # Measure how long the validation run took.
+    acc = accuracy_score(all_target, all_prediction)
+    logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
     logger.info("       F1 (micro): {:.3%}".format(micro_f1))
     pre, recall, macro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='macro')
@@ -143,9 +147,15 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
+        # for improved_CHEF
+        # log_path = args.log_path + "improved_CHEF_{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
+        # for CHEF
+        log_path = args.log_path + "CHEF_{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
     elif args.mode == "test":
-        log_path = args.log_path + "test_unbiased_model.log"
+        # for improved_CHEF
+        # log_path = args.log_path + "test_unbiased_three_improved_CHEF_model.log"
+        # for CHEF
+        log_path = args.log_path + "test_unbiased_three_CHEF_model.log"
     logger = log.get_logger(log_path)
 
     # load data
@@ -199,26 +209,34 @@ def main(args):
         train(args, model, train_loader, dev_loader, logger)
     micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    with open(args.test_results, 'a+') as f:
-        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
-        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-        print("Precision (macro): {:.3%}".format(pre), file=f)
-        print("   Recall (macro): {:.3%}".format(recall), file=f)
-        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    # with open(args.test_results, 'a+') as f:
+    #     print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+    #     print("Precision (macro): {:.3%}".format(pre), file=f)
+    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
+    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/parameter/')
-    parser.add_argument("--data_path", type=str, default="./data/improved_CHEF_3/[DATA].json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/parameter/three_unbiased_model_[constraint]_[claim].pth")
-    parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_3_class.txt")
+    parser.add_argument("--log_path", type=str, default='./logs/')
+    # for improved_CHEF
+    # parser.add_argument("--data_path", type=str, default="./data/improved_CHEF_3/[DATA].json")
+    # parser.add_argument("--saved_model_path", type=str, default="./models/three_unbiased_improved_CHEF_[constraint]_[claim].pth")
+    # # parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_3_class.txt")
 
+    # parser.add_argument("--checkpoint", type=str, default="./models/three_unbiased_improved_CHEF_0.004_0.5.pth")
+
+    # for CHEF
+    parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_3.json")
+    parser.add_argument("--saved_model_path", type=str, default="./models/three_unbiased_CHEF_[constraint]_[claim].pth")
+
+    parser.add_argument("--checkpoint", type=str, default="./models/three_unbiased_improved_CHEF_0.008_0.5.pth")
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
-    parser.add_argument("--checkpoint", type=str, default="./models/three_unbiased_model_[constraint]_[claim].pth")
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=3)
     parser.add_argument("--mode", type=str, default="train")
+    # parser.add_argument("--mode", type=str, default="test")
 
     # train parameters
     parser.add_argument("--batch_size", type=int, default=32)
@@ -231,6 +249,9 @@ if __name__ == '__main__':
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
     parser.add_argument("--claim_loss_weight", type=float, default=0.5)
+    # best for improved_CHEF
+    # parser.add_argument("--constraint_loss_weight", type=float, default=0.004)
+    # best for CHEF
     parser.add_argument("--constraint_loss_weight", type=float, default=0.008)
 
     args = parser.parse_args()
