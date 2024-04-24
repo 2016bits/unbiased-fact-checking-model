@@ -15,6 +15,11 @@ evidence_prompt = """根据声明改写证据，使得改写后的新证据与�
 原证据: [EVIDENCE]
 新证据: 
 """
+nei_claim_prompt = """通过替换声明中的关键词改写声明使得改写后的新声明与原声明之间表达主题相反，且保证根据证据无法判断改写后声明的真实性
+原声明: [CLAIM]
+证据: [EVIDENCE]
+新声明: 
+"""
 
 def define_gpt():
     # chatgpt api
@@ -42,7 +47,9 @@ def main(args):
 
     with open(args.in_path, 'r', encoding='utf-8') as f:
         raws = json.load(f)
-    random.shuffle(raws)
+    
+    with open(args.generated_data_path, 'r', encoding='utf-8') as f_data:
+        dataset = json.load(f_data)
 
     # control example number
     
@@ -68,16 +75,21 @@ def main(args):
             rewritten_label = 2
         
         # prepare prompt
-        claim_text = claim_prompt.replace("[CLAIM]", original_claim)
-        claim_text = claim_text.replace("[EVIDENCE]", original_evidence)
-        evidence_text = evidence_prompt.replace("[EVIDENCE]", original_evidence)
-        evidence_text = evidence_text.replace("[CLAIM]", original_claim)
+        # for SUPPORTS and REFUTES
+        # claim_text = claim_prompt.replace("[CLAIM]", original_claim)
+        # claim_text = claim_text.replace("[EVIDENCE]", original_evidence)
+        # evidence_text = evidence_prompt.replace("[EVIDENCE]", original_evidence)
+        # evidence_text = evidence_text.replace("[CLAIM]", original_claim)
+
+        # for NEI
+        prompt = nei_claim_prompt.replace("[CLAIM]", original_claim)
+        prompt = prompt.replace("[EVIDENCE]", original_evidence)
         
         # rewritte by ChatGPT
         write_claim_flag = True
         write_evidence_flag = True
         try:
-            rewritten_claim = llm(claim_text)
+            rewritten_claim = llm(prompt)
         except:
             write_claim_flag = False
             print("generate claim {} failed".format(original_id))
@@ -111,15 +123,23 @@ def main(args):
             count += 1
     
     with open(args.out_path, 'w', encoding='utf-8') as fout:
-        json.dump(processed, fout, indent=2, ensure_ascii=False)
+        json.dump(dataset + processed, fout, indent=2, ensure_ascii=False)
     print("Finished!\nGenerate {} examples.".format(count))
     
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    # for test
     parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_3/test.json')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_test_3_nei.json')
-    parser.add_argument("--tmp_path", type=str, default="./tmp/out_three_class_test_nei.txt")
+    parser.add_argument("--generated_data_path", type=str, default='./data/gpt/symmetric_test_2_all.json')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/symmetric_test_3_all2.json')
+    parser.add_argument("--tmp_path", type=str, default="./tmp/out_three_class_test_all2.txt")
+
+    # for dev
+    # parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/data/improved_CHEF_3/dev.json')
+    # parser.add_argument("--generated_data_path", type=str, default='./data/gpt/symmetric_dev_2_all.json')
+    # parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/data/gpt/sysmmetric_dev_3_all.json')
+    # parser.add_argument("--tmp_path", type=str, default="./tmp/out_three_class_dev_all.txt")
 
     args = parser.parse_args()
     main(args)
