@@ -145,9 +145,9 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "{}_class_CHEF_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
+        log_path = args.log_path + "{}_class_improved_CHEF_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
     elif args.mode == "test":
-        log_path = args.log_path + "test_two_class_CHEF_unbiased_model.log"
+        log_path = args.log_path + "test_two_class_improved_CHEF_unbiased_model.log"
     logger = log.get_logger(log_path)
 
     # load data
@@ -203,7 +203,7 @@ def main(args):
 
     with open(args.test_results, 'a+') as f:
         print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
-        print("         Accuracy: {:.3%}".format(acc), file=f)
+        print("         Accuracy: {:.3%}".format(acc),file=f)
         print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
         print("Precision (macro): {:.3%}".format(pre), file=f)
         print("   Recall (macro): {:.3%}".format(recall), file=f)
@@ -211,10 +211,10 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/parameter/')
-    parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/parameter/two_unbiased_CHEF_[constraint]_[claim].pth")
-    parser.add_argument("--test_results", type=str, default="./para_results/CHEF_two_class_unbiased.txt")
+    parser.add_argument("--log_path", type=str, default='./logs/parameter2/')
+    parser.add_argument("--data_path", type=str, default="./data/improved_CHEF_2/[DATA].json")
+    parser.add_argument("--saved_model_path", type=str, default="./models/parameter2/two_unbiased_improved_CHEF_[constraint]_[claim].pth")
+    parser.add_argument("--test_results", type=str, default="./para_results/improved_CHEF_two_class_unbiased.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
     parser.add_argument("--checkpoint", type=str, default="./models/two_unbiased_CHEF_0.004_0.5.pth")
