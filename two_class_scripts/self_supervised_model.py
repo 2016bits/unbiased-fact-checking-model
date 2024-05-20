@@ -9,7 +9,7 @@ from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
 from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 from util import log, dataset
-from util.model import Self_supervised_unbiased_model
+from util.model import SS_model
 
 def compute_self_loss(logits_neg, label):
     index = label.view(label.size(0), 1)
@@ -48,19 +48,28 @@ def train(args, model, train_loader, dev_loader, logger):
 
             optimizer.zero_grad()
 
-            if epoch < args.pretrain_epoches:
-                out_pos_ce = model(pos_ce_ids, pos_ce_msks, None, None, False)
-                loss_pos_ce = F.cross_entropy(out_pos_ce, labels.long())
+            # train with two-stages
+            # if epoch < args.pretrain_epoches:
+            #     out_pos_ce = model(pos_ce_ids, pos_ce_msks, None, None, False)
+            #     loss_pos_ce = F.cross_entropy(out_pos_ce, labels.long())
 
-                loss = loss_pos_ce.sum()
-            else:
-                # add self-supervised module
-                out_pos_ce, out_neg_ce = model(pos_ce_ids, pos_ce_msks, neg_ce_ids, neg_ce_msks, True)
-                loss_pos_ce = F.cross_entropy(out_pos_ce, labels.long())
+            #     loss = loss_pos_ce.sum()
+            # else:
+            #     # add self-supervised module
+            #     out_pos_ce, out_neg_ce = model(pos_ce_ids, pos_ce_msks, neg_ce_ids, neg_ce_msks, True)
+            #     loss_pos_ce = F.cross_entropy(out_pos_ce, labels.long())
 
-                self_loss = compute_self_loss(out_neg_ce, labels)
+            #     self_loss = compute_self_loss(out_neg_ce, labels)
 
-                loss = loss_pos_ce.sum() + args.self_loss_weight * self_loss
+            #     loss = loss_pos_ce.sum() + args.self_loss_weight * self_loss
+
+            # train with one-stage
+            out_pos_ce, out_neg_ce = model(pos_ce_ids, pos_ce_msks, neg_ce_ids, neg_ce_msks, True)
+            loss_pos_ce = F.cross_entropy(out_pos_ce, labels.long())
+
+            self_loss = compute_self_loss(out_neg_ce, labels)
+
+            loss = loss_pos_ce.sum() + args.self_loss_weight * self_loss
 
             loss.backward()
 
@@ -144,7 +153,7 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "ss_{}_class_CHEF.log".format(args.num_classes)
+        log_path = args.log_path + "ss_{}_class_CHEF2.log".format(args.num_classes)
     elif args.mode == "test":
         log_path = args.log_path + "test_ss_two_class_CHEF.log"
     logger = log.get_logger(log_path)
@@ -188,7 +197,7 @@ def main(args):
     )
 
     # load model
-    model = Self_supervised_unbiased_model(args)
+    model = SS_model(args)
     model = model.cuda()
 
     # for test
@@ -212,7 +221,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--log_path", type=str, default='./logs/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/two_ss_CHEF.pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/two_ss_CHEF2.pth")
     # parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_2_class.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
@@ -224,7 +233,7 @@ if __name__ == '__main__':
 
     # train parameters
     parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument("--epoch_num", type=int, default=40)
+    parser.add_argument("--epoch_num", type=int, default=10)
     parser.add_argument("--pretrain_epoches", type=int, default=12)
     parser.add_argument("--max_len", type=int, default=512)
     parser.add_argument("--bert_hidden_dim", type=int, default=768)

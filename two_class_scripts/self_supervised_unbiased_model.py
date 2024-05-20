@@ -50,37 +50,21 @@ def train(args, model, train_loader, dev_loader, logger):
 
             optimizer.zero_grad()
 
-            if epoch < args.pretrain_epoches:
-                out_c, out_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, None, None, False)
-                loss_c = F.cross_entropy(out_c, labels.long())
-                loss_ce = F.cross_entropy(out_ce, labels.long())
+            # add self-supervised module
+            out_c, out_pos_ce, out_neg_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, neg_ce_ids, neg_ce_msks, True)
+            loss_c = F.cross_entropy(out_c, labels.long())
+            loss_ce = F.cross_entropy(out_pos_ce, labels.long())
 
-                # for calculating KL-divergence
-                pce = F.softmax(out_ce, dim=-1)
-                pc = F.softmax(out_c, dim=-1)
-                zeros_tensor = torch.zeros(labels.size(0), args.num_classes).cuda()
-                label_distribution = zeros_tensor.scatter_(1, labels.unsqueeze(1), 1)
-                loss_constraint = F.kl_div(pce.log(), label_distribution, reduction='sum') + F.kl_div(pc.log(), label_distribution, reduction='sum')
+            # for calculating KL-divergence
+            pce = F.softmax(out_pos_ce, dim=-1)
+            pc = F.softmax(out_c, dim=-1)
+            zeros_tensor = torch.zeros(labels.size(0), args.num_classes).cuda()
+            label_distribution = zeros_tensor.scatter_(1, labels.unsqueeze(1), 1)
+            loss_constraint = F.kl_div(pce.log(), label_distribution, reduction='sum') + F.kl_div(pc.log(), label_distribution, reduction='sum')
 
-                loss = loss_ce.sum() + args.claim_loss_weight * loss_c.sum() - args.constraint_loss_weight * loss_constraint
-            else:
-                # add self-supervised module
-                out_c, out_pos_ce, out_neg_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, neg_ce_ids, neg_ce_msks, True)
-                loss_c = F.cross_entropy(out_c, labels.long())
-                loss_ce = F.cross_entropy(out_pos_ce, labels.long())
+            self_loss = compute_self_loss(out_neg_ce, labels)
 
-                # for calculating KL-divergence
-                pce = F.softmax(out_ce, dim=-1)
-                pc = F.softmax(out_c, dim=-1)
-                zeros_tensor = torch.zeros(labels.size(0), args.num_classes).cuda()
-                label_distribution = zeros_tensor.scatter_(1, labels.unsqueeze(1), 1)
-                loss_constraint = F.kl_div(pce.log(), label_distribution, reduction='sum') + F.kl_div(pc.log(), label_distribution, reduction='sum')
-
-                loss = loss_ce.sum() + args.claim_loss_weight * loss_c.sum() - args.constraint_loss_weight * loss_constraint
-
-                self_loss = compute_self_loss(out_neg_ce, labels)
-
-                loss = loss_ce.sum() + args.claim_loss_weight * loss_c.sum() - args.constraint_loss_weight * loss_constraint + args.self_loss_weight * self_loss
+            loss = loss_ce.sum() + args.claim_loss_weight * loss_c.sum() - args.constraint_loss_weight * loss_constraint + args.self_loss_weight * self_loss
 
             loss.backward()
 
@@ -103,7 +87,7 @@ def train(args, model, train_loader, dev_loader, logger):
             labels = Variable(labels).cuda()
 
             with torch.no_grad():
-                out_c, out_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks)
+                out_c, out_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, None, None, False)
                 prob_c = F.softmax(out_c, dim=-1)
                 prob_ce = F.softmax(out_ce, dim=-1)
                 scores = prob_ce - prob_c * args.claim_loss_weight
@@ -148,7 +132,7 @@ def test(model, logger, test_loader):
         labels = Variable(labels).cuda()
 
         with torch.no_grad():
-            out_c, out_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, False)
+            out_c, out_ce = model(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, None, None, False)
             prob_c = F.softmax(out_c, dim=-1)
             prob_ce = F.softmax(out_ce, dim=-1)
             scores = prob_ce - prob_c * args.claim_loss_weight
@@ -175,9 +159,9 @@ def test(model, logger, test_loader):
 def main(args):
     # init logger
     if args.mode == "train":
-        log_path = args.log_path + "ss_{}_class_CHEF_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
+        log_path = args.log_path + "ss_unbiased_two_CHEF_constraint_{}_claim_{}.log".format(args.constraint_loss_weight, args.claim_loss_weight)
     elif args.mode == "test":
-        log_path = args.log_path + "test_ss_two_class_CHEF_unbiased_model.log"
+        log_path = args.log_path + "test_ss_unbiased_two_class_CHEF.log"
     logger = log.get_logger(log_path)
 
     # load data
@@ -231,20 +215,20 @@ def main(args):
         train(args, model, train_loader, dev_loader, logger)
     acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    # with open(args.test_results, 'a+') as f:
-    #     print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
-    #     print("         Accuracy: {:.3%}".format(acc))
-    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-    #     print("Precision (macro): {:.3%}".format(pre), file=f)
-    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
-    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+        print("         Accuracy: {:.3%}".format(acc))
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/')
+    parser.add_argument("--log_path", type=str, default='./logs/parameter3/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/two_ss_unbiased_CHEF_[constraint]_[claim].pth")
-    # parser.add_argument("--test_results", type=str, default="./logs/test_result_unbiased_2_class.txt")
+    parser.add_argument("--saved_model_path", type=str, default="./models/parameter3/two_ss_unbiased_CHEF_[constraint]_[claim].pth")
+    parser.add_argument("--test_results", type=str, default="./para_results/self_supervised_unbiased_model.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
     parser.add_argument("--checkpoint", type=str, default="./models/two_ss_unbiased_CHEF_0.004_0.5.pth")
@@ -254,8 +238,8 @@ if __name__ == '__main__':
     parser.add_argument("--mode", type=str, default="train")
 
     # train parameters
-    parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument("--epoch_num", type=int, default=40)
+    parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--epoch_num", type=int, default=20)
     parser.add_argument("--pretrain_epoches", type=int, default=12)
     parser.add_argument("--max_len", type=int, default=512)
     parser.add_argument("--bert_hidden_dim", type=int, default=768)

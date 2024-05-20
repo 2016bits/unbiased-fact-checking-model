@@ -62,9 +62,9 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/logs/test_result_unbiased_2_class.txt')
-    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/results/train_two_improved_unbiased.xlsx')
-    parser.add_argument("--figure_path", type=str, default='/data/yangjun/fact/debias/results/train_two_improved_unbiased.png')
+    parser.add_argument("--in_path", type=str, default='/data/yangjun/fact/debias/para_results/self_supervised_unbiased_model.txt')
+    parser.add_argument("--out_path", type=str, default='/data/yangjun/fact/debias/results/two_CHEF_self_supervised_unbiased.xlsx')
+    parser.add_argument("--figure_path", type=str, default='/data/yangjun/fact/debias/results/two_CHEF_self_supervised_unbiased.png')
 
     args = parser.parse_args()
     main(args)

@@ -33,9 +33,9 @@ class Unbiased_model(nn.Module):
         out_ce = self.ce_classifier(ce_cls_hidden_states)
         return out_c, out_ce
     
-class Self_supervised_unbiased_model(nn.Module):
+class SS_model(nn.Module):
     def __init__(self, args):
-        super(Self_supervised_unbiased_model, self).__init__()
+        super(SS_model, self).__init__()
         self.claim_encoder = BertModel.from_pretrained(args.cache_dir)
         self.claim_classifier = nn.Linear(args.bert_hidden_dim, args.num_classes)
         self.ce_encoder = BertModel.from_pretrained(args.cache_dir)
