@@ -258,3 +258,86 @@ def batch_ss_c_ce_data(data_loader, max_len, tokenizer):
 
     batched_dataset = TensorDataset(claim_ids, claim_msks, pos_ce_ids, pos_ce_msks, neg_ce_ids, neg_ce_msks, labels)
     return batched_dataset
+
+def read_c_e_ce_data(data_path, evidence_type):
+    with open(data_path, 'r', encoding='utf-8') as fin:
+        dataset = json.load(fin)
+
+    data_list = []
+    for data in dataset:
+        claim = data['claim']
+        if evidence_type == "gold_evidence":
+            evidence = " [SEP] ".join(data['gold_evidence'])
+        elif evidence_type == "selected_evidence":
+            evidence = " [SEP] ".join(data['selected_evidence'])
+        ce_pair = "[CLS] {} [SEP] {}".format(claim, evidence)
+
+        label = data['label']
+        if not isinstance(label, int):
+            label = label_dict[label]
+
+        data_list.append({
+            "id": data['id'],
+            "claim": claim,
+            "evidence": evidence,
+            "ce_pair": ce_pair,
+            "label": label
+        })
+    return data_list
+
+def batch_c_e_ce_data(data_list, max_len, tokenizer):
+    # pre-processing sentenses to BERT pattern
+    claim_ids = []
+    claim_msks = []
+    evidence_ids = []
+    evidence_msks = []
+    ce_pair_ids = []
+    ce_pair_msks = []
+    labels = []
+    for data in data_list:
+        encoded_claim_dict = tokenizer.encode_plus(
+            data["claim"],
+            max_length=max_len,
+            padding='max_length',
+            return_attention_mask=True,
+            return_tensors='pt',
+            truncation=True
+        )
+        claim_ids.append(encoded_claim_dict['input_ids'])
+        claim_msks.append(encoded_claim_dict['attention_mask'])
+
+        encoded_evidence_dict = tokenizer.encode_plus(
+            data['evidence'],
+            max_length=max_len,
+            padding='max_length',
+            return_attention_mask=True,
+            return_tensors='pt',
+            truncation=True
+        )
+        evidence_ids.append(encoded_evidence_dict['input_ids'])
+        evidence_msks.append(encoded_evidence_dict['attention_mask'])
+        
+        encoded_ce_pair_dict = tokenizer.encode_plus(
+            data['ce_pair'],
+            max_length=max_len,
+            padding='max_length',
+            return_attention_mask=True,
+            return_tensors='pt',
+            truncation=True
+        )
+        ce_pair_ids.append(encoded_ce_pair_dict['input_ids'])
+        ce_pair_msks.append(encoded_ce_pair_dict['attention_mask'])
+
+        labels.append(data['label'])
+    
+    # convert the lists into tensors
+    claim_ids = torch.cat(claim_ids, dim=0).cuda()
+    claim_msks = torch.cat(claim_msks, dim=0).cuda()
+    evidence_ids = torch.cat(evidence_ids, dim=0).cuda()
+    evidence_msks = torch.cat(evidence_msks, dim=0).cuda()
+    ce_pair_ids = torch.cat(ce_pair_ids, dim=0).cuda()
+    ce_pair_msks = torch.cat(ce_pair_msks, dim=0).cuda()
+    labels = torch.tensor(labels, device='cuda')
+
+    batched_dataset = TensorDataset(claim_ids, claim_msks, evidence_ids, evidence_msks, ce_pair_ids, ce_pair_msks, labels)
+    return batched_dataset

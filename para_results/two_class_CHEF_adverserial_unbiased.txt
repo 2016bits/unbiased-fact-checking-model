@@ -1,0 +1,96 @@
+claim_loss_weight: 0.001, evidence_loss_weight: 0.001
+         Accuracy: 93.233%
+       F1 (micro): 93.233%
+Precision (macro): 93.242%
+   Recall (macro): 93.234%
+       F1 (macro): 93.233%
+claim_loss_weight: 0.1, evidence_loss_weight: 0.01
+         Accuracy: 93.233%
+       F1 (micro): 93.233%
+Precision (macro): 93.242%
+   Recall (macro): 93.234%
+       F1 (macro): 93.233%
+claim_loss_weight: 0.001, evidence_loss_weight: 0.01
+         Accuracy: 93.233%
+       F1 (micro): 93.233%
+Precision (macro): 93.242%
+   Recall (macro): 93.234%
+       F1 (macro): 93.233%
+claim_loss_weight: 0.1, evidence_loss_weight: 0.1
+         Accuracy: 93.383%
+       F1 (micro): 93.383%
+Precision (macro): 93.389%
+   Recall (macro): 93.384%
+       F1 (macro): 93.383%
+claim_loss_weight: 0.001, evidence_loss_weight: 0.1
+         Accuracy: 93.383%
+       F1 (micro): 93.383%
+Precision (macro): 93.389%
+   Recall (macro): 93.384%
+       F1 (macro): 93.383%
+claim_loss_weight: 0.1, evidence_loss_weight: 1.0
+         Accuracy: 80.602%
+       F1 (micro): 80.602%
+Precision (macro): 84.450%
+   Recall (macro): 80.576%
+       F1 (macro): 80.035%
+claim_loss_weight: 0.001, evidence_loss_weight: 1.0
+         Accuracy: 55.940%
+       F1 (micro): 55.940%
+Precision (macro): 76.597%
+   Recall (macro): 55.873%
+       F1 (macro): 45.236%
+claim_loss_weight: 1.0, evidence_loss_weight: 0.001
+         Accuracy: 92.782%
+       F1 (micro): 92.782%
+Precision (macro): 92.819%
+   Recall (macro): 92.784%
+       F1 (macro): 92.781%
+claim_loss_weight: 0.01, evidence_loss_weight: 0.001
+         Accuracy: 93.233%
+       F1 (micro): 93.233%
+Precision (macro): 93.242%
+   Recall (macro): 93.234%
+       F1 (macro): 93.233%
+claim_loss_weight: 1.0, evidence_loss_weight: 0.01
+         Accuracy: 92.782%
+       F1 (micro): 92.782%
+Precision (macro): 92.819%
+   Recall (macro): 92.784%
+       F1 (macro): 92.781%
+claim_loss_weight: 0.01, evidence_loss_weight: 0.01
+         Accuracy: 93.233%
+       F1 (micro): 93.233%
+Precision (macro): 93.242%
+   Recall (macro): 93.234%
+       F1 (macro): 93.233%
+claim_loss_weight: 1.0, evidence_loss_weight: 0.1
+         Accuracy: 93.083%
+       F1 (micro): 93.083%
+Precision (macro): 93.106%
+   Recall (macro): 93.085%
+       F1 (macro): 93.082%
+claim_loss_weight: 0.01, evidence_loss_weight: 0.1
+         Accuracy: 93.383%
+       F1 (micro): 93.383%
+Precision (macro): 93.389%
+   Recall (macro): 93.384%
+       F1 (macro): 93.383%
+claim_loss_weight: 1.0, evidence_loss_weight: 1.0
+         Accuracy: 83.609%
+       F1 (micro): 83.609%
+Precision (macro): 85.521%
+   Recall (macro): 83.592%
+       F1 (macro): 83.380%
+claim_loss_weight: 0.01, evidence_loss_weight: 1.0
+         Accuracy: 70.677%
+       F1 (micro): 70.677%
+Precision (macro): 80.875%
+   Recall (macro): 70.633%
+       F1 (macro): 68.010%
+claim_loss_weight: 0.1, evidence_loss_weight: 0.001
+         Accuracy: 93.233%
+       F1 (micro): 93.233%
+Precision (macro): 93.242%
+   Recall (macro): 93.234%
+       F1 (macro): 93.233%
