@@ -11,20 +11,20 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 from util import log, dataset
 from util.model import Unbiased_model
 
-def scale_probability(original_probabilities):
-    # 较大的概率值增大 1.2 倍，较小的概率值缩小 1.2 倍
+def scale_probability(original_probabilities, scaled_rate=1.2):
+    # 较大的概率值增大 scaled_rate 倍，较小的概率值缩小 scaled_rate 倍
         # 找到每行最大概率值和对应的索引
     max_probabilities, max_indices = torch.max(original_probabilities, dim=1)
     min_probabilities, min_indices = torch.min(original_probabilities, dim=1)
 
-    # 将较大的概率值增大 1.2 倍，较小的概率值缩小 1.2 倍
-    scaled_max_probabilities = max_probabilities * 1.2
-    scaled_min_probabilities = min_probabilities / 1.2
+    # 将较大的概率值增大 scaled_rate 倍，较小的概率值缩小 scaled_rate 倍
+    scaled_max_probabilities = max_probabilities * scaled_rate
+    scaled_min_probabilities = min_probabilities / scaled_rate
 
     # 更新概率值
     scaled_probabilities = original_probabilities.clone()  # 克隆原始概率，以防修改原始张量
     scaled_probabilities[torch.arange(original_probabilities.size(0)), max_indices] = scaled_max_probabilities
-    scaled_probabilities[torch.arange(original_probabilities.size(0)), 1 - max_indices] = scaled_min_probabilities
+    scaled_probabilities[torch.arange(original_probabilities.size(0)), min_indices] = scaled_min_probabilities
 
     # 确保每个样本概率之和为 1
     scaled_probabilities /= torch.sum(scaled_probabilities, dim=1, keepdim=True)
@@ -99,7 +99,7 @@ def train(args, model, train_loader, dev_loader, logger):
                 prob_ce = F.softmax(out_ce, dim=-1)
 
                 # scale probability
-                scaled_prob_c = scale_probability(prob_c)
+                scaled_prob_c = scale_probability(prob_c, args.scaled_rate)
 
                 scores = prob_ce - scaled_prob_c * args.claim_loss_weight
 
@@ -113,7 +113,8 @@ def train(args, model, train_loader, dev_loader, logger):
             
         # Measure how long the validation run took.
         logger.info("Epoch {}".format(epoch + 1))
-        logger.info("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight))
+        logger.info("constraint_loss_weight: {}, claim_loss_weight: {}, scaled_rate: {}".format(
+            args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate))
         acc = accuracy_score(all_target, all_prediction)
         logger.info("         Accuracy: {:.3%}".format(acc))
         pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
@@ -126,6 +127,7 @@ def train(args, model, train_loader, dev_loader, logger):
         if macro_f1 > best_macro_f1:
             model_path = args.saved_model_path.replace("[constraint]", str(args.constraint_loss_weight))
             model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
+            model_path = model_path.replace("[scaled]", str(args.scaled_rate))
             best_macro_f1 = macro_f1
             torch.save(model.state_dict(), model_path)            
 
@@ -177,7 +179,7 @@ def main(args):
         # for improved_CHEF
         # log_path = args.log_path + "improved_CHEF_{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
         # for CHEF
-        log_path = args.log_path + "CHEF_{}_class_emplify_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
+        log_path = args.log_path + "CHEF_{}_class_emplify_unbiased_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
     elif args.mode == "test":
         # for improved_CHEF
         # log_path = args.log_path + "test_unbiased_{}_improved_CHEF_model.log".format(args.num_classes)
@@ -255,7 +257,7 @@ if __name__ == '__main__':
 
     # for CHEF
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/two_unbiased_CHEF_[constraint]_[claim].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./models/two_unbiased_CHEF_[constraint]_[claim]_[scaled].pth")
 
     parser.add_argument("--checkpoint", type=str, default="./models/two_unbiased_CHEF_0.007_0.2.pth")
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
@@ -275,11 +277,12 @@ if __name__ == '__main__':
 
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
-    parser.add_argument("--claim_loss_weight", type=float, default=0.2)
+    parser.add_argument("--claim_loss_weight", type=float, default=0.3)
     # best for improved_CHEF
     # parser.add_argument("--constraint_loss_weight", type=float, default=0.004)
     # best for CHEF
     parser.add_argument("--constraint_loss_weight", type=float, default=0.007)
+    parser.add_argument("--scaled_rate", type=float, default=1.2)
 
     args = parser.parse_args()
     main(args)
