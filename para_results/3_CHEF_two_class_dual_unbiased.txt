@@ -1,0 +1,54 @@
+constraint_claim_loss_weight: 0.003, constraint_evidence_loss_weight: 0.003, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.932%
+       F1 (micro): 92.932%
+Precision (macro): 92.936%
+   Recall (macro): 92.932%
+       F1 (macro): 92.932%
+constraint_claim_loss_weight: 0.003, constraint_evidence_loss_weight: 0.006, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.932%
+       F1 (micro): 92.932%
+Precision (macro): 92.933%
+   Recall (macro): 92.932%
+       F1 (macro): 92.932%
+constraint_claim_loss_weight: 0.003, constraint_evidence_loss_weight: 0.009, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.632%
+       F1 (micro): 92.632%
+Precision (macro): 92.636%
+   Recall (macro): 92.631%
+       F1 (macro): 92.631%
+constraint_claim_loss_weight: 0.006, constraint_evidence_loss_weight: 0.003, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.932%
+       F1 (micro): 92.932%
+Precision (macro): 92.933%
+   Recall (macro): 92.932%
+       F1 (macro): 92.932%
+constraint_claim_loss_weight: 0.006, constraint_evidence_loss_weight: 0.006, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.782%
+       F1 (micro): 92.782%
+Precision (macro): 92.784%
+   Recall (macro): 92.781%
+       F1 (macro): 92.782%
+constraint_claim_loss_weight: 0.006, constraint_evidence_loss_weight: 0.009, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.932%
+       F1 (micro): 92.932%
+Precision (macro): 92.933%
+   Recall (macro): 92.932%
+       F1 (macro): 92.932%
+constraint_claim_loss_weight: 0.009, constraint_evidence_loss_weight: 0.003, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.632%
+       F1 (micro): 92.632%
+Precision (macro): 92.636%
+   Recall (macro): 92.631%
+       F1 (macro): 92.631%
+constraint_claim_loss_weight: 0.009, constraint_evidence_loss_weight: 0.006, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 92.932%
+       F1 (micro): 92.932%
+Precision (macro): 92.933%
+   Recall (macro): 92.932%
+       F1 (macro): 92.932%
+constraint_claim_loss_weight: 0.009, constraint_evidence_loss_weight: 0.009, claim_loss_weight: 0.3, evidence_loss_weight: 0.3
+         Accuracy: 93.083%
+       F1 (micro): 93.083%
+Precision (macro): 93.085%
+   Recall (macro): 93.082%
+       F1 (macro): 93.083%
