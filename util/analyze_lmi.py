@@ -108,7 +108,8 @@ def analyze_lmi(data_path, data_type, data_item):
 
 
         # 将最重要的前 50 个词写入文件
-        filepath = './results/analyze/{}_{}_{}.csv'.format(data_type, data_item, label)
+        # filepath = './results/analyze/{}_{}_{}.csv'.format(data_type, data_item, label)
+        filepath = './results/analyze/symmetric_{}_{}_{}.csv'.format(data_type, data_item, label)
         with open(filepath, 'w') as f:
             csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for i in range(min(50, len(words))):
@@ -118,9 +119,10 @@ def analyze_lmi(data_path, data_type, data_item):
                     csv_writer.writerow([words[i], int(round(pmis_x_freq[i]*10**6)), round(scores[i],2), freqs[i]])
 
 def main():
-    data_path = "data/raw/[DATA].json"
-    analyze_lmi(data_path, "train", "claim")
-    analyze_lmi(data_path, "train", "gold evidence")
+    # data_path = "data/raw/[DATA].json"
+    # analyze_lmi(data_path, "train", "claim")
+    # analyze_lmi(data_path, "train", "gold evidence")
+    data_path = "data/gpt/symmetric_data/[DATA]_2.json"
     analyze_lmi(data_path, "dev", "claim")
     analyze_lmi(data_path, "dev", "gold evidence")
     analyze_lmi(data_path, "test", "claim")

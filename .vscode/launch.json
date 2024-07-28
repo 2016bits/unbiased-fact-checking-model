@@ -12,13 +12,13 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args":[
-                "--batch_size", "5",
-                "--epoch_num", "4",
-                "--num_sample", "10",
-                "--mode", "train"
+                // "--batch_size", "5",
+                // "--epoch_num", "4",
+                // "--num_sample", "10",
+                "--mode", "test"
             ],
             "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
+                "CUDA_VISIBLE_DEVICES": "7"
             }
         }
     ]

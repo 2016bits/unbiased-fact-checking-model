@@ -15,9 +15,9 @@ class Base_model(nn.Module):
         out = self.classifier(cls_hidden_states)
         return out
 
-class Dual_unbiased_model(nn.Module):
+class Unbiased_model(nn.Module):
     def __init__(self, args):
-        super(Dual_unbiased_model, self).__init__()
+        super(Unbiased_model, self).__init__()
         self.claim_encoder = BertModel.from_pretrained(args.cache_dir)
         self.claim_classifier = nn.Linear(args.bert_hidden_dim, args.num_classes)
         self.ce_encoder = BertModel.from_pretrained(args.cache_dir)
