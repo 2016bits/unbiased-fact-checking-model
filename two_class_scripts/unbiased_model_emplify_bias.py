@@ -6,7 +6,8 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
-from sklearn.metrics import precision_recall_fscore_support, accuracy_score
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score, classification_report
+from sklearn.model_selection import train_test_split
 
 from util import log, dataset
 from util.model import Unbiased_model
@@ -162,6 +163,11 @@ def test(model, logger, test_loader):
             all_target = np.concatenate((all_target, labels_flat), axis=None)
         
     # Measure how long the validation run took.
+    report = classification_report(all_target, all_prediction, output_dict=True)
+    f1_score_class_0 = report['0.0']['f1-score']
+    f1_score_class_1 = report['1.0']['f1-score']
+    logger.info("F1 score for class 0: {:.3%}".format(f1_score_class_0))
+    logger.info("F1 score for class 1: {:.3%}".format(f1_score_class_1))
     acc = accuracy_score(all_target, all_prediction)
     logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
@@ -179,22 +185,28 @@ def main(args):
         # for improved_CHEF
         # log_path = args.log_path + "improved_CHEF_{}_class_unbiased_constraint_{}_claim_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight)
         # for CHEF
-        log_path = args.log_path + "CHEF_{}_class_emplify_unbiased_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
+        log_path = args.log_path + "symmetric_CHEF_{}_class_emplify_unbiased_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
     elif args.mode == "test":
         # for improved_CHEF
         # log_path = args.log_path + "test_unbiased_{}_improved_CHEF_model.log".format(args.num_classes)
         # for CHEF
-        log_path = args.log_path + "test_emplify_unbiased_{}_CHEF_model.log".format(args.num_classes)
+        log_path = args.log_path + "test_emplify_unbiased_{}_symmetric_CHEF_model.log".format(args.num_classes)
     logger = log.get_logger(log_path)
 
     # load data
     logger.info("loading dataset......")
-    train_data_path = args.data_path.replace("[DATA]", "train")
-    train_raw = dataset.read_data(train_data_path, "gold_evidence")
-    dev_data_path = args.data_path.replace("[DATA]", "dev")
-    dev_raw = dataset.read_data(dev_data_path, "gold_evidence")
-    test_data_path = args.data_path.replace("[DATA]", "test")
-    test_raw = dataset.read_data(test_data_path, "gold_evidence")
+    # for CHEF
+    # train_data_path = args.data_path.replace("[DATA]", "train")
+    # train_raw = dataset.read_data(train_data_path, "gold_evidence")
+    # dev_data_path = args.data_path.replace("[DATA]", "dev")
+    # dev_raw = dataset.read_data(dev_data_path, "gold_evidence")
+    # test_data_path = args.data_path.replace("[DATA]", "test")
+    # test_raw = dataset.read_data(test_data_path, "gold_evidence")
+
+    # for symmetric-CHEF
+    train_dev_raw = dataset.read_data(args.train_dev_data_path, "gold_evidence")
+    train_raw, dev_raw = train_test_split(train_dev_raw, test_size=0.2, random_state=42)
+    test_raw = dataset.read_data(args.test_data_path, "gold_evidence")
 
     # tokenizer
     logger.info("loading tokenizer......")
@@ -256,10 +268,15 @@ if __name__ == '__main__':
     # parser.add_argument("--checkpoint", type=str, default="./models/two_unbiased_improved_CHEF_0.004_0.5.pth")
 
     # for CHEF
-    parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./models/two_unbiased_CHEF_[constraint]_[claim]_[scaled].pth")
+    # parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
+    # parser.add_argument("--saved_model_path", type=str, default="./models/two_unbiased_CHEF_[constraint]_[claim]_[scaled].pth")
 
-    parser.add_argument("--checkpoint", type=str, default="./models/two_unbiased_CHEF_0.007_0.2.pth")
+    # for symmetric-CHEF
+    parser.add_argument("--train_dev_data_path", type=str, default="./data/gpt/symmetric_dev_2_all.json")
+    parser.add_argument("--test_data_path", type=str, default="./data/gpt/symmetric_test_2_all.json")
+    parser.add_argument("--saved_model_path", type=str, default="./models/two_unbiased_symmetric_CHEF_[constraint]_[claim]_[scaled].pth")
+
+    parser.add_argument("--checkpoint", type=str, default="./models/two_unbiased_CHEF_0.007_0.2_1.5.pth")
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
 
     parser.add_argument("--num_sample", type=int, default=-1)
@@ -277,7 +294,7 @@ if __name__ == '__main__':
 
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
-    parser.add_argument("--claim_loss_weight", type=float, default=0.3)
+    parser.add_argument("--claim_loss_weight", type=float, default=0.2)
     # best for improved_CHEF
     # parser.add_argument("--constraint_loss_weight", type=float, default=0.004)
     # best for CHEF

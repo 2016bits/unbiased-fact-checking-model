@@ -6,7 +6,7 @@ from tqdm import tqdm
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertTokenizer, get_linear_schedule_with_warmup, AdamW
-from sklearn.metrics import precision_recall_fscore_support, accuracy_score
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score, classification_report
 
 from util import log, dataset
 from util.model import Dual_unbiased_model
@@ -144,7 +144,12 @@ def test(model, logger, test_loader):
             labels_flat = label_ids.flatten()
             all_prediction = np.concatenate((all_prediction, np.array(pred_label.to('cpu'))), axis=None)
             all_target = np.concatenate((all_target, labels_flat), axis=None)
-        
+    
+    report = classification_report(all_target, all_prediction, output_dict=True)
+    f1_score_class_0 = report['0.0']['f1-score']
+    f1_score_class_1 = report['1.0']['f1-score']
+    logger.info("F1 score for class 0: {:.3%}".format(f1_score_class_0))
+    logger.info("F1 score for class 1: {:.3%}".format(f1_score_class_1))
     acc = accuracy_score(all_target, all_prediction)
     logger.info("         Accuracy: {:.3%}".format(acc))
     pre, recall, micro_f1, _ = precision_recall_fscore_support(all_target, all_prediction, average='micro')
@@ -216,24 +221,24 @@ def main(args):
         train(args, model, train_loader, dev_loader, logger)
     acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    test_result_path = args.test_results.replace("[PARA]", args.para)
-    with open(test_result_path, 'a+') as f:
-        print("constraint_claim_loss_weight: {}, constraint_evidence_loss_weight: {}, claim_loss_weight: {}, evidence_loss_weight: {}".format(args.constraint_claim_loss_weight, args.constraint_evidence_loss_weight, args.claim_loss_weight, args.evidence_loss_weight), file=f)
-        print("         Accuracy: {:.3%}".format(acc), file=f)
-        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-        print("Precision (macro): {:.3%}".format(pre), file=f)
-        print("   Recall (macro): {:.3%}".format(recall), file=f)
-        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    # test_result_path = args.test_results.replace("[PARA]", args.para)
+    # with open(test_result_path, 'a+') as f:
+    #     print("constraint_claim_loss_weight: {}, constraint_evidence_loss_weight: {}, claim_loss_weight: {}, evidence_loss_weight: {}".format(args.constraint_claim_loss_weight, args.constraint_evidence_loss_weight, args.claim_loss_weight, args.evidence_loss_weight), file=f)
+    #     print("         Accuracy: {:.3%}".format(acc), file=f)
+    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+    #     print("Precision (macro): {:.3%}".format(pre), file=f)
+    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
+    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--log_path", type=str, default='./logs/parameter[PARA]/')
+    parser.add_argument("--log_path", type=str, default='./logs/')
     parser.add_argument("--data_path", type=str, default="./data/processed/[DATA]_2.json")
     parser.add_argument("--saved_model_path", type=str, default="./models/parameter[PARA]/two_dual_unbiased_CHEF_[CC]_[CE]_[claim]_[evidence].pth")
     parser.add_argument("--test_results", type=str, default="./para_results/[PARA]_CHEF_two_class_dual_unbiased.txt")
 
     parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
-    parser.add_argument("--checkpoint", type=str, default="./models/two_unbiased_CHEF_0.004_0.5.pth")
+    parser.add_argument("--checkpoint", type=str, default="./models/parameter2/two_dual_unbiased_CHEF_0.005_0.005_0.2_0.2.pth")
 
     parser.add_argument("--num_sample", type=int, default=-1)
     parser.add_argument("--num_classes", type=int, default=2)
@@ -249,10 +254,10 @@ if __name__ == '__main__':
 
     # hyperparameters
     parser.add_argument("--seed", type=int, default=1111)
-    parser.add_argument("--claim_loss_weight", type=float, default=0.1)
-    parser.add_argument("--evidence_loss_weight", type=float, default=0.1)
-    parser.add_argument("--constraint_claim_loss_weight", type=float, default=0.004)
-    parser.add_argument("--constraint_evidence_loss_weight", type=float, default=0.004)
+    parser.add_argument("--claim_loss_weight", type=float, default=0.2)
+    parser.add_argument("--evidence_loss_weight", type=float, default=0.2)
+    parser.add_argument("--constraint_claim_loss_weight", type=float, default=0.005)
+    parser.add_argument("--constraint_evidence_loss_weight", type=float, default=0.005)
 
     parser.add_argument("--para", type=str, default="1")
 
