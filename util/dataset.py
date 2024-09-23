@@ -9,6 +9,38 @@ label_dict = {
     "NOT ENOUGH INFO": 2
 }
 
+def read_fever_data(data_path, evidence_type):
+    with open(data_path, 'r', encoding='utf-8') as fin:
+        dataset = json.load(fin)
+
+    data_list = []
+
+    for data in dataset:
+        claim = data['claim']
+        if data['label'] == "NOT ENOUGH INFO":
+            evidence = ""
+        elif evidence_type == "gold_evidence":
+            evidence = " [SEP] ".join(data['gold_evidence'][0])
+        elif evidence_type == "selected_evidence":
+            evidence = " [SEP] ".join(data['selected_evidence'])
+        elif evidence_type == "only_claim":
+            evidence = ""
+        
+        ce_pair = "[CLS] {} [SEP] {}".format(claim, evidence)
+
+        label = data['label']
+        if not isinstance(label, int):
+            label = label_dict[label]
+        data_list.append({
+            "id": data['id'],
+            "claim": claim,
+            "evidence": evidence,
+            "ce_pair": ce_pair,
+            "label": label
+        })
+
+    return data_list
+
 def read_data(data_path, evidence_type):
     with open(data_path, 'r', encoding='utf-8') as fin:
         dataset = json.load(fin)

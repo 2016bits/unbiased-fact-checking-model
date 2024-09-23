@@ -4,10 +4,15 @@
 /data/gpt
 /data/improved_CHEF_2
 /data/improved_CHEF_3
-/data/symmetricFEVER
+/data/FEVER
+/data/symmetric-FEVER
+/data/PolitiHop
+/data/symmetric-PolitiHop
+/data/adversarial-PolitiHop
 /reference
 /hfl/chinese-roberta-wwm-ext-large
 /bert-base-chinese
+/bert-base-uncased
 /models
 /logs
 /results
@@ -20,3 +25,5 @@
 /util/__pycache__
 /MoritzLaurer
 /.vscode
+/save_models
+/save_logs
