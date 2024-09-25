@@ -64,8 +64,8 @@ def train(args, model, train_loader, dev_loader, logger):
             optimizer.zero_grad()
 
             out_c, out_ce = model(claim_ids, claim_msks, ce_ids, ce_msks)
-            loss_c = F.cross_entropy(out_c, labels.long())
-            loss_ce = F.cross_entropy(out_ce, labels.long())
+            loss_c = F.cross_entropy(out_c, labels.long(), weight=torch.Tensor([8., 1.]).cuda())
+            loss_ce = F.cross_entropy(out_ce, labels.long(), weight=torch.Tensor([8., 1.]).cuda())
             
             # for calculating KL-divergence
             pce = F.softmax(out_ce, dim=-1)
@@ -178,7 +178,7 @@ def test(model, logger, test_loader):
     logger.info("   Recall (macro): {:.3%}".format(recall))
     logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
-    return micro_f1, pre, recall, macro_f1
+    return acc, micro_f1, pre, recall, macro_f1
 
 def main(args):
     # init logger
@@ -241,25 +241,28 @@ def main(args):
         model.load_state_dict(state_dict)
     elif args.mode == 'train':
         train(args, model, train_loader, dev_loader, logger)
-    micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
+    acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    # with open(args.test_results, 'a+') as f:
-    #     print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
-    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-    #     print("Precision (macro): {:.3%}".format(pre), file=f)
-    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
-    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}, claim_loss_weight: {}, scaled_rate: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+        print("         Accuracy: {:.3%}".format(acc), file=f)
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("最完整的双向去偏模型，包括动态约束损失和扩大偏见影响")
-    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/')
+    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/para/')
     
     parser.add_argument("--dataset", type=str, default="PolitiHop")
     # for FEVER
     parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_2.json")
     parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
     parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/two_unbiased_[constraint]_[claim]_[scaled].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/politihop.pth")
+
+    parser.add_argument("--test_results", type=str, default="./para_results/politihop.txt")
 
     parser.add_argument("--checkpoint", type=str, default="./save_models/fever/two_unbiased_FEVER_0.007_0.2_1.5.pth")
     # parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")

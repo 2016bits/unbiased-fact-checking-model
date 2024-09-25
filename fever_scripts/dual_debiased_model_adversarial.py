@@ -194,18 +194,12 @@ def main(args):
     # load data
     logger.info("loading dataset......")
 
-    train_dev_data_path = args.train_dev_data_path.replace("[DATASET]", args.dataset)
+    train_data_path = args.train_data_path.replace("[DATASET]", args.dataset)
+    dev_data_path = args.dev_data_path.replace("[DATASET]", args.dataset)
     test_data_path = args.test_data_path.replace("[DATASET]", args.dataset)
-    train_dev_raw = dataset.read_data(train_dev_data_path, "gold_evidence")
-    train_raw, dev_raw = train_test_split(train_dev_raw, test_size=0.2, random_state=42)
-    test_raw = dataset.read_data(test_data_path, "gold_evidence")
-    
-    # train_data_path = args.train_data_path.replace("[DATASET]", args.dataset)
-    # dev_data_path = args.dev_data_path.replace("[DATASET]", args.dataset)
-    # test_data_path = args.test_data_path.replace("[DATASET]", args.dataset)
-    # train_raw = dataset.read_fever_data(train_data_path, "gold_evidence")
-    # dev_raw = dataset.read_fever_data(dev_data_path, "gold_evidence")
-    # test_raw = dataset.read_fever_data(test_data_path, "gold_evidence")
+    train_raw = dataset.read_fever_data(train_data_path, "gold_evidence")
+    dev_raw = dataset.read_fever_data(dev_data_path, "gold_evidence")
+    test_raw = dataset.read_fever_data(test_data_path, "gold_evidence")
 
     # tokenizer
     logger.info("loading tokenizer......")
@@ -262,9 +256,9 @@ if __name__ == '__main__':
     
     parser.add_argument("--dataset", type=str, default="symmetric-FEVER")
     # for FEVER
-    parser.add_argument("--train_dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
-    # parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_2.json")
-    # parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
+    # parser.add_argument("--train_dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
+    parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_2.json")
+    parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
     parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_2.json")
     parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/two_unbiased_[constraint]_[claim]_[scaled].pth")
 
