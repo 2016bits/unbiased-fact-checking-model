@@ -126,20 +126,20 @@ def train(args, model, train_loader, dev_loader, logger):
         logger.info("   Recall (macro): {:.3%}".format(recall))
         logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
-        # if macro_f1 > best_macro_f1:
-        #     model_path = args.saved_model_path.replace("[DATASET]", args.dataset)
-        #     model_path = model_path.replace("[constraint]", str(args.constraint_loss_weight))
-        #     model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
-        #     model_path = model_path.replace("[scaled]", str(args.scaled_rate))
-        #     best_macro_f1 = macro_f1
-        #     torch.save(model.state_dict(), model_path)
-        if acc > best_acc:
+        if macro_f1 > best_macro_f1:
             model_path = args.saved_model_path.replace("[DATASET]", args.dataset)
             model_path = model_path.replace("[constraint]", str(args.constraint_loss_weight))
             model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
             model_path = model_path.replace("[scaled]", str(args.scaled_rate))
-            best_acc = acc
+            best_macro_f1 = macro_f1
             torch.save(model.state_dict(), model_path)
+        # if acc > best_acc:
+        #     model_path = args.saved_model_path.replace("[DATASET]", args.dataset)
+        #     model_path = model_path.replace("[constraint]", str(args.constraint_loss_weight))
+        #     model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
+        #     model_path = model_path.replace("[scaled]", str(args.scaled_rate))
+        #     best_acc = acc
+        #     torch.save(model.state_dict(), model_path)
 
 def test(model, logger, test_loader):
     logger.info("start testing......")
@@ -193,7 +193,7 @@ def main(args):
     log_path = args.log_path.replace("[DATASET]", args.dataset)
     if args.mode == "train":
         # train in FEVER, test in symmetric-FEVER
-        log_path = log_path + "{}_unbiased_acc_71_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
+        log_path = log_path + "{}_unbiased_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
     elif args.mode == "test":
         # for train in FEVER, test in symmetric-FEVER
         log_path = log_path + "test_{}_unbiased.log".format(args.num_classes)
@@ -251,13 +251,13 @@ def main(args):
         train(args, model, train_loader, dev_loader, logger)
     acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    # with open(args.test_results, 'a+') as f:
-    #     print("constraint_loss_weight: {}, claim_loss_weight: {}, scaled_rate: {}".format(args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate), file=f)
-    #     print("         Accuracy: {:.3%}".format(acc), file=f)
-    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-    #     print("Precision (macro): {:.3%}".format(pre), file=f)
-    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
-    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+        print("         Accuracy: {:.3%}".format(acc), file=f)
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("最完整的双向去偏模型，包括动态约束损失和扩大偏见影响")
@@ -268,10 +268,10 @@ if __name__ == '__main__':
     parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_2.json")
     parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
     parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/two_unbiased_acc_71_[constraint]_[claim]_[scaled].pth")
-    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/adversarial-politihop.pth")
+    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/two_unbiased_acc_71_[constraint]_[claim]_[scaled].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/adversarial-politihop.pth")
 
-    parser.add_argument("--test_results", type=str, default="./para_results/adversarial_politihop.txt")
+    parser.add_argument("--test_results", type=str, default="./para_results/adversarial_politihop_2.txt")
 
     # parser.add_argument("--checkpoint", type=str, default="./save_models/fever/two_unbiased_FEVER_0.007_0.2_1.5.pth")
     # parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")
