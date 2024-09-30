@@ -1,15 +1,3 @@
-constraint_loss_weight: 0.007, claim_loss_weight: 0.2, scaled_rate: 1.2
-         Accuracy: 55.718%
-       F1 (micro): 55.718%
-Precision (macro): 56.946%
-   Recall (macro): 55.655%
-       F1 (macro): 53.530%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.0, scaled_rate: 1.2
-         Accuracy: 58.651%
-       F1 (micro): 58.651%
-Precision (macro): 61.835%
-   Recall (macro): 58.574%
-       F1 (macro): 55.555%
 constraint_loss_weight: 0.0, claim_loss_weight: 0.0, scaled_rate: 1.2
          Accuracy: 58.651%
        F1 (micro): 58.651%

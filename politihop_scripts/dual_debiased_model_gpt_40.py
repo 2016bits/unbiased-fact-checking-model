@@ -127,7 +127,7 @@ def train(args, model, train_loader, dev_loader, logger):
         logger.info("       F1 (macro): {:.3%}".format(macro_f1))
 
         if macro_f1 > best_macro_f1:
-            model_path = args.saved_model_path.replace("[DATASET]", args.dataset)
+            model_path = args.saved_model_path.replace("[DATA]", args.dataset)
             model_path = model_path.replace("[constraint]", str(args.constraint_loss_weight))
             model_path = model_path.replace("[claim]", str(args.claim_loss_weight))
             model_path = model_path.replace("[scaled]", str(args.scaled_rate))
@@ -192,10 +192,10 @@ def test(model, logger, test_loader):
 
 def main(args):
     # init logger
-    log_path = args.log_path.replace("[DATASET]", args.dataset)
+    log_path = args.log_path.replace("[DATA]", args.dataset)
     if args.mode == "train":
         # train in FEVER, test in symmetric-FEVER
-        log_path = log_path + "adversarial_politihop_{}_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
+        log_path = log_path + "{}_gpt_40_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
     elif args.mode == "test":
         # for train in FEVER, test in symmetric-FEVER
         log_path = log_path + "test_{}_unbiased.log".format(args.num_classes)
@@ -204,9 +204,9 @@ def main(args):
     # load data
     logger.info("loading dataset......")
     
-    train_data_path = args.train_data_path.replace("[DATASET]", args.dataset)
-    dev_data_path = args.dev_data_path.replace("[DATASET]", args.dataset)
-    test_data_path = args.test_data_path.replace("[DATASET]", args.dataset)
+    train_data_path = args.train_data_path
+    dev_data_path = args.dev_data_path
+    test_data_path = args.test_data_path.replace("[DATA]", args.dataset)
     train_raw = dataset.read_fever_data(train_data_path, "gold_evidence")
     dev_raw = dataset.read_fever_data(dev_data_path, "gold_evidence")
     test_raw = dataset.read_fever_data(test_data_path, "gold_evidence")
@@ -263,17 +263,20 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("最完整的双向去偏模型，包括动态约束损失和扩大偏见影响")
-    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/para/')
+    parser.add_argument("--log_path", type=str, default='./save_logs/hard-PolitiHop/gpt40/')
     
-    parser.add_argument("--dataset", type=str, default="adversarial-PolitiHop")
-    # for FEVER
-    parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_3.json")
-    parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_3.json")
-    parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_3.json")
-    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/three_unbiased_[constraint]_[claim]_[scaled].pth")
-    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/adversarial-politihop.pth")
+    parser.add_argument("--dataset", type=str, default="even")
+    # train, dev: PolitiHop-even-3
+    # parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_even_3.json")
+    # parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_even_3.json")
+    # train, dev: adversarial-PolitiHop-3
+    parser.add_argument("--train_data_path", type=str, default="data/adversarial-PolitiHop/converted_data/train_3.json")
+    parser.add_argument("--dev_data_path", type=str, default="data/adversarial-PolitiHop/converted_data/dev_3.json")
+    parser.add_argument("--test_data_path", type=str, default="./data/hard-PolitiHop/converted_data/test_gpt40_3.json")
+    # parser.add_argument("--saved_model_path", type=str, default="./save_models/hard-PolitiHop/three_adv_[DATA]_[constraint]_[claim]_[scaled].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./save_models/hard-PolitiHop/politihop_gpt40.pth")
 
-    parser.add_argument("--test_results", type=str, default="./para_results/adversarial_politihop_3.txt")
+    parser.add_argument("--test_results", type=str, default="./para_results/politihop_gpt35.txt")
 
     # parser.add_argument("--checkpoint", type=str, default="./save_models/fever/two_unbiased_FEVER_0.007_0.2_1.5.pth")
     # parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")

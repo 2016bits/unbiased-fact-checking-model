@@ -253,27 +253,31 @@ def main(args):
         train(args, model, train_loader, dev_loader, logger)
     acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    # with open(args.test_results, 'a+') as f:
-    #     print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
-    #     print("         Accuracy: {:.3%}".format(acc), file=f)
-    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-    #     print("Precision (macro): {:.3%}".format(pre), file=f)
-    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
-    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}, claim_loss_weight: {}".format(args.constraint_loss_weight, args.claim_loss_weight), file=f)
+        print("         Accuracy: {:.3%}".format(acc), file=f)
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("最完整的双向去偏模型，包括动态约束损失和扩大偏见影响")
-    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/')
+    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/even_test/')
     
     parser.add_argument("--dataset", type=str, default="hard-PolitiHop")
     # train, dev: PolitiHop-even-3
-    parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_even_3.json")
-    parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_even_3.json")
-    parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_even_3.json")
-    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/three_even_[constraint]_[claim]_[scaled].pth")
-    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/adversarial-politihop.pth")
+    # parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_even_3.json")
+    # parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_even_3.json")
 
-    parser.add_argument("--test_results", type=str, default="./para_results/adversarial_politihop.txt")
+    # train, dev: PolitiHop-adversrial-3
+    parser.add_argument("--train_data_path", type=str, default="data/adversarial-PolitiHop/converted_data/train_3.json")
+    parser.add_argument("--dev_data_path", type=str, default="data/adversarial-PolitiHop/converted_data/dev_3.json")
+    parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_even_3.json")
+    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/three_even_[constraint]_[claim]_[scaled].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/even_test-politihop.pth")
+
+    parser.add_argument("--test_results", type=str, default="./para_results/even_test_politihop.txt")
 
     # parser.add_argument("--checkpoint", type=str, default="./save_models/fever/two_unbiased_FEVER_0.007_0.2_1.5.pth")
     # parser.add_argument("--cache_dir", type=str, default="./bert-base-chinese")

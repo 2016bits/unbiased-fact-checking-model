@@ -185,9 +185,9 @@ def main(args):
     log_path = args.log_path.replace("[DATASET]", args.dataset)
     if args.mode == "train":
         # for symmetric-PolitiHop
-        # log_path = log_path + "{}_unbiased_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
+        log_path = log_path + "{}_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
         # for symmetric-PolitiHop-shareevi
-        log_path = log_path + "{}_shareevi_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
+        # log_path = log_path + "{}_shareevi_constraint_{}_claim_{}_scaled_{}.log".format(args.num_classes, args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate)
     elif args.mode == "test":
         # for symmetric-PolitiHop
         log_path = log_path + "test_{}_unbiased.log".format(args.num_classes)
@@ -245,27 +245,27 @@ def main(args):
         train(args, model, train_loader, dev_loader, logger)
     acc, micro_f1, pre, recall, macro_f1 = test(model, logger, test_loader)
 
-    # with open(args.test_results, 'a+') as f:
-    #     print("constraint_loss_weight: {}, claim_loss_weight: {}, scaled_rate: {}".format(args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate), file=f)
-    #     print("         Accuracy: {:.3%}".format(acc), file=f)
-    #     print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
-    #     print("Precision (macro): {:.3%}".format(pre), file=f)
-    #     print("   Recall (macro): {:.3%}".format(recall), file=f)
-    #     print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
+    with open(args.test_results, 'a+') as f:
+        print("constraint_loss_weight: {}, claim_loss_weight: {}, scaled_rate: {}".format(args.constraint_loss_weight, args.claim_loss_weight, args.scaled_rate), file=f)
+        print("         Accuracy: {:.3%}".format(acc), file=f)
+        print("       F1 (micro): {:.3%}".format(micro_f1), file=f)
+        print("Precision (macro): {:.3%}".format(pre), file=f)
+        print("   Recall (macro): {:.3%}".format(recall), file=f)
+        print("       F1 (macro): {:.3%}".format(macro_f1), file=f)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("最完整的双向去偏模型，包括动态约束损失和扩大偏见影响")
-    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/')
+    parser.add_argument("--log_path", type=str, default='./save_logs/[DATASET]/para/')
     
     parser.add_argument("--dataset", type=str, default="symmetric-PolitiHop")
     parser.add_argument("--train_data_path", type=str, default="./data/[DATASET]/converted_data/train_2.json")
     parser.add_argument("--dev_data_path", type=str, default="./data/[DATASET]/converted_data/dev_2.json")
     # for symmetric-PolitiHop
-    # parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_2.json")
+    parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_2.json")
     # for symmetric-PolitiHop-shareevi
-    parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_shareevi_2.json")
-    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/two_shareevi_[constraint]_[claim]_[scaled].pth")
-    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/symmetric.pth")
+    # parser.add_argument("--test_data_path", type=str, default="./data/[DATASET]/converted_data/test_shareevi_2.json")
+    # parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/two_shareevi_[constraint]_[claim]_[scaled].pth")
+    parser.add_argument("--saved_model_path", type=str, default="./save_models/[DATASET]/symmetric.pth")
 
     parser.add_argument("--test_results", type=str, default="./para_results/symmetric_politihop.txt")
 

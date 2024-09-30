@@ -10,10 +10,13 @@
 /data/PolitiHop
 /data/symmetric-PolitiHop
 /data/adversarial-PolitiHop
+/data/hard-PolitiHop
+/data/VitC
 /reference
 /hfl/chinese-roberta-wwm-ext-large
 /bert-base-chinese
 /bert-base-uncased
+/minwhoo
 /models
 /logs
 /results
