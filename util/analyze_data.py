@@ -14,7 +14,7 @@ def analyze_constraint_claim(in_path, out_path):
     for line in lines:
         line = line.strip()
         if line.startswith('constraint_loss_weight:'):
-            con_lw, claim_lw, _ = line.split(',')
+            con_lw, claim_lw = line.split(',')
             constraint_loss_weight = float(con_lw.strip().split(':')[1].strip())
             claim_loss_weight = float(claim_lw.strip().split(':')[1].strip())
         elif line.startswith('Accuracy:'):

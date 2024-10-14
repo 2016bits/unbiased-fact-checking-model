@@ -4,25 +4,7 @@ constraint_loss_weight: 0.0, claim_loss_weight: 0.0
 Precision (macro): 67.841%
    Recall (macro): 69.874%
        F1 (macro): 68.633%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.0
-         Accuracy: 83.417%
-       F1 (micro): 83.417%
-Precision (macro): 67.841%
-   Recall (macro): 69.874%
-       F1 (macro): 68.633%
 constraint_loss_weight: 0.0, claim_loss_weight: 0.1
-         Accuracy: 82.915%
-       F1 (micro): 82.915%
-Precision (macro): 66.985%
-   Recall (macro): 69.651%
-       F1 (macro): 68.031%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.1
-         Accuracy: 82.915%
-       F1 (micro): 82.915%
-Precision (macro): 66.985%
-   Recall (macro): 69.651%
-       F1 (macro): 68.031%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.2
          Accuracy: 82.915%
        F1 (micro): 82.915%
 Precision (macro): 66.985%
@@ -40,429 +22,579 @@ constraint_loss_weight: 0.0, claim_loss_weight: 0.3
 Precision (macro): 64.327%
    Recall (macro): 68.756%
        F1 (macro): 66.175%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.3
+constraint_loss_weight: 0.0, claim_loss_weight: 0.4
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 63.601%
+   Recall (macro): 68.532%
+       F1 (macro): 65.612%
+constraint_loss_weight: 0.0, claim_loss_weight: 0.5
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 64.536%
+   Recall (macro): 69.896%
+       F1 (macro): 66.772%
+constraint_loss_weight: 0.0, claim_loss_weight: 0.6
+         Accuracy: 77.387%
+       F1 (micro): 77.387%
+Precision (macro): 61.332%
+   Recall (macro): 67.190%
+       F1 (macro): 63.734%
+constraint_loss_weight: 0.0, claim_loss_weight: 0.7
+         Accuracy: 76.382%
+       F1 (micro): 76.382%
+Precision (macro): 60.781%
+   Recall (macro): 66.742%
+       F1 (macro): 63.162%
+constraint_loss_weight: 0.0, claim_loss_weight: 0.8
+         Accuracy: 73.869%
+       F1 (micro): 73.869%
+Precision (macro): 58.710%
+   Recall (macro): 64.260%
+       F1 (macro): 60.795%
+constraint_loss_weight: 0.0, claim_loss_weight: 0.9
+         Accuracy: 65.327%
+       F1 (micro): 65.327%
+Precision (macro): 57.240%
+   Recall (macro): 61.821%
+       F1 (macro): 57.727%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.0
+         Accuracy: 83.417%
+       F1 (micro): 83.417%
+Precision (macro): 67.841%
+   Recall (macro): 69.874%
+       F1 (macro): 68.633%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.1
+         Accuracy: 82.915%
+       F1 (micro): 82.915%
+Precision (macro): 66.985%
+   Recall (macro): 69.651%
+       F1 (macro): 68.031%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.2
+         Accuracy: 82.412%
+       F1 (micro): 82.412%
+Precision (macro): 66.415%
+   Recall (macro): 69.427%
+       F1 (macro): 67.681%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.3
+         Accuracy: 79.899%
+       F1 (micro): 79.899%
+Precision (macro): 63.136%
+   Recall (macro): 68.308%
+       F1 (macro): 65.279%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.4
          Accuracy: 80.905%
        F1 (micro): 80.905%
-Precision (macro): 64.327%
+Precision (macro): 65.037%
+   Recall (macro): 70.119%
+       F1 (macro): 67.134%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.5
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 64.536%
+   Recall (macro): 69.896%
+       F1 (macro): 66.772%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.6
+         Accuracy: 77.387%
+       F1 (micro): 77.387%
+Precision (macro): 61.332%
+   Recall (macro): 67.190%
+       F1 (macro): 63.734%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.7
+         Accuracy: 75.879%
+       F1 (micro): 75.879%
+Precision (macro): 60.531%
+   Recall (macro): 66.519%
+       F1 (macro): 62.883%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.8
+         Accuracy: 73.869%
+       F1 (micro): 73.869%
+Precision (macro): 59.664%
+   Recall (macro): 65.624%
+       F1 (macro): 61.812%
+constraint_loss_weight: 0.001, claim_loss_weight: 0.9
+         Accuracy: 65.327%
+       F1 (micro): 65.327%
+Precision (macro): 57.240%
+   Recall (macro): 61.821%
+       F1 (macro): 57.727%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.0
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 69.349%
+   Recall (macro): 71.462%
+       F1 (macro): 70.218%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.1
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 68.477%
+   Recall (macro): 70.098%
+       F1 (macro): 68.994%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.2
+         Accuracy: 82.412%
+       F1 (micro): 82.412%
+Precision (macro): 66.415%
+   Recall (macro): 69.427%
+       F1 (macro): 67.681%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.3
+         Accuracy: 79.899%
+       F1 (micro): 79.899%
+Precision (macro): 63.136%
+   Recall (macro): 68.308%
+       F1 (macro): 65.279%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.4
+         Accuracy: 80.905%
+       F1 (micro): 80.905%
+Precision (macro): 65.037%
+   Recall (macro): 70.119%
+       F1 (macro): 67.134%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.5
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 64.536%
+   Recall (macro): 69.896%
+       F1 (macro): 66.772%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.6
+         Accuracy: 77.387%
+       F1 (micro): 77.387%
+Precision (macro): 61.332%
+   Recall (macro): 67.190%
+       F1 (macro): 63.734%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.7
+         Accuracy: 75.377%
+       F1 (micro): 75.377%
+Precision (macro): 60.296%
+   Recall (macro): 66.295%
+       F1 (macro): 62.609%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.8
+         Accuracy: 73.367%
+       F1 (micro): 73.367%
+Precision (macro): 59.475%
+   Recall (macro): 65.400%
+       F1 (macro): 61.554%
+constraint_loss_weight: 0.002, claim_loss_weight: 0.9
+         Accuracy: 64.824%
+       F1 (micro): 64.824%
+Precision (macro): 57.130%
+   Recall (macro): 61.597%
+       F1 (macro): 57.499%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.0
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 69.349%
+   Recall (macro): 71.462%
+       F1 (macro): 70.218%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.1
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 68.477%
+   Recall (macro): 70.098%
+       F1 (macro): 68.994%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.2
+         Accuracy: 82.915%
+       F1 (micro): 82.915%
+Precision (macro): 66.985%
+   Recall (macro): 69.651%
+       F1 (macro): 68.031%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.3
+         Accuracy: 79.899%
+       F1 (micro): 79.899%
+Precision (macro): 63.136%
+   Recall (macro): 68.308%
+       F1 (macro): 65.279%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.4
+         Accuracy: 79.899%
+       F1 (micro): 79.899%
+Precision (macro): 64.078%
+   Recall (macro): 69.672%
+       F1 (macro): 66.420%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.5
+         Accuracy: 79.899%
+       F1 (micro): 79.899%
+Precision (macro): 64.078%
+   Recall (macro): 69.672%
+       F1 (macro): 66.420%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.6
+         Accuracy: 76.884%
+       F1 (micro): 76.884%
+Precision (macro): 61.047%
+   Recall (macro): 66.966%
+       F1 (macro): 63.445%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.7
+         Accuracy: 75.377%
+       F1 (micro): 75.377%
+Precision (macro): 60.296%
+   Recall (macro): 66.295%
+       F1 (macro): 62.609%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.8
+         Accuracy: 72.864%
+       F1 (micro): 72.864%
+Precision (macro): 59.294%
+   Recall (macro): 65.176%
+       F1 (macro): 61.299%
+constraint_loss_weight: 0.003, claim_loss_weight: 0.9
+         Accuracy: 65.327%
+       F1 (micro): 65.327%
+Precision (macro): 57.240%
+   Recall (macro): 61.821%
+       F1 (macro): 57.727%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.0
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 69.349%
+   Recall (macro): 71.462%
+       F1 (macro): 70.218%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.1
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 68.477%
+   Recall (macro): 70.098%
+       F1 (macro): 68.994%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.2
+         Accuracy: 83.920%
+       F1 (micro): 83.920%
+Precision (macro): 68.477%
+   Recall (macro): 70.098%
+       F1 (macro): 68.994%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.3
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 63.601%
+   Recall (macro): 68.532%
+       F1 (macro): 65.612%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.4
+         Accuracy: 79.899%
+       F1 (micro): 79.899%
+Precision (macro): 64.078%
+   Recall (macro): 69.672%
+       F1 (macro): 66.420%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.5
+         Accuracy: 78.894%
+       F1 (micro): 78.894%
+Precision (macro): 63.269%
+   Recall (macro): 69.224%
+       F1 (macro): 65.743%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.6
+         Accuracy: 76.382%
+       F1 (micro): 76.382%
+Precision (macro): 60.781%
+   Recall (macro): 66.742%
+       F1 (macro): 63.162%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.7
+         Accuracy: 75.377%
+       F1 (micro): 75.377%
+Precision (macro): 60.296%
+   Recall (macro): 66.295%
+       F1 (macro): 62.609%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.8
+         Accuracy: 72.362%
+       F1 (micro): 72.362%
+Precision (macro): 59.121%
+   Recall (macro): 64.953%
+       F1 (macro): 61.047%
+constraint_loss_weight: 0.004, claim_loss_weight: 0.9
+         Accuracy: 64.824%
+       F1 (micro): 64.824%
+Precision (macro): 57.130%
+   Recall (macro): 61.597%
+       F1 (macro): 57.499%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.0
+         Accuracy: 82.915%
+       F1 (micro): 82.915%
+Precision (macro): 68.192%
+   Recall (macro): 71.014%
+       F1 (macro): 69.468%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.1
+         Accuracy: 83.417%
+       F1 (micro): 83.417%
+Precision (macro): 67.841%
+   Recall (macro): 69.874%
+       F1 (macro): 68.633%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.2
+         Accuracy: 84.422%
+       F1 (micro): 84.422%
+Precision (macro): 69.195%
+   Recall (macro): 70.322%
+       F1 (macro): 69.367%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.3
+         Accuracy: 82.915%
+       F1 (micro): 82.915%
+Precision (macro): 66.985%
+   Recall (macro): 69.651%
+       F1 (macro): 68.031%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.4
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 64.536%
+   Recall (macro): 69.896%
+       F1 (macro): 66.772%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.5
+         Accuracy: 78.894%
+       F1 (micro): 78.894%
+Precision (macro): 63.269%
+   Recall (macro): 69.224%
+       F1 (macro): 65.743%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.6
+         Accuracy: 76.884%
+       F1 (micro): 76.884%
+Precision (macro): 61.047%
+   Recall (macro): 66.966%
+       F1 (macro): 63.445%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.7
+         Accuracy: 74.372%
+       F1 (micro): 74.372%
+Precision (macro): 59.864%
+   Recall (macro): 65.847%
+       F1 (macro): 62.074%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.8
+         Accuracy: 69.849%
+       F1 (micro): 69.849%
+Precision (macro): 58.354%
+   Recall (macro): 63.834%
+       F1 (macro): 59.824%
+constraint_loss_weight: 0.005, claim_loss_weight: 0.9
+         Accuracy: 63.317%
+       F1 (micro): 63.317%
+Precision (macro): 56.810%
+   Recall (macro): 60.926%
+       F1 (macro): 56.818%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.0
+         Accuracy: 81.407%
+       F1 (micro): 81.407%
+Precision (macro): 66.379%
+   Recall (macro): 70.343%
+       F1 (macro): 68.156%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.1
+         Accuracy: 83.417%
+       F1 (micro): 83.417%
+Precision (macro): 68.494%
+   Recall (macro): 71.238%
+       F1 (macro): 69.616%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.2
+         Accuracy: 84.422%
+       F1 (micro): 84.422%
+Precision (macro): 69.195%
+   Recall (macro): 70.322%
+       F1 (macro): 69.367%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.3
+         Accuracy: 84.925%
+       F1 (micro): 84.925%
+Precision (macro): 70.012%
+   Recall (macro): 70.545%
+       F1 (macro): 69.753%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.4
+         Accuracy: 80.905%
+       F1 (micro): 80.905%
+Precision (macro): 64.114%
    Recall (macro): 68.756%
-       F1 (macro): 66.175%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.4
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 63.601%
-   Recall (macro): 68.532%
-       F1 (macro): 65.612%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.4
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 63.601%
-   Recall (macro): 68.532%
-       F1 (macro): 65.612%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.5
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 64.536%
-   Recall (macro): 69.896%
-       F1 (macro): 66.772%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.5
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 64.536%
-   Recall (macro): 69.896%
-       F1 (macro): 66.772%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.6
-         Accuracy: 77.387%
-       F1 (micro): 77.387%
-Precision (macro): 61.332%
-   Recall (macro): 67.190%
-       F1 (macro): 63.734%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.6
-         Accuracy: 77.387%
-       F1 (micro): 77.387%
-Precision (macro): 61.332%
-   Recall (macro): 67.190%
-       F1 (macro): 63.734%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.7
+       F1 (macro): 65.954%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.5
+         Accuracy: 79.397%
+       F1 (micro): 79.397%
+Precision (macro): 63.657%
+   Recall (macro): 69.448%
+       F1 (macro): 66.077%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.6
          Accuracy: 76.382%
        F1 (micro): 76.382%
-Precision (macro): 60.781%
-   Recall (macro): 66.742%
-       F1 (macro): 63.162%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.7
-         Accuracy: 76.382%
-       F1 (micro): 76.382%
-Precision (macro): 60.781%
-   Recall (macro): 66.742%
-       F1 (macro): 63.162%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.8
-         Accuracy: 73.869%
-       F1 (micro): 73.869%
-Precision (macro): 58.710%
-   Recall (macro): 64.260%
-       F1 (macro): 60.795%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.8
-         Accuracy: 73.869%
-       F1 (micro): 73.869%
-Precision (macro): 58.710%
-   Recall (macro): 64.260%
-       F1 (macro): 60.795%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.9
-         Accuracy: 65.327%
-       F1 (micro): 65.327%
-Precision (macro): 57.240%
-   Recall (macro): 61.821%
-       F1 (macro): 57.727%
-constraint_loss_weight: 0.0, claim_loss_weight: 0.9
-         Accuracy: 65.327%
-       F1 (micro): 65.327%
-Precision (macro): 57.240%
-   Recall (macro): 61.821%
-       F1 (macro): 57.727%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.0
-         Accuracy: 83.417%
-       F1 (micro): 83.417%
-Precision (macro): 67.841%
-   Recall (macro): 69.874%
-       F1 (macro): 68.633%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.0
-         Accuracy: 83.417%
-       F1 (micro): 83.417%
-Precision (macro): 67.841%
-   Recall (macro): 69.874%
-       F1 (macro): 68.633%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.1
-         Accuracy: 82.915%
-       F1 (micro): 82.915%
-Precision (macro): 66.985%
-   Recall (macro): 69.651%
-       F1 (macro): 68.031%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.1
-         Accuracy: 82.915%
-       F1 (micro): 82.915%
-Precision (macro): 66.985%
-   Recall (macro): 69.651%
-       F1 (macro): 68.031%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.2
-         Accuracy: 82.412%
-       F1 (micro): 82.412%
-Precision (macro): 66.415%
-   Recall (macro): 69.427%
-       F1 (macro): 67.681%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.2
-         Accuracy: 82.412%
-       F1 (micro): 82.412%
-Precision (macro): 66.415%
-   Recall (macro): 69.427%
-       F1 (macro): 67.681%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.3
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 63.136%
-   Recall (macro): 68.308%
-       F1 (macro): 65.279%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.3
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 63.136%
-   Recall (macro): 68.308%
-       F1 (macro): 65.279%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.4
+Precision (macro): 61.696%
+   Recall (macro): 68.106%
+       F1 (macro): 64.179%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.7
+         Accuracy: 74.372%
+       F1 (micro): 74.372%
+Precision (macro): 59.864%
+   Recall (macro): 65.847%
+       F1 (macro): 62.074%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.8
+         Accuracy: 69.849%
+       F1 (micro): 69.849%
+Precision (macro): 58.354%
+   Recall (macro): 63.834%
+       F1 (macro): 59.824%
+constraint_loss_weight: 0.006, claim_loss_weight: 0.9
+         Accuracy: 61.809%
+       F1 (micro): 61.809%
+Precision (macro): 56.503%
+   Recall (macro): 60.255%
+       F1 (macro): 56.141%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.0
          Accuracy: 80.905%
        F1 (micro): 80.905%
-Precision (macro): 65.037%
+Precision (macro): 66.428%
    Recall (macro): 70.119%
-       F1 (macro): 67.134%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.4
-         Accuracy: 80.905%
-       F1 (micro): 80.905%
-Precision (macro): 65.037%
-   Recall (macro): 70.119%
-       F1 (macro): 67.134%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.5
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 64.536%
-   Recall (macro): 69.896%
-       F1 (macro): 66.772%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.5
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 64.536%
-   Recall (macro): 69.896%
-       F1 (macro): 66.772%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.6
-         Accuracy: 77.387%
-       F1 (micro): 77.387%
-Precision (macro): 61.332%
-   Recall (macro): 67.190%
-       F1 (macro): 63.734%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.6
-         Accuracy: 77.387%
-       F1 (micro): 77.387%
-Precision (macro): 61.332%
-   Recall (macro): 67.190%
-       F1 (macro): 63.734%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.7
-         Accuracy: 75.879%
-       F1 (micro): 75.879%
-Precision (macro): 60.531%
-   Recall (macro): 66.519%
-       F1 (macro): 62.883%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.7
-         Accuracy: 75.879%
-       F1 (micro): 75.879%
-Precision (macro): 60.531%
-   Recall (macro): 66.519%
-       F1 (macro): 62.883%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.8
-         Accuracy: 73.869%
-       F1 (micro): 73.869%
-Precision (macro): 59.664%
-   Recall (macro): 65.624%
-       F1 (macro): 61.812%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.8
-         Accuracy: 73.869%
-       F1 (micro): 73.869%
-Precision (macro): 59.664%
-   Recall (macro): 65.624%
-       F1 (macro): 61.812%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.9
-         Accuracy: 65.327%
-       F1 (micro): 65.327%
-Precision (macro): 57.240%
-   Recall (macro): 61.821%
-       F1 (macro): 57.727%
-constraint_loss_weight: 0.001, claim_loss_weight: 0.9
-         Accuracy: 65.327%
-       F1 (micro): 65.327%
-Precision (macro): 57.240%
-   Recall (macro): 61.821%
-       F1 (macro): 57.727%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.0
+       F1 (macro): 68.091%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.1
          Accuracy: 83.920%
        F1 (micro): 83.920%
 Precision (macro): 69.349%
    Recall (macro): 71.462%
        F1 (macro): 70.218%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.0
-         Accuracy: 83.920%
-       F1 (micro): 83.920%
-Precision (macro): 69.349%
-   Recall (macro): 71.462%
-       F1 (macro): 70.218%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.1
+constraint_loss_weight: 0.007, claim_loss_weight: 0.2
          Accuracy: 83.920%
        F1 (micro): 83.920%
 Precision (macro): 68.477%
    Recall (macro): 70.098%
        F1 (macro): 68.994%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.1
-         Accuracy: 83.920%
-       F1 (micro): 83.920%
-Precision (macro): 68.477%
-   Recall (macro): 70.098%
-       F1 (macro): 68.994%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.2
+constraint_loss_weight: 0.007, claim_loss_weight: 0.3
+         Accuracy: 84.925%
+       F1 (micro): 84.925%
+Precision (macro): 70.012%
+   Recall (macro): 70.545%
+       F1 (macro): 69.753%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.4
          Accuracy: 82.412%
        F1 (micro): 82.412%
 Precision (macro): 66.415%
    Recall (macro): 69.427%
        F1 (macro): 67.681%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.2
+constraint_loss_weight: 0.007, claim_loss_weight: 0.5
+         Accuracy: 79.397%
+       F1 (micro): 79.397%
+Precision (macro): 63.657%
+   Recall (macro): 69.448%
+       F1 (macro): 66.077%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.6
+         Accuracy: 77.387%
+       F1 (micro): 77.387%
+Precision (macro): 62.262%
+   Recall (macro): 68.553%
+       F1 (macro): 64.785%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.7
+         Accuracy: 72.362%
+       F1 (micro): 72.362%
+Precision (macro): 59.121%
+   Recall (macro): 64.953%
+       F1 (macro): 61.047%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.8
+         Accuracy: 66.834%
+       F1 (micro): 66.834%
+Precision (macro): 57.584%
+   Recall (macro): 62.492%
+       F1 (macro): 58.415%
+constraint_loss_weight: 0.007, claim_loss_weight: 0.9
+         Accuracy: 59.296%
+       F1 (micro): 59.296%
+Precision (macro): 56.010%
+   Recall (macro): 59.136%
+       F1 (macro): 55.015%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.0
+         Accuracy: 79.397%
+       F1 (micro): 79.397%
+Precision (macro): 64.879%
+   Recall (macro): 69.448%
+       F1 (macro): 66.844%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.1
          Accuracy: 82.412%
        F1 (micro): 82.412%
-Precision (macro): 66.415%
-   Recall (macro): 69.427%
-       F1 (macro): 67.681%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.3
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 63.136%
-   Recall (macro): 68.308%
-       F1 (macro): 65.279%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.3
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 63.136%
-   Recall (macro): 68.308%
-       F1 (macro): 65.279%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.4
+Precision (macro): 67.336%
+   Recall (macro): 70.790%
+       F1 (macro): 68.864%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.2
+         Accuracy: 83.417%
+       F1 (micro): 83.417%
+Precision (macro): 67.622%
+   Recall (macro): 69.874%
+       F1 (macro): 68.393%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.3
+         Accuracy: 84.925%
+       F1 (micro): 84.925%
+Precision (macro): 70.012%
+   Recall (macro): 70.545%
+       F1 (macro): 69.753%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.4
+         Accuracy: 84.925%
+       F1 (micro): 84.925%
+Precision (macro): 70.012%
+   Recall (macro): 70.545%
+       F1 (macro): 69.753%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.5
          Accuracy: 80.905%
        F1 (micro): 80.905%
 Precision (macro): 65.037%
    Recall (macro): 70.119%
        F1 (macro): 67.134%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.4
-         Accuracy: 80.905%
-       F1 (micro): 80.905%
-Precision (macro): 65.037%
-   Recall (macro): 70.119%
-       F1 (macro): 67.134%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.5
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 64.536%
-   Recall (macro): 69.896%
-       F1 (macro): 66.772%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.5
-         Accuracy: 80.402%
-       F1 (micro): 80.402%
-Precision (macro): 64.536%
-   Recall (macro): 69.896%
-       F1 (macro): 66.772%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.6
-         Accuracy: 77.387%
-       F1 (micro): 77.387%
-Precision (macro): 61.332%
-   Recall (macro): 67.190%
-       F1 (macro): 63.734%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.6
-         Accuracy: 77.387%
-       F1 (micro): 77.387%
-Precision (macro): 61.332%
-   Recall (macro): 67.190%
-       F1 (macro): 63.734%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.7
-         Accuracy: 75.377%
-       F1 (micro): 75.377%
-Precision (macro): 60.296%
-   Recall (macro): 66.295%
-       F1 (macro): 62.609%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.7
-         Accuracy: 75.377%
-       F1 (micro): 75.377%
-Precision (macro): 60.296%
-   Recall (macro): 66.295%
-       F1 (macro): 62.609%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.8
+constraint_loss_weight: 0.008, claim_loss_weight: 0.6
+         Accuracy: 76.884%
+       F1 (micro): 76.884%
+Precision (macro): 61.970%
+   Recall (macro): 68.330%
+       F1 (macro): 64.479%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.7
          Accuracy: 73.367%
        F1 (micro): 73.367%
 Precision (macro): 59.475%
    Recall (macro): 65.400%
        F1 (macro): 61.554%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.8
-         Accuracy: 73.367%
-       F1 (micro): 73.367%
-Precision (macro): 59.475%
-   Recall (macro): 65.400%
-       F1 (macro): 61.554%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.9
-         Accuracy: 64.824%
-       F1 (micro): 64.824%
-Precision (macro): 57.130%
-   Recall (macro): 61.597%
-       F1 (macro): 57.499%
-constraint_loss_weight: 0.002, claim_loss_weight: 0.9
-         Accuracy: 64.824%
-       F1 (micro): 64.824%
-Precision (macro): 57.130%
-   Recall (macro): 61.597%
-       F1 (macro): 57.499%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.0
-         Accuracy: 83.920%
-       F1 (micro): 83.920%
-Precision (macro): 69.349%
-   Recall (macro): 71.462%
-       F1 (macro): 70.218%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.0
-         Accuracy: 83.920%
-       F1 (micro): 83.920%
-Precision (macro): 69.349%
-   Recall (macro): 71.462%
-       F1 (macro): 70.218%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.1
-         Accuracy: 83.920%
-       F1 (micro): 83.920%
-Precision (macro): 68.477%
-   Recall (macro): 70.098%
-       F1 (macro): 68.994%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.1
-         Accuracy: 83.920%
-       F1 (micro): 83.920%
-Precision (macro): 68.477%
-   Recall (macro): 70.098%
-       F1 (macro): 68.994%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.2
+constraint_loss_weight: 0.008, claim_loss_weight: 0.8
+         Accuracy: 65.327%
+       F1 (micro): 65.327%
+Precision (macro): 57.240%
+   Recall (macro): 61.821%
+       F1 (macro): 57.727%
+constraint_loss_weight: 0.008, claim_loss_weight: 0.9
+         Accuracy: 57.789%
+       F1 (micro): 57.789%
+Precision (macro): 55.721%
+   Recall (macro): 58.465%
+       F1 (macro): 54.337%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.0
+         Accuracy: 78.392%
+       F1 (micro): 78.392%
+Precision (macro): 63.302%
+   Recall (macro): 69.001%
+       F1 (macro): 65.667%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.1
+         Accuracy: 80.402%
+       F1 (micro): 80.402%
+Precision (macro): 64.804%
+   Recall (macro): 69.896%
+       F1 (macro): 66.986%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.2
+         Accuracy: 82.915%
+       F1 (micro): 82.915%
+Precision (macro): 67.599%
+   Recall (macro): 71.014%
+       F1 (macro): 68.849%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.3
+         Accuracy: 84.925%
+       F1 (micro): 84.925%
+Precision (macro): 70.952%
+   Recall (macro): 71.909%
+       F1 (macro): 70.696%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.4
+         Accuracy: 85.427%
+       F1 (micro): 85.427%
+Precision (macro): 70.951%
+   Recall (macro): 70.769%
+       F1 (macro): 70.154%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.5
          Accuracy: 82.915%
        F1 (micro): 82.915%
 Precision (macro): 66.985%
    Recall (macro): 69.651%
        F1 (macro): 68.031%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.2
-         Accuracy: 82.915%
-       F1 (micro): 82.915%
-Precision (macro): 66.985%
-   Recall (macro): 69.651%
-       F1 (macro): 68.031%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.3
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 63.136%
-   Recall (macro): 68.308%
-       F1 (macro): 65.279%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.3
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 63.136%
-   Recall (macro): 68.308%
-       F1 (macro): 65.279%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.4
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 64.078%
-   Recall (macro): 69.672%
-       F1 (macro): 66.420%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.4
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 64.078%
-   Recall (macro): 69.672%
-       F1 (macro): 66.420%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.5
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 64.078%
-   Recall (macro): 69.672%
-       F1 (macro): 66.420%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.5
-         Accuracy: 79.899%
-       F1 (micro): 79.899%
-Precision (macro): 64.078%
-   Recall (macro): 69.672%
-       F1 (macro): 66.420%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.6
-         Accuracy: 76.884%
-       F1 (micro): 76.884%
-Precision (macro): 61.047%
-   Recall (macro): 66.966%
-       F1 (macro): 63.445%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.6
-         Accuracy: 76.884%
-       F1 (micro): 76.884%
-Precision (macro): 61.047%
-   Recall (macro): 66.966%
-       F1 (macro): 63.445%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.7
-         Accuracy: 75.377%
-       F1 (micro): 75.377%
-Precision (macro): 60.296%
-   Recall (macro): 66.295%
-       F1 (macro): 62.609%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.7
-         Accuracy: 75.377%
-       F1 (micro): 75.377%
-Precision (macro): 60.296%
-   Recall (macro): 66.295%
-       F1 (macro): 62.609%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.8
-         Accuracy: 72.864%
-       F1 (micro): 72.864%
-Precision (macro): 59.294%
-   Recall (macro): 65.176%
-       F1 (macro): 61.299%
-constraint_loss_weight: 0.003, claim_loss_weight: 0.8
-         Accuracy: 72.864%
-       F1 (micro): 72.864%
-Precision (macro): 59.294%
-   Recall (macro): 65.176%
-       F1 (macro): 61.299%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.6
+         Accuracy: 77.387%
+       F1 (micro): 77.387%
+Precision (macro): 62.262%
+   Recall (macro): 68.553%
+       F1 (macro): 64.785%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.7
+         Accuracy: 72.362%
+       F1 (micro): 72.362%
+Precision (macro): 59.121%
+   Recall (macro): 64.953%
+       F1 (macro): 61.047%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.8
+         Accuracy: 65.829%
+       F1 (micro): 65.829%
+Precision (macro): 57.352%
+   Recall (macro): 62.044%
+       F1 (macro): 57.955%
+constraint_loss_weight: 0.009, claim_loss_weight: 0.9
+         Accuracy: 55.779%
+       F1 (micro): 55.779%
+Precision (macro): 55.336%
+   Recall (macro): 57.570%
+       F1 (macro): 53.427%
