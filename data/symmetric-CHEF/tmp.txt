@@ -1,0 +1,666 @@
+dev
+7296 :  There is no evidence to support the claim that COP 26 agreed to reposition nuclear power to green energy.
+2514 :  There is no evidence to support the claim that bananas can destroy the new coronavirus.
+2682 :  The claim cannot be rewritten based on the provided evidence as it is not supported by the evidence. The evidence states that the University of Technology has been on winter vacation since January 11 and that the school has not been closed due to the epidemic. Additionally, the evidence mentions a specific case (case 839) where 39 students and 4 teachers were screened and separated, but it does not provide information on the closure of the Yuan Pei Medical School or the isolation of an unknown number of people.
+835 :  The claim that drinking ice in the summer will cause kidney loss is false. While coldness can harm the digestive system, there is no evidence to support the idea that frequent cold water drinking leads to kidney loss.
+1724 :  There is no evidence to support the original claim that a limited version of the metro will be delivered free of charge in December 2020.
+4549 :  No claim can be made as there is no evidence provided to support the original claim.
+2611 :  There is no evidence to support the claim that Taiwan police raided and arrested hundreds of Vietnamese in the morning.
+3147 :  No new claim can be made based on the provided evidence as it does not support or refute the original claim.
+4958 :  There is no evidence to support the claim that gray green iron sulfide in boiled eggs can affect health.
+5694 :  No claim can be made as there is no evidence to support or refute the original claim.
+627 :  There is no evidence to support the claim that more than 100 vehicles collided at a high speed at the snowfall airport in Chengzhou on 10 February 2019.
+4853 :  There is no evidence to support the claim that one should poison a meal instead of packing up a table outside.
+1614 :  The claim that eating too much eggplant will result in poisoning is not supported by evidence, as it would require consuming almost one-and-a-half old eggplants, which is unlikely to occur.
+1052 :  A worker who has suffered an injury at work and has a stable medical injury is entitled to a lump-sum disability benefit, depending on the level of disability.
+5422 :  No claim can be made as there is no evidence provided to support the original claim.
+1201 :  The movement of tectonic plates is a major cause of earthquakes, as evidenced by events such as the 7.3 magnitude earthquake off the coast of north-eastern Venezuela and the previous Indonesian Longbe Island earthquake in the Pacific Rim.
+6311 :  There is no evidence provided to support or modify the original claim.
+2968 :  The claim that the U.S. can see the virus in the air with the most advanced microscopes is not supported by the evidence provided.
+5880 :  Washing vegetables before cutting them can help reduce the loss of water-soluble vitamins such as Vitamin C.
+4116 :  There is no evidence to support the claim that a big dermatologist only believes in Vancelin and Crystal Soap.
+271 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence suggests that many older people do not have proper diets and do not know that proper diets are good for health.
+1407 :  Contrary to popular belief, reducing calcium intake may actually increase the risk of kidney stones, as a low calcium diet can increase the absorption of herbate and its discharge in urine.
+6286 :  There is no scientific basis for claiming that recovered milk is fake or non-nutritious, and therefore it cannot be classified as such.
+6256 :  The claim "Without a shaved head, you don't have dandruff" is not supported by evidence. In fact, dandruff can occur on any scalp, regardless of whether the head is shaved or not.
+6452 :  No evidence provided to support the original claim.
+935 :  There is no evidence to support the claim that the new coronavirus is synthetic.
+2276 :  The Ministry of Education announced that schools and kindergartens throughout the country would be suspended from school until 2 July 2021 in response to the epidemic.
+7194 :  The claim about frauds involving fake cops and car accidents in Peach Park and Xinbang is not supported by police reports. One of the videos cited as evidence was actually a real car accident that occurred on 19 July 2021.
+1609 :  There is no evidence to support the claim that lipstick sweating is decomposing.
+4874 :  The claim that it snowed on December 30th is not supported by the evidence provided by the Bureau of Meteorology, which reported no snow on the entire station as of 3 p.m. on that day. Additionally, online videos and photographs claiming to show snowfall in certain areas were found to be inaccurate.
+851 :  The claim that electronic smoke is a healthy alternative to cigarettes is not supported by scientific evidence, as e-smoking still contains high levels of nicotine and may not be an effective tool for quitting smoking.
+7076 :  There is no evidence provided to support the original claim, therefore it cannot be rewritten based on the evidence.
+758 :  The claim that genetically modified crops are common in the country's population is not supported by the evidence provided. The evidence only mentions the use of genetically modified soybean oil in cooking oil designated for the World Expo and Olympics.
+601 :  Insufficient evidence provided to support the original claim.
+2591 :  The claim that vascular bruising under the tongue represents a cerebral vascular blockage is not supported by the evidence provided. The bruising may indicate poor circulation or a bruising of the body, but it cannot be directly diagnosed as a cardiovascular clogged.
+2154 :  No new claim can be made based on the provided evidence as it does not support or refute the original claim.
+2750 :  Mobile phones can call "112" in emergency situations, and the previous method of calling "119" by pressing 0 or 9 is no longer valid.
+5730 :  There is no evidence to support the claim that Samurai has won the train and it's free for the month of July.
+2993 :  There is no evidence to support the claim that half a million masks from Taiwan settled and prayed for Taiwan's safety.
+6934 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+6093 :  Even if you are vaccinated, it is still recommended to wear a mask and practice other preventive measures such as handwashing.
+2720 :  There is no evidence to support the claim that Taiwanese police urgently arrested Vietnamese female students living with HIV/AIDS.
+7354 :  The claim that high school history books teach Japan to be our home country is not supported by the evidence provided. While there may be a reference to Japan as a historical context in the chapter on Taiwan's colonization, it is not taught as a whole and is not described as Taiwan's "mother country."
+5215 :  No new claim can be made as there is no evidence provided to support or modify the original claim.
+1275 :  There is no evidence to support the original claim that there will be an increase of 7 metres in the level of flooding at the sandy power station along the river in June 2019.
+792 :  No new claim can be made based on the provided evidence as it does not support or refute the original claim.
+1338 :  The claim that eating bean products is easy to get breast cancer is not supported by evidence. In fact, studies show that soybeans and their products can reduce the risk of female breast cancer.
+1410 :  During pregnancy, there is a high risk of developing diabetes, which can lead to complications such as high blood pressure, pre-eclampsia, haematosis, premature birth, impaired kidney function, retinal aberrations, and visual abnormalities for both the mother and the foetus. If left untreated, high blood sugar can also lead to low blood sugar after birth, which can be life-threatening.
+2661 :  There is no specific fruit that can cure high blood pressure, and while some fruits may contain nutrients that can help lower blood pressure, it is not recommended to rely solely on fruit consumption to manage the condition. Overconsumption of fruit, which contains sugar, can also lead to an increase in blood sugar levels.
+5933 :  The nucleic acid test can detect the Delta virus, as it is able to detect the viral nucleic acid contained in the virus particles.
+5698 :  There is no evidence to support the claim that a mom gave birth to 17 babies at a time.
+1000 :  The claim that the consumption of overnight vegetables can lead to kidney failure is not supported by evidence. In rare cases, the consumption of corrupt night-time foods can lead to acute kidney failure due to dehydration, but normally only causes discomfort and does not lead to serious renal failure.
+2300 :  No modified claim can be made based on the provided evidence as it does not support the original claim. The evidence only discusses the analysis of smoke from chimneys and does not provide any evidence for the causes of drought and water shortage in Taiwan.
+2395 :  The claim that hot foods such as curry, chili, and jalape can make cancer cells hibernate is not supported by medical evidence. Additionally, the four drugs mentioned in the claim (safoxin, platinum, hydroferon, and yellow) are not long-term drugs for cancer treatment.
+5897 :  There is no scientific evidence to support the claim that lemonade and green tea can kill the new coronavirus.
+7455 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+4098 :  No claim can be made as there is no evidence to support or refute the original claim.
+7275 :  There is no evidence to support the original claim that the Government has made it possible to donate blood to individuals with certain health conditions. The evidence provided suggests that civil society organizations opposed the government's amendment of the Blood Donator's Health Criteria in 2018, but there is no indication that the amendment was implemented or that the government has made any recent changes to blood donation regulations.
+2397 :  There is no evidence to support the claim that the United States is over, the White House is blocking news, and there has been a mass death of United States vaccine receivers. Additionally, the United Nations has not announced that it will abandon the United States vaccine and use it in China.
+1298 :  There is no evidence to support the claim that street tattoos will be detained after 2 a.m.
+3026 :  There is no evidence to support the claim that 15 masks will be enough to quarantine the virus for 14 days. Experts have pointed out that using a mask for 14 days can lead to germ breeding and it is not recommended to reuse masks for such a prolonged period.
+1576 :  There is no evidence to support the claim that eating melon fruit in the fall can cause a disease.
+2507 :  The claim cannot be rewritten based on the evidence provided as the evidence contradicts the original claim. The claim that Paloma Herrera was interviewed by Joe McNally/Henry Leutwyler and appeared in Life magazine with a photo that touched countless people is not supported by the evidence that the photo was taken by Henry Leutwyler in 2012 at the New York City Ballet and the dancer was not Paloma Herrera.
+1995 :  There is no evidence provided to support the original claim.
+1889 :  There is no evidence to support the claim that the cost of buying a house in Fuzhou will increase with the introduction of the tax law in August 2020.
+2996 :  There is no evidence to support the claim that the U.S. is the source of the virus in the world.
+154 :  The sleep spray claims to contain pure natural ingredients that help calm and soothe the body for a better sleep experience.
+3247 :  There is no evidence to support the claim that China dispatched a bus to Kansai airport to rescue its stranded passengers after the closure of the airport due to severe hurricane damage.
+2317 :  There is no evidence to support the claim that there was an accident at the Russian Air Fair.
+4410 :  No claim can be made based on the provided evidence as it does not support or refute the original claim.
+7149 :  There is no credible evidence to support the claim made by Australian Sky News that those receiving the vaccine should not fly because of the risk of haemorrhage.
+3010 :  There is no evidence to support the claim that President Choi is suspected of being infected with Vukhan pneumonia and placed in an isolation ward.
+2915 :  There is no evidence to support the claim that the Bill Gates Foundation was under hacker attack and that large amounts of e-mails and documents were leaked. Additionally, there is no evidence to support the claim that Dr. Shek Jung-li placed contaminated dry ice near the mouth of the seafood market on 19 October 2019.
+1353 :  There is no such thing as a fainting anesthesia that can make people faint just by smelling or ingesting it.
+2016 :  No claim can be made based on the provided evidence as it refutes the original claim as false.
+7515 :  There is no evidence to support the claim that the Olympics sent a Kenyan and Spanish contestant to run.
+534 :  The claim that nurse Elizabeth Povaya Mwewa admitted to moving nearly 5,000 babies at random during her work at the University of Zambia Teaching Hospital is not supported by evidence, as there is no record of her working at the hospital or being registered as a nurse or obstetrician in Zambia.
+4572 :  There is no evidence to support the claim that an easy-to-drink drink can kill a rat with a urinary hook spiral.
+4582 :  The claim made by Dr. Botanical Research Institute of the Middle School on Twitter that red herbs contain thiram, are hepatotoxic, cause cancer, deformity and lead to high primary lung pressure, and her suggestion that everyone should not eat this wild vegetable is not supported by sufficient research evidence in English. The Director of the Poisons Department at Lin Yingg Hospital stated that while red phoenix contains "trisium cynicium", it is not possible for the general population to take such a high amount of it in their daily diet, and there is no need to worry too much about the liver toxicity caused by eating red phoenix.
+7385 :  The claim that consuming charcoal food leads to pulmonary disease is not supported by evidence, as experts have stated that bamboo-carbed food does not cause the entry of bamboo-carbing particles into the lungs. Additionally, the use of food-added bamboo-carbage powder as a coloring agent in small amounts does not have toxic or detoxification effects.
+4984 :  There is no evidence to support the claim that the U.S. National Guard re-tested the vote.
+2371 :  The claim that adding salt to egg juice before cooking can produce chlorine and poison is not supported by evidence.
+1617 :  The claim that children need only halve their use of drugs is not supported by evidence, as children have different physiological responses to drugs compared to adults and require careful consideration of appropriate dosages.
+2445 :  No new claim can be made based on the provided evidence as it does not support or refute the original claim.
+5053 :  There is no evidence to support the claim that soup washes the eyes and dissolves cataracts.
+5327 :  There is no evidence to support the claim that gluten drops in the form of mosquitoes can prevent vomiting during sleep.
+5001 :  The claim that "When a car accident happens, you can avoid it if you don't see it" is misleading and can lead to negative consequences. The Chinese traffic police force has warned against a "car risk common sense" message that advises people to deny seeing anyone when making a statement after hitting someone with a car, as this can result in self-inflicted harm and unfavorable court sentences.
+6610 :  There is no evidence to support the claim that eating bitter melons leads to osteoporosis.
+735 :  The construction of net fences in Inner Mongolia herding areas has been controversial, with some experts arguing that it disrupts the biological chain and leads to loss of biodiversity in the grasslands, while others argue that it plays an important role in the conservation and ecological preservation of the grasslands. The net fence covers 1,140 million acres, including 460 million acres, or 41 per cent of the grassland area, of which the net fence is built. However, experts from the Mongolian Grass Ecosystem Positioning Research Station at the Chinese Academy of Sciences argue that the net fence will have little impact on the spread of plant pollen and is not an ecological killer, but rather a necessary tool for grassland preservation.
+3054 :  The claim that high blood pressure patients are the most vulnerable to infection with the coronavirus is unfounded, and there is no evidence to support the use of "acid fungi" as a treatment for the virus.
+7572 :  There is no evidence to support the claim that chlorine dioxide can be inhaled in the mouth and nose as a fungicide.
+833 :  There is no evidence to support the claim that sunscreens are required before computer screens.
+4368 :  No claim can be made as there is no evidence to support the original claim.
+4964 :  On November 16th, a fire broke out in the kitchen of a McDonald's restaurant, which was quickly extinguished by two black-coloured workers. There were no reported casualties.
+1841 :  The evidence provided does not support the original claim.
+6198 :  On 12 May 2021, the spokesman for the Ministry of Foreign Affairs refuted the American and European media's statement that China is facing a demographic crisis and emphasized that China's population is still growing steadily.
+7333 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence only mentions speculation and doubts about the validity of reports on the COVID-Omicron virus, but does not provide any information on its lethality or detectability.
+1030 :  There is no evidence to support the claim that micro-message has pornographic videos and its owners and administrators will be detained.
+4322 :  There is no evidence to support the claim that Pilgrim 6 and high school students raised black shrimp with chopstick-free water. The original claim is likely a rumor or exaggeration.
+49 :  The White Paper China Action against New Crown Pneumonia is a record of China's struggle to combat the epidemic and share effective practices in the prevention, control, and medical care of the epidemic in China.
+873 :  The employer may violate the legal rights and interests of workers during the probationary period by not paying social insurance contributions, not conforming to the basic wage law, calculating overtime fees below the local minimum wage, paying overtime fees less than the rate prescribed by law, and distinguishing between work requirements and benefits for workers after the probationary period. However, it is not necessarily true that employees are not paid for the trial period.
+499 :  In February 2020, there were reports of a housing market crisis with zero-sum deals falling through and an increase in bankruptcies of housing companies. Some experts speculated that the market was on the verge of collapse.
+244 :  There is no evidence to support the claim that apple juice can dissolve gallstones.
+7128 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence is unrelated and does not provide any information about the state of the US economy, the Biden government's decision on police spending, or police protests.
+1492 :  The use of pain medication may result in adverse effects, which can vary depending on individual factors such as drug properties, dosage, duration of use, and risk factors for adverse drug reactions. However, efforts are being made to reduce the occurrence of adverse reactions, such as genetic testing to predict the risk of adverse responses to certain painkillers.
+1312 :  There is no national age adjustment for primary school enrolment set at 31 December in China.
+6579 :  The Chongqing City Public Security Bureau issued an urgent notice regarding a scam involving the National Political Service Platform's confidential personnel asking for payment codes to be entered into the small procedure, but the Chongqing Public Security Bureau's General Criminal Investigation Unit verified that the micro-credit platform has strict access rules and real-name certification management, making it generally safe and credible.
+2815 :  There is no evidence to support the claim that the United States Secretary of State, Pompeo, had an unpleasant trip to Germany and was given a living lesson by German Chancellor Mekl.
+2054 :  There is no evidence to support the claim that a dealer jumped off a building in Nakayama, Guangdong in October 2018.
+1484 :  The claim that silver almonds can be used as health products is not supported by evidence, as they are not health-care products and can even cause poisoning.
+4245 :  There is no evidence to support the original claim.
+7058 :  No claim can be made as there is no evidence provided to support the original claim.
+407 :  There is no clear evidence that the use of blue-ray glasses in Internet-based classes can prevent near-sightedness.
+7360 :  On 18 October, Alibaba will launch a cloud-based computer that provides access to a dedicated cloud desktop, applications, and documents, and can expand computing power at the top of the cloud. It can be used as a personal computer for individuals, families, and enterprises, but it does not completely replace traditional computers.
+2667 :  There is no evidence to support the claim that the French viral laboratory recently announced that the new coronavirus cannot be killed with 90 degrees of water and that it has a nanoscale needle that allows for immediate recovery.
+4203 :  There is concern about the safety of Taiwan bread containing nitroazine dimethylamethamine, and the Ministry of Health is working with specialists to prevent its use.
+7004 :  No new claim can be made based on the provided evidence as it does not support or clarify the original claim.
+7056 :  No claim can be made as there is no evidence to support or refute the original claim.
+2434 :  There is no evidence to support a claim about finding oil on the highway or the need for a motorway rescue car. Chinese oil has stopped providing this service and the highway authority can be contacted at "1968" in case of a drag on the highway.
+5123 :  No claim can be made as there is no evidence to support the original claim.
+2542 :  There is no evidence to support the claim that the Minister of Health of India checks against the disease by personally checking whether people are wearing masks or not.
+7116 :  The European Drug Administration has not approved the use of Ivermectin for the treatment of COVID-19.
+2295 :  The claim that crabs know how to write alive is not supported by evidence, as experts have pointed out that crabs cannot write and can only see vague images.
+1821 :  There is no evidence to support the claim that Shanghai offered to host the 2032 Olympic Games. The Shanghai Sports Bureau stated that the research conducted on the hierarchies of Shanghai sports events was part of a basic study of the construction of the system of events and should not be over-interpreted.
+1219 :  There is no evidence to support the claim that China's climate tipping point is drifting across a large area this year. The head of the Climate Services Unit of the National Climate Centre has stated that the articles on the internet are not authoritative or specific and are spreading in an alarming way. While there has been an increase in inter-annual variability and intensity of precipitation, it cannot be said that precipitation thresholds have been met or occurred, and weather patterns in the northwest have changed dramatically.
+2372 :  The red algae found on the cement jetty at the north-south gate are not capable of building up algal reefs, as confirmed by experts who identified the species as "stones" and "dang pyroclastics".
+6407 :  There is no evidence to support the claim that strawberries lead to blood fever. Hemorrhagic fever is transmitted by rats and has nothing to do with strawberries, according to the deputy director of Xian's Department of Infectious Diseases.
+0 :  China's current poverty reduction standards are above world standards, as they exceed the World Bank criteria for extreme poverty and the absolute poverty line established by the United Nations in 2015 under the 2030 Agenda for Sustainable Development.
+1595 :  There is no evidence to support the claim that seedless watermelons contain a large amount of hormones.
+5147 :  No claim can be made as there is no evidence to support the original claim.
+5008 :  U.S. supermarkets sell pork that may contain ractopamine, a drug that has hormonal effects similar to those of amphetamines and may promote the transfer of dopamine to non-receptors.
+6315 :  The claim that the more the mask is sprayed, the better the protection is not supported by evidence. In fact, wearing multiple masks does not effectively increase protective effects and may even cause respiratory distress. The Public Science Mask Guidelines for the new coronary anti-pneumonia regime should make it clear that thicker masks or higher numbers of molten fumes do not necessarily provide better protection.
+1894 :  The claim cannot be rewritten based on the provided evidence as the evidence contradicts the original claim. The incident did not occur in July 2019 in Fujian Quan State and was not related to a cell phone charge.
+617 :  There is no evidence to support the claim that the HPV vaccine killed 328 people in one year, left 2,000 permanently disabled and caused 50,000 cases of adverse effects. The World Health Organization has confirmed the safety of the cervical cancer vaccine.
+4424 :  No claim can be made as there is no evidence to support the original claim.
+7134 :  The claim that cleaning banana surface skins and wrapping roots with paper can prevent the release of ethylene from bananas is not supported by the evidence provided.
+175 :  The belief that only old people get cataracts is a misconception as the rate of crystallized ageing varies from person to person and some individuals as young as 50 years old can develop cataracts. The process of disillusionment often begins in adulthood and is only diagnosed as cataracts when it affects vision.
+3100 :  There is no evidence to support the claim that a group of people are going to be door-to-door, pretending to be members of the Interior Ministry, preparing (or investigating) the upcoming elections.
+4767 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+1554 :  There is no evidence to suggest that crab yellow and crab ointment pose a risk of cancer.
+7525 :  There is no evidence to support the claim that every photo visit to the morning will start to be charged both ways as of 1 August 2020.
+7344 :  There is no evidence provided to support the original claim, therefore it cannot be rewritten based on the evidence.
+5933 :  The claim that a Kuwaiti car was baked by the sun is false and was spread by foreign agents. The "melted" car was actually caused by a nearby building fire and did not occur in Kuwait.
+1191 :  The claim that holding your breath for ten seconds can detect pneumonia is unscientific and not recommended by medical professionals.
+7174 :  No new claim can be made as the evidence provided does not support the original claim.
+2665 :  There is no evidence to support the claim that the United States is over, the White House is blocking news, and there has been a mass death of United States vaccine receivers. Additionally, the United Nations has not announced that it will abandon the United States vaccine and use it in China. Reports from the United States CDC and Taiwan experts suggest that the current massive use of the Pfizer and Moderna vaccines is largely safe.
+1705 :  The claim that a pair of glasses can be worn for life is not supported by evidence, as glasses can experience wear-and-aging and may cause damage to the person's eyesight over time.
+1832 :  There is no evidence to support the original claim that elevators will be installed on a pilot basis and free of charge in the old subdistricts of Suzhou in November 2020.
+4052 :  No new claim can be made as there is no evidence provided to support or refute the original claim.
+5751 :  No clear evidence was found to support the claim that Korea's Happy World's GyroDrop ride is falling free and that the ceremonial flowering is falling.
+2877 :  There is no evidence to support the claim that "Three Chinese thugs were taken alive at the scene of the demonstration: the Chinese embassy asked us to do it."
+1649 :  The claim that excessive disinfection seriously contaminates groundwater is not supported by the evidence provided. Researcher Peng Kei Ten stated that sterilizing for a period of one to three months would have some impact on surface water, soil, and vegetation, but would not cause serious contamination of groundwater.
+1603 :  There is no evidence to support the claim that seedless watermelon was used as a birth control pill.
+7068 :  There is no evidence to support the claim that sorghum kills cancer cells.
+6146 :  Earthquake disasters in plate-stabilized areas can still occur and may be difficult to detect, as evidenced by past earthquakes such as the 2001 earthquake in Gujarat, the 2012 coastal earthquake in Sumendara, India, and the 2017 earthquake in Puebla, Mexico, which were caused by internal earthquakes that were poorly prepared for. These types of earthquakes typically occur in the position of filamentary fractures, which are a "defect" of the crust and can easily shift to accommodate the region's tectonic changes during an earthquake.
+518 :  There is no evidence to support the claim that scientists detected a mysterious signal from the universe that was professionally analyzed and found to be an alien signal.
+1621 :  The evidence does not support the original claim that taking medication can cure both the symptoms and causes of pain. The evidence suggests that pain is only one manifestation of an inflammatory disease and that complete elimination of the disease is necessary for effective control.
+1159 :  There is no evidence to support the claim that an expert on immunization in Shanghai recommended using firecrackers to eliminate the virus. In fact, it has been found that using firecrackers can actually increase the risk of infection.
+2558 :  The symptoms of the new outbreak of neo-crowd pneumonia are not significantly different from the old one, and include fever, cough, fatigue, acute breathing, muscle pain, headache, throat pain, abdominal pain, runny nose, and loss of smell or taste.
+5229 :  There is no evidence to support the claim that drinking water with a straw is more effective than dripping.
+6943 :  There is no scientific evidence to support the claim that lemon juice mixed with green tea can kill the new coronavirus.
+2081 :  In December 2018, a gas leak in Nanning resulted in slight poisoning of four employees and two customers at a barber shop. No deaths were reported.
+6833 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+1081 :  There is no evidence that summer eggs, fish, and seafood are unsafe due to the new coronavirus outbreak in Beijing.
+2890 :  No new claim can be made based on the provided evidence as it does not support the original claim. The original claim appears to be a statement without any factual basis or evidence to support it.
+6907 :  The storage of disinfectants should be done safely due to their flammable, explosive, and corrosive nature.
+114 :  The claim that delivery stopped during Spring 2019 is not supported by the provided evidence. Instead, the evidence suggests that several logistics companies indicated their commitment to uninterrupted delivery services during that time period.
+6331 :  There is no evidence provided to support the original claim.
+2241 :  No new claim can be made based on the provided evidence as it does not support or relate to the original claim.
+7484 :  There is no evidence to support the claim that those who have received the vaccine are spreading mutations and that those who have not received the vaccine will not spread it.
+4239 :  LINE allows users to choose the order of sending photos and send them in their original resolution.
+5094 :  No claim can be made as there is no evidence to support or refute the original claim.
+2243 :  In Singapore, breastfeeding mothers are advised to continue breastfeeding after completing a COVID-19 vaccine, according to the latest guidelines updated on 31 May 2021. However, the previous version of the guidelines did not recommend breastfeeding for a period of five to seven days. There are no relevant guidelines on breastfeeding after COVID-19 vaccination in Taiwan.
+1371 :  There is no evidence to support the claim that a corrosive milk equals 12 g salt.
+125 :  The claim that Hepatitis B is often spread through food and drink is not supported by evidence, as the virus is not able to enter the oral, digestive, or gastrointestinal tract cells.
+6165 :  There is no evidence to support the claim that nearly 150 million butterfly feathers caused earthquakes.
+1129 :  The pulmonary function of new coronary pneumonia patients may be difficult to restore, especially if there are serious complications such as multiple organ failure.
+5102 :  There is no evidence to support the claim that Chinese scientists have developed a myth about human life extending to 150 years of age. The claim is based on a misleading article that treats a doctor's expectations as a fact.
+4232 :  No evidence is provided to support the original claim that more than 160 countries have carcinogenated cereals.
+3099 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence only mentions rumours and does not provide any information about hackers using good morning/good afternoon/good evening greetings to steal money.
+4595 :  There is no evidence to support the original claim.
+6683 :  There is no evidence to support the claim that the Ministry of Education may introduce a shorter school system in pilot areas for the comprehensive reform of basic education.
+2836 :  The claim that Israel has developed and commercialized a Covid-19 antidote is not supported by evidence. Additionally, as of 17 July, Israel has imposed a second-wave ban, including the closure of restaurants and gyms, and has not announced the complete lifting of travel restrictions on citizens.
+7399 :  There is no evidence to support the claim that 1.2 million A.S. Kate anticancer pills can lead to two months of zero cancer cells.
+3253 :  No modified claim can be made based on the provided evidence as it is not relevant to the original claim.
+1786 :  There is no evidence to support the claim that school districts in Harbin were divided into stoves in March 2018.
+2918 :  There is no evidence to support the claim that tongue movement can help control or prevent dementia.
+3033 :  There is no evidence to support the claim that an article published on the website of the Central Military Commission of the Supreme Authority of the Liberation Army of China, the West Coast Strategy, admitted that the virus was synthetic. The reported Western Strategy is a civilian military theme site, not an official site of the Central Military Commission of the Communist Party of China, and its article quotes Chinese Science: Life Sciences, stating that "the four key proteins of the VHU virus are replaced and can be targeted with precision," but does not make any admission about the virus being synthetic.
+6559 :  There is no evidence to support the claim that the sanitation worker in Jiangsuzhou wants money for the wedding car.
+5029 :  There is no evidence to support the claim that the "good morning, good night" video is a hacker fishing program stealing money.
+2043 :  There is no evidence to support the original claim.
+615 :  There is no evidence to support the claim that medicines will be replaced by health products.
+2176 :  There is no clear evidence to support the claim that the two-way north toll station was flooded in July 2018.
+2763 :  There is no evidence to support the claim that Hunter Biden used drugs on the buttocks of a Ukrainian sex worker.
+4928 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+1840 :  The evidence does not support the original claim.
+2230 :  The claim about the new canopy virus killing people from the "12288 rescue soup" of the Ecuadorian Indo-Indian people is false and has no scientific basis according to doctors in Ecuador.
+6943 :  Drinking and smoking are not effective measures for preventing the new coronavirus and can even worsen health conditions. In fact, smoking has been found to increase the risk of serious illness and death from the virus.
+5407 :  There is no evidence to support the claim that Japan uses high technology to photograph the state of the coronavirus in the air.
+6799 :  No claim can be made as there is no evidence provided to support the original claim.
+5897 :  There is no evidence to support the claim that Ivesin can treat new coronary pneumonia.
+3137 :  The evidence does not support the original claim as it refers to a different context and location. Therefore, no new claim can be made based on this evidence.
+2693 :  There is no evidence to support the claim that a song titled "Don't fall on the ground" was played at a wedding in Africa.
+773 :  No evidence was provided to support the original claim.
+2784 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+1859 :  No new evidence was provided to support or modify the original claim.
+1722 :  There is no evidence to support the claim that a crowd was moved off the river in the city of Jinzhou in June 2020.
+3226 :  There is no evidence to support the claim that the state of florists in Taiwan is suspected of being infected with African pigpest by pigs.
+2567 :  There is no evidence to support the claim that the cities of New North and Taipei will be fully sterilized on Friday and Saturday night by a group of military and chemical soldiers, whose drugs are highly toxic. The North City Environmental Protection Agency has issued a statement in the evening stating that the above false information should not be believed or disseminated.
+7426 :  No claim can be made as there is no evidence to support the original claim.
+6942 :  No claim can be made as there is no evidence provided to support the original claim.
+581 :  There is no evidence to support the original claim that a woman wearing orange tops robbed a child in Huen Kojong City in Shenzhen.
+2412 :  The claim that scattered eggs can cure diabetes-related leg swelling, urinary incontinence, and prophylactic gland issues is not supported by medical experts.
+7259 :  The claim that there is a worm in canned drinks is not supported by the evidence provided. The patient in the film had fig maggots, which are not found in canned drinks. Experts have also pointed out that canned drinks do not contain living organisms such as worms, and that contamination can occur through external sources.
+2181 :  In August 2020, two children, Zhang Yiu (7 years old) and Shihua (5 years old), were reportedly abducted by traffickers while playing at the entrance to the east side of Yu Qing County Camp Street.
+1107 :  There is no evidence that Hubei agricultural products are infected with the new coronary virus.
+4696 :  There is no evidence to support the claim that Line's official co-server keeps evidence of users uploading movies and music videos.
+412 :  On 6 July 2020, a bus in Shanghai was driven through flooded streets caused by heavy rains, but there is no evidence to support the claim that it was driven by wind.
+1716 :  The claim that 13 people were scheduled to die from the swine virus in October 2018 is false information that was spread on the internet and verified to be untrue by the police.
+7079 :  No claim can be made as there is no evidence provided to support it.
+930 :  The height of the amino enzyme is not necessarily an indicator of a liver problem and can be caused by physiological factors such as over-exertion or fatigue.
+1120 :  There is no evidence to support the claim that foreign capital needs to withdraw completely from China due to the effects of the epidemic.
+5156 :  No claim can be made as there is no evidence to support the original claim.
+918 :  The statement that "it's the preservative that's been used for long periods of time" is incorrect, as the shipping line does not use preservatives but instead relies on cold chain transport to keep the fruit fresh.
+2076 :  No new claim can be made based on this evidence as it does not provide any information to support or refute the original claim.
+2884 :  No claim can be made based on the provided evidence as it does not support the original claim. The evidence only discusses a rumor about a video and an incident involving a gift exchange between Melania Trump and Michelle Obama, but it does not provide any evidence to support the claim that Trump tried to end black rage or that Obama dumped the gift.
+513 :  The claim that free public transport for older persons puts pressure on telecommuting peaks is not supported by the evidence. Instead, the data shows that it has effectively supplemented the transport capacity of low-commuting periods.
+5386 :  There is no evidence to support the claim that Blacks on stage shouted "Trump Pneumonia" directed at Trump.
+1911 :  There is no evidence to support the original claim.
+6318 :  The evidence does not support the original claim that "A diarrhea is a virus." Therefore, a new claim cannot be provided based on this evidence.
+2961 :  There is no evidence to support the claim that American soldiers who were trained in Thailand, drinking snake blood, went to the World Military Games and were the true middle hosts of the new crown virus.
+4591 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+2409 :  There is no evidence to support the claim that the U.S. has changed and the riots have continued because the U.S. government has banned them and the European media are cooperating. The videos used to support this claim were not recent and there is no evidence linking them to recent events in the United States.
+1792 :  There is no evidence to support the claim that a major public health emergency level response was launched in Shanghai in November 2020.
+2587 :  The claim that there are female and male flowers on the tree is inaccurate and not supported by evidence.
+414 :  The claim that Professor Lee Joon-young is the ground commander of the launch of the Fengyun I meteorological satellite is false and a fabrication, according to a circular from the Chinese Meteorological Service.
+7506 :  There is no evidence to support the claim that Moderna covers mRNA with nanograde graphite oxide, or that the new crown vaccine contains graphite oxide.
+2583 :  No new claim can be made as the evidence provided does not support or relate to the original claim.
+1495 :  The claim that silver ion antibacterial fluids can kill the new coronary virus is not supported by scientific evidence.
+6280 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+1100 :  The requirement during the outbreak for elevators in the Black Dragon River area was for individuals to stand back-to-back, meaning the person behind would look at the back of the person in front, rather than standing face-to-face.
+7501 :  There is no evidence to support the claim that Canadian residents successfully proved in court that the COVID-19 virus did not exist and announced the lifting of the quarantine regulations.
+1433 :  The claim that sugar-free foods do not hurt teeth is not supported by the evidence provided. While these foods may reduce the risk of tooth decay compared to sugar-containing foods, excessive consumption can still cause other hazards.
+5350 :  There is no evidence to support the claim of a 100% cure special effect.
+7040 :  Sudden suffocation can lead to increased internal chest pressure, elevated blood pressure, decreased veins, and inadequate heart output, which can cause shock and arrhythmia. It is advised to avoid sudden standing up or bending, especially for those with heart conditions.
+1242 :  The claim that Hong Kong's rights were undermined and one country's two systems failed is not supported by the evidence provided. The Hong Kong Special Administrative Region has implemented laws to safeguard the rights and freedoms of its residents, and according to Ambassador Liu Xiaoming of China to the United Kingdom, Hong Kong now has more democratic and liberal rights than it did under British colonial rule.
+6060 :  There is evidence to suggest that not all children's cosmetics are safe, despite being marketed as such.
+1082 :  There is no evidence to support the claim that Chinese are more vulnerable to the new coronavirus.
+4256 :  There is no evidence to support the claim that donating a bag of blood will kill you. However, any "insecure act" such as unprotected sex or sharing needles can pose a high risk of HIV infection. The autoimmunology analyzer is used for blood donation and syphilis testing, but some people have concerns about lifting the ban on male sex donors.
+3077 :  The claim is unclear and incomplete. It is recommended to provide more context and information to rewrite the claim based on the evidence.
+5448 :  No claim can be made as there is no evidence provided to support any claim about the symptoms of or responses to Wuhan pneumonia.
+2654 :  No new claim can be made as the original claim is not supported by any evidence and is based on a false rumor.
+5761 :  It is illegal for an employer to terminate the contract of employment if a worker refuses to work overtime in violation of the law, as stated in Article 43 of the Labour Law of the People's Republic of China.
+4082 :  No claim can be made based on the provided evidence as it does not support the original claim.
+5936 :  There is no evidence to support the claim that strange clouds in the sky are a warning for disasters.
+5518 :  No modified claim can be made as there is no evidence provided to support or refute the original claim.
+5322 :  No claim can be made as there is no evidence to support the original claim.
+1585 :  The appearance of light milk does not necessarily indicate a lack of nutrition, as the nutritional value of breast milk is unmatched and irreplaceable regardless of its appearance, colour, and concentration.
+3062 :  The claim that Clock Houseman's antivirus strategy involves washing throats with light salt before going to public places is not supported by evidence, as experts have stated that salt water cannot protect against the new coronavirus.
+6608 :  No claim can be made based on the provided evidence as it does not support or refute the original claim.
+4985 :  There is no evidence to support the claim that the U.S. 500 National Guard recounts use a Quantum section chain and have corn powder components that can be tracked by GPS.
+4618 :  No claim can be made based on the provided evidence as it does not support the original claim.
+1502 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence suggests that not all bubble foods are dangerous and that reasonable soaking can avoid poisoning, but it does not mention the specific incident of chicken-western acid soup poisoning or the danger of methic acid poisoning.
+5255 :  No claim can be made as there is no evidence provided to support the original claim.
+1852 :  There is no evidence to support the claim that the value of the Nanjing Provident Fund loan was reduced in June 2019.
+2824 :  The claim that Taiwan did not have the serum of the Great Kong eyeglasses, which were captured in the Tianan and New North Mountains, is false and unsupported by evidence. The Taiwan City Fire Department’s Eastern Division has confirmed that only ordinary snakes were captured and experts have stated that the Golden Kong Eye Snake has never been captured in the open.
+2179 :  On 13 October 2020, a public report was received from the Seven Stars police station of the Public Security Bureau of the City of Pilgrim regarding a case of new coronary pneumonia.
+6613 :  The claim that aspirin can prevent any brain guard is not supported by the evidence provided. Experts suggest that while aspirin may have some benefits, it can also have potential risks and should not be considered a guaranteed solution for brain protection.
+2247 :  The claim that taking protein A and vitamin C can reduce the side effects of the vaccine is not supported by evidence, as there is no absolute connection between the immune system and the side effects of the vaccine.
+1292 :  There is no evidence to support the claim that blood donation affects fertility.
+1659 :  The claim that chopsticks should be washed and placed head down is incorrect, as it is unsanitary. The correct way to wash chopsticks is to place them head up.
+1754 :  There is no evidence to support the claim that an ambulance in Jilin was blocked and no one was allowed to save the patient.
+1092 :  The chain of transmission of the disease was not broken on 19 May 2020 in the city of Jilin, as two new cases were linked to a confirmed case and the sources of transmission were identified.
+5235 :  No new claim can be made based on the provided evidence as it does not relate to the original claim in a meaningful way. The original claim appears to be a poetic statement about a flower, while the evidence discusses a specific type of plant and its flowering habits.
+6301 :  The claim that chocolates with substitute cocoa resins are healthy is not supported by evidence, as these resins contain proteins and artificially synthetic fats that are unindigestionary and can hinder the absorption of iron in the human body, as well as cause digestive issues and poisoning. Additionally, these resins are not legally considered chocolate, but rather an additive.
+7053 :  There is no evidence to support the claim that the Religious Council of the Tibetan Dalai Lama confirmed that Michael Jackson has been born as a duck.
+2048 :  No evidence was provided to support the claim that new measures were introduced for the purchase of official air tickets in March 2019.
+1565 :  No new claim can be made based on the provided evidence as it does not support or refute the original claim.
+2893 :  On 6 June, it was recommended that people wear masks while voting, but not wearing a mask did not prevent individuals from exercising their right to vote.
+4683 :  There is no evidence to support the claim that a syringe can be used to suck salt out of the nose.
+1184 :  There is no evidence to support the original claim that the Chinese company for the production of gas masks stopped producing dozens of them in February 2020.
+5065 :  There is no evidence to support the claim that China has launched a cloud phone that does not need a chip.
+4948 :  There is no evidence to support the claim that George Soros is currently in federal custody in Philadelphia for the election.
+112 :  The evidence does not support the original claim.
+4118 :  The original claim cannot be rewritten based on the provided evidence as it does not provide any relevant information or evidence to support or refute the claim.
+1521 :  The medication alone may not be sufficient to control the disease, as unhealthy living, eating, and other habits also contribute to the disease and must be corrected.
+4263 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+2622 :  There is no evidence to support the claim that Singapore's government has set up a new facility to fine users of mobile phones.
+1888 :  The claim that the coldest spring festival in the history of Xiamen will come in January 2021 is not supported by the evidence provided.
+1707 :  It is not recommended to change the size of the frame without the consent of a doctor, especially for those with close or distant vision problems accompanied by a slight slash. Changing the number of glasses without proper consultation may not effectively correct the patient's eyesight and may even worsen the condition. For minors whose eyes are still growing, it is emphasized that the number of pairs should not be changed without following the doctor's prescription.
+974 :  Those who have recovered from new coronary pneumonia and meet the criteria for discharge from hospital are no longer contagious.
+1775 :  There is no evidence to support the original claim that individuals from the Jamus Central Isolation Point went out in private in April 2020.
+6752 :  There is no evidence provided to support the claim that "More juice has the effect of detoxification." Therefore, the claim cannot be rewritten based on the provided evidence.
+5456 :  No claim can be made as there is no evidence to support it.
+2979 :  There is no evidence to support the claim that a protest was staged in Paris, France, against the sealing of the city.
+4301 :  There is no evidence provided to support the claim that there is a way to save yourself when the elevator crashes.
+131 :  Driving an RV requires caution and adherence to regulations, including limitations on the number of passengers allowed based on the RV license.
+6508 :  A person who has experienced domestic violence or a real risk of domestic violence may apply for a personal security protection order, and close relatives, public security organs, women's associations, residents' committees, villagers' committees, and rescue management bodies may also apply on their behalf if they are unable to do so themselves due to coercion or intimidation.
+5921 :  Improper use of a jogging machine can potentially hurt your knee, but outdoor exercise with proper protection and moderate intensity is less likely to cause knee damage.
+253 :  There is no evidence to support the claim that the Lighthouse Fort Two, the largest market for fur in the north-east, closed in 2019.
+479 :  The claim that the Shanghai Hotel was neither used to measure temperature nor required to display a health code in April 2020 is not supported by the evidence provided. Instead, the evidence suggests that hotels in Shanghai had various measures in place to monitor the health status of their guests, such as requiring them to fill out health information registers, sign letters of commitment, and present travel codes or certificates of de-segregation.
+4080 :  There is no evidence to support the claim that almonds are an anti-cancer fruit and can prevent cancer in 850,000 people in the country. In fact, almonds have no known anti-cancer properties and may even be toxic if consumed in large quantities.
+6859 :  No claim can be made as there is no evidence provided to support it.
+1235 :  The claim that the thyroid cord is a precursor to cancer is not supported by the evidence provided. The evidence suggests that most thyroid nodules are benign and that not all thyroid nodules are a precursor to cancer.
+2855 :  No new claim can be made based on the provided evidence as it is not related to the original claim.
+2214 :  There is no evidence to support the claim that 160,000 dollars were made available as police officers in the city gates of Lanzhou in April 2020.
+2073 :  There is no sufficient evidence to support the claim that there were aftershocks in the north of the jade forest in October 2019.
+681 :  The evidence provided does not support the original claim.
+25 :  There is no evidence to support the original claim that the State will include ordinary high-ranking posts in compulsory education and make 12 years of compulsory education compulsory.
+5998 :  There is no evidence to support the claim that the sun can cause vitamin D deficiency.
+1116 :  In May 2020, there were no drugs dedicated to the prevention and treatment of new coronary virus infections.
+506 :  The claim that the better the cell phone signals, the greater the electromagnetic radiation is not supported by the evidence. In fact, the evidence suggests that the greater the number of base stations, the better the cellular phone is, the less electromagnetic radiation is generated by the cell phone and the base station. With good signals, cellular contact with the base station is less powerful, less responsive and less radiation to the human body.
+578 :  No evidence was provided to support the original claim that archaeology is damage to cultural objects. Therefore, no new claim can be made based on the evidence.
+5691 :  There is no evidence to support the claim that all residents of Taiwan were evacuated on 1 September 2019 and all residents were prohibited from travelling to Taiwan on 15 August 2019.
+1982 :  There is no sufficient evidence to support the claim that two new cases of coronary pneumonia were detected in two hotels in Wuhan Yuzu Square in June 2020.
+3213 :  The claim that crawfish is a worm is incorrect. In fact, crayfish is classified as a crustacean and is closely related to shrimp.
+3250 :  There is no evidence to support the claim that Ma Huen bought a new company with bitcoin for nearly 10 billion pesos as reported by CNN.
+3144 :  The claim cannot be rewritten based on the provided evidence as it does not support the original claim. The evidence suggests that the car was not illegal and was being used for a commercial video shoot.
+994 :  There is no evidence to support the claim that the roof of the palace was designed to prevent birds from staying or excreting on it.
+2788 :  There is no other known photograph of a dried emperor in the world, except for the one found in the Gatti Museum in the United States and the British Museum of Natural History's website.
+1194 :  The payment of the bouquet required a check-up code, which was used as authentication for the password that replaced the payment card's entry code. After successful validation, the outlaws could reset the login code and access the money paid for the treasure account. There is no evidence provided to support the original claim that the payment was up to the Foca gift cap.
+5202 :  There is no evidence to support the claim that New York City cut down on police spending.
+478 :  Fancy flowers such as peach blossoms and oilseeds are not likely to cause allergies due to their large, heavy, and sticky pollen particles that cannot fly in the air and attract bees for pollination.
+3148 :  No claim can be made based on the provided evidence as it does not support the original claim.
+5120 :  The claim that the U.S. Portland armored vehicle caused a bloody scene is false and based on misleading rumors.
+7408 :  There is no evidence to support the claim that apple seeds contain toxic cyanide.
+1970 :  There is no evidence to support the claim that the new coronavirus changed in July 2020 and that Wuhan was hit by dozens more.
+857 :  The inappropriate and random use of hepatitis drugs can cause liver injury, despite their potential to prevent liver disease. It is important to use these drugs under the guidance of a doctor and avoid self-medication and irrational use.
+4766 :  There is no evidence to support the claim that hot lemon only kills cancer cells.
+418 :  There is no clear evidence to support the claim that the dam broke down in the port of Chuan on July 11, 2020.
+1334 :  There is no evidence to support the claim that 18 firefighters lost their lives in March 2019 as a result of inhaling large quantities of carcinogenic gases.
+302 :  The formation of "rich buns" is not necessarily linked to obesity, but rather to long-term low-heading positions such as prolonged use of mobile phones or poor posture. Obese individuals may be more prone to developing rich buns due to the excess fat under their skin, which can hide behind their necks when the curvature of their necks slides.
+test
+1838 :  There is no evidence to support the claim that he was fined $200 by the police for excavating in the park in April 2020, as the claim was found to be false during interrogation.
+3219 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+1756 :  The claim cannot be rewritten based on the provided evidence as it is not supported by any evidence. The evidence only states that the information about 800 miles being set on fire on nine sets was a rumour and that the authorities took action to prevent its spread.
+510 :  The claim that foreigners don't eat crawfish is not supported by evidence.
+699 :  In November 2018, a 3-year-old boy was found in a dead well in Wenzhou, while the 11-year-old missing boy in Wenzhou was found safe in December 2018, hidden by his mother.
+1946 :  In June 2020, a rural credit union faced rumours of bankruptcy, leading to panic among depositors and economic loss, but there is no evidence that the organization actually became bankrupt or that people were asked to pick up their money.
+1210 :  There is no conclusive evidence that everyone must sleep for eight hours a day, as the amount of sleep needed varies depending on factors such as the quality of sleep, seasonal changes, physical and mental health, and living environment.
+411 :  There is a potential for heavy rains, strong winds, and thunderstorms to hit the Kyoto race on 27 July 2020, with a potential intensity as high as 7.29 and 8.16 in previous years, according to an approximate alarm and radar echoes received. However, the provincial council has been issuing local and short-term weather warnings for two days, causing unnecessary panic among citizens who do not believe in it.
+6479 :  There is no evidence provided to support the original claim.
+1453 :  There is no scientific basis for using tooth bites to determine the authenticity of gold.
+4092 :  No claim can be made as there is no evidence to support or refute the original claim.
+2217 :  There is no evidence to support the claim that Gaeon Ying was awarded a plate number A8888 in Lanzhou in October 2018.
+42 :  There is no evidence to support the claim that the housing fund is to be eliminated in 2020.
+205 :  There is no evidence to support the original claim as it is based on a false rumor.
+1485 :  The claim that fast-food foods are harmful to health due to preservatives is not supported by the evidence provided. The use of food additives, including preservatives, is subject to strict criteria and safety evaluations before being approved by the Ministry of Health.
+2501 :  The original claim is false. The singer in the video is not Pavarotti's granddaughter and the song being sung is not "Dear Grandpa."
+991 :  There is no evidence to support the claim that there was a lift strike in the autumn of 2020.
+3028 :  The claim that a rainy cloud belt drifting from the mainland of China may contain bacteria and viruses, including the new coronavirus, is not supported by evidence. Experts have stated that it is not possible for a cloud to contain the virus, and that the virus is primarily transmitted through close contact and airborne droplets.
+1939 :  There is no evidence to support the claim that mid-point and high-level entry points came out in Pingshan City in August 2020.
+5991 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+1225 :  Even without bleeding, it is recommended to get a rabies vaccine if you are bitten or scratched by an animal, especially at the second and third levels of skin exposure.
+932 :  There is no evidence to support the claim that the truck was denied access from 15 January 2021.
+5510 :  There is no evidence to support the claim that Professor Kang of Wuhan Pneumonia can provide pre-meditation treatment for COVID-19.
+1384 :  There is no evidence to support the claim that the high consumption of Chinese meat and eggs has significantly reduced the area of rainforests in Brazil.
+5222 :  No claim can be made as there is no evidence to support or refute the original claim.
+1878 :  No modified claim can be made as there is no evidence to support the original claim.
+5739 :  It is unclear what the new claim is supposed to be as the evidence provided does not support either of the original claims.
+4575 :  No evidence was provided to support the original claim.
+4580 :  There is no evidence to support the claim that rice-cold antiseptic powder can aid in weight loss. The idea is still being researched and has not been tested on humans. It is not recommended to rely on this method for weight loss.
+6180 :  There is uncertainty about the potential impact on vaccine efficacy when using vaccines produced by different companies, but the four vaccines currently approved in the country have been deemed safe and effective by government authorities.
+7119 :  The claim that "life is not exercise, but rest" is not supported by the evidence provided, as experts suggest that exercise can have positive effects on blood circulation, metabolism, and overall health.
+167 :  The evidence provided does not support the original claim.
+1168 :  There is no evidence to support the claim that air conditioning can kill the new coronary virus.
+5516 :  No evidence provided to support the claim that the anti-secession law entered into force on 15 January 2020.
+4470 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+4158 :  No claim can be made as there is no evidence provided to support the original claim.
+6745 :  The speed at which blood pressure is lowered should be balanced with the risk of dizziness and other side effects, and treatment should take 4-12 weeks to reach the standard level.
+667 :  There is no evidence to support the claim that the payment treasure is going to be called Treasure.
+1148 :  In March 2020, there were no significant cancellations of flights from Shenzhen, Guangzhou, and Hangzhou, despite media reports of cancellations.
+764 :  For old buildings that do not use steeled glass, it is recommended to put a tape on the interior to prevent a broken glass. With the exception of the rice sheet, a wet newspaper on the glass would be able to withstand a 13-degree typhoon. However, for glass that exceeds 1.5 m2, steel-treated glass is used, which is five times stronger than ordinary glass and can withstand typhoons.
+3092 :  There is no evidence to support the claim that Thailand has come to visit Taiwan for $30,000 each.
+1745 :  There is no evidence to support the claim that sharks on the beach at Liaoning in August 2018 ate humans.
+6469 :  There is no evidence to support the claim that Harvard's study shows that long white hair reduces the risk of cancer. The study was based on a mouse model exploring the whiteness of hair and did not provide any data on the incidence of cancer. Reports in external media misread expert opinions and arrived at erroneous conclusions.
+1238 :  There is no evidence to support the claim that people who like to eat hot are more likely to get Alzheimer's.
+2758 :  There is no evidence to support the claim that a tornado in Toronto, Canada brought together four Boeing 747 aircraft from the airport.
+1254 :  There is no evidence provided to support the claim that men are prone to Alzheimer's disease in their household.
+4359 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+769 :  The claim that the heat company went to citizens' homes to see leaks and have them sign an agreement to increase the price of heating in Jinan is not supported by the evidence. The evidence states that adjustments in government prices, such as heating costs, are subject to a proposal to adjust prices and that the heat company has no authority to make or adjust the price of heating costs.
+2581 :  No claim can be made based on the provided evidence as it does not support the original claim.
+2832 :  There is no evidence of significant fraud in the 2020 elections, as all polling offices were run in public and there have been no demands for a retest of the vote or evidence of significant discrepancies in the actual number of votes.
+5391 :  No evidence was provided to support the original claim that some countries throw the bodies of the virus into the sea, therefore it cannot be rewritten based on evidence.
+6195 :  No evidence was provided to support the original claim.
+2146 :  The claim that someone died in a car accident in Vientiane City in January 2019 is not supported by the evidence, as the Police Department reported that no one was killed and only one person was injured at the scene.
+6016 :  The claim that there is dangerous radiation at the transformer is not supported by evidence. The electromagnetic radiation produced by the transformer is almost zero and has been proven to have no harmful effects on the human body.
+4701 :  There is no evidence to support the claim that lemon kills cancer cells. The Institute of Health Sciences has not published any information on whether citrus fruits are anti-cancer.
+5735 :  No modified claim can be made as there is no evidence provided to support or refute the original claim.
+3225 :  The evidence does not support the original claim as it contains inappropriate and insensitive language. A new claim cannot be provided.
+2753 :  There is no evidence to support the claim that an American came to Taiwan with $1 million in 2017, swapped 33 million yuan, spent 4 million dollars a year, and swapped the remaining 29 million dollars for $1 million today. The photos used to support the claim were taken in Beijing, not Taiwan, and there is no historical transfer rate of Taiwan dollar to support the claim.
+1303 :  The use of food additives can be beneficial in maintaining the nutritional value and safety of processed foods, such as antioxidants in edible oils, emulsions in ice creams, intensities that improve food taste, and the addition of preservative beryllic acids in drinks, carbon dioxide conducive to food storage, and prevention of corruption.
+208 :  Self-heated lingerie is claimed to have a "high-tech" material that can heat itself and maintain a constant temperature of 37°C, but the effectiveness of this technology is not yet fully proven.
+1829 :  No claim can be made based on the provided evidence as it states that the original claim is false and should not be clicked on.
+3133 :  There is no evidence to support the claim that cell phones should not be placed in the kitchen, as mobile phone electromagnetic waves would not cause sparks in space and therefore do not pose a risk of explosion in the kitchen.
+1812 :  The claim cannot be rewritten based on the provided evidence as the evidence contradicts the original claim.
+1807 :  No modified claim can be made based on the provided evidence as it does not support or refute the original claim. The evidence only mentions a report received from an online user about a diagnosed case at the Pentagon, which is not related to the original claim about a case diagnosed in April 2020 at the May Point in Yang Po, Shanghai.
+5189 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+1560 :  The claim that grapefruit skins and vinegar can remove formaldehyde is not supported by evidence, as vinegar does not react chemically with formaldehyde and grapefruit skins lack the ability to absorb formaldehyde from the air.
+7018 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence suggests that the Malaysian government has not stopped the third dose program and that the United States community of high-risk groups has not refused the third dose of the vaccine. The evidence does not mention anything about the FDA team refusing Pfizer's third dose for the 16-65 age group or Sweden, Norway, and Finland completely stopping the Moderna vaccine.
+5617 :  There is no evidence to support the claim that earthworms come out of the ground as a result of earthquakes. Earthworms may climb out of the ground due to various geophysical or chemical factors, such as vibrations, chemical matter, or electricity from the ground. Therefore, it is difficult to establish a causal relationship between the surface and earthquakes based on the behavior of earthworms.
+2013 :  There is no evidence to support the claim that university students were raped by students in May 2018.
+2256 :  No new claim can be made as the evidence does not support the original claim.
+2937 :  The claim that leopards are reappearing in Taiwan is not supported by the provided evidence, as the video used to support the claim was filmed in a wild zoo in Thailand and experts state that there have been no recent sightings of leopards in Taiwan.
+7130 :  No new claim can be made as there is no evidence provided to support the original claim.
+2098 :  There is no evidence to support the claim that Chongqing had the lowest level of adjustment of retirement pensions in the country in August 2020.
+5324 :  There is no evidence to support the claim that people should drink water at night.
+7267 :  There is no evidence to support the claim that four majors will be raised and added in 2021.
+745 :  No claim can be made based on the provided evidence as it only addresses the inaccuracy of the original claim.
+7239 :  There is no evidence to support the claim that former President Barack Obama revealed that the new coronavirus was made in the United States to destroy yellow people.
+5335 :  The claim that drinking can be effective in preventing the disease is not supported by the evidence provided. Instead, the evidence suggests that using medical alcohol for disinfection and sterilization purposes can be effective in killing the virus.
+5414 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+7379 :  There is no evidence to support the original claim that Southwest Air's chief aviation executive announced giving up compulsory vaccinations against their employees.
+853 :  There is no evidence to support the claim that Mr. Yang Zhening died in March 2021.
+424 :  More than 80 per cent of the shallow groundwater in China is threatened by pollution and cannot be used for drinking, but the water quality of the deep groundwaters is stable and even superior to the groundwater III standard and can be used exclusively for drinking water.
+7442 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+4284 :  No claim can be made as there is no evidence to support the original claim.
+5621 :  The claim that the United States has a new robotic wife named Alice, which is 99 per cent similar to a real person and costs $100,000, is false. The video that circulated online is actually a PS4 game animation from the game "Detroit: Become Human."
+3230 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+7571 :  No claim can be made based on the provided evidence as it does not support the original claim.
+7283 :  There are no specific dietary taboos for mango consumption, but individuals with mango allergies or those who need to control sugar and silicon intake should be cautious when consuming mangoes.
+605 :  There is no evidence to support the claim that Japan wanted to charge the Chinese a penny each for the invention of the QR code.
+5767 :  There is no evidence to support the claim that the Ministry of Education terminated its cooperation with schools and projects in China and abroad.
+6943 :  There is evidence to suggest that boosters may be necessary after 6 to 12 months of immunization with the new crown vaccine, but the vaccine itself does not necessarily expire after six months.
+6145 :  The provided evidence does not support the original claim. The evidence discusses a report being tampered with and disseminated on the internet, but there is no mention of the C.O.V. of the Dairy Water News or the People's Network's C.I.P. relaying a heavy weight regarding the three-child fertility policy on May 31st, 2021.
+753 :  The claim that one can replace vegetables with fruits is not supported by evidence, as fruits are not nutritionally equivalent to vegetables and consuming too much fruit can have negative effects on blood sugar regulation.
+4059 :  The stench in the mouth can be caused by various factors, including problems with teeth and gums, dry mouth, consumption of strongly scented foods and drinks, smoking, and certain medical conditions such as tonsillitis, diabetes, and acid reflux. Only 10% of cases are attributed to the phantom rotor in the mouth.
+4065 :  There is no clear evidence provided to support a modified claim. The original claim about solar cars being generally iron, light, and incalculable, as opposed to Euro-American, is not supported by the provided evidence about Japanese car crash safety. Therefore, the claim cannot be modified based on the evidence provided.
+5527 :  There is no evidence to support the claim that a NASA gas satellite caught a fire in Australia.
+574 :  There is no evidence to support the claim that the construction of the subway shield was damaged by antiquities.
+5998 :  There is no evidence to support the claim that sun-proof spray can be sprayed at any time.
+5469 :  There is no evidence to support the claim that "throat moist antivirus" is an effective method for preventing or treating viral infections.
+7404 :  The claim that dioxane occurs in formula cinnamon polyethers and cells in bath milk, and that dioxane is the top carcinogen, has been verified as false by Taiwan's fact-finding centre.
+7041 :  There is no evidence to support the claim that in case of stroke, the patient has to have a needle in their 10 fingers and hemorrhage for a few minutes while being awake.
+2718 :  There is no evidence to support the claim that Obama was arrested on 28 November on suspicion of transmitting secrets from the United States to the Communist Party.
+3208 :  The claim that bananas with ice sugar can alleviate coughing is not supported by the evidence provided. In fact, frozen bananas with high sugar content may actually cause or worsen coughing, especially if there is a reverse flow in the stomach. The cause of the cough must be identified in order to determine the appropriate treatment.
+2886 :  No new claim can be made based on the provided evidence as it does not support or relate to the original claim.
+694 :  There is no evidence to support the claim that there was a gang of drug-traffickers and child-traffickers in Sanhing County in December 2018.
+54 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+970 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence only mentions the security of the Facebook system and does not provide any information about the safety of face recognition systems in general.
+7363 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+4299 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+2966 :  There is no evidence to support the claim that masks distributed by the government contain Ecstasy and are used to rob people.
+273 :  The claim that drinking milk increases cholesterol is not supported by research, as milk contains components that can actually help curb cholesterol and improve high-density protein cholesterol.
+2259 :  There is no evidence to support or modify the original claim.
+1011 :  There is no evidence to support the claim that keeping a cup of tea warm for too long can poison people. The stainless steel used on the wall of the cup is inert and difficult to corrode, and the accelerated aromatic volatility in tea due to long periods of high-temperature bubbles does not produce "heavy metals" or "toxic substances."
+2913 :  No new claim can be made as there is no evidence to support the original claim.
+4695 :  There is a formula that includes lemonade, garlic, ginger, and apple vinegar, which have some soft vascular effects and may have a certain preventive effect on cardiovascular diseases. However, it is not a substitute for drug treatment and should only be used as a supplement under the guidance of a doctor.
+4749 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+5291 :  No claim can be made based on the provided evidence as it does not support the original claim.
+1403 :  There is no evidence to support the claim that fumigation for 30 minutes can effectively kill the new coronavirus.
+77 :  There is no evidence to support the claim that the new coronavirus spreads through clothes.
+6800 :  To apply for an electronic social security card, the entity must first hold and maintain their physical social security card.
+7077 :  In 1913, the United States post office introduced mailer services, which included the transportation of children as parcels. However, this practice was banned in 1914 by the United States Postal Secretary, and the last case of "mails" of children in the United States was in 1915.
+2462 :  There is no evidence to support the claim that Robert Trump, who passed away on August 15, 2020, voted for Biden later that year.
+1382 :  There is no evidence to support the claim that tea and coffee can cure alcohol.
+4534 :  There is no evidence to support the claim that a girl in Taiwan who ate shrimp and vitamin C suddenly bled to death for no reason.
+220 :  The calendar for the end of 2021 has the same dates and weeks as the calendar for 1971, as well as several other years that share the same starting and ending days of the week.
+4862 :  No modified claim can be made as the evidence provided does not support the original claim.
+7440 :  No new claim can be made based on the provided evidence as it does not support or refute the original claim.
+1114 :  There is no evidence to support the claim that two Chinese female students were attacked in Melbourne in 2020.
+5692 :  There is no evidence to support the claim that the South China Airlines Boeing 747 has been hit by fire.
+788 :  There is no evidence to support the original claim that all vehicles will be equipped with electronic licence plates with no penalty of $500 starting from 1 September 2018.
+2625 :  The original claim cannot be rewritten based on the provided evidence as it contains incorrect information. The evidence states that the Korean government had no authority to contract overseas sales and contracts for AZ vaccines, and the announcement that the AZ vaccines received in Taiwan were not wanted by the Korean government is not correct.
+6426 :  There is no evidence to support the claim that obesity leads to vascular fluids that can be reduced by dialysis. Additionally, dialysis is not a method used for weight loss.
+2072 :  There is no evidence to support the original claim that Guangxi started school on 7 April in March 2020.
+5114 :  The claim that the largest aquarium in the world is a restaurant next to the Peach Garden High Railway Station is false. The largest aquarium in the world is a newly opened aquarium in Hainan Island.
+2329 :  The original claim is false as the video is not a magic show by Shin Lim, a Canadian Chinese magician who won $1 million in a magic show in the United States of America.
+4317 :  There is no evidence to support the claim that entering "BFF" in the message area on Facebook will indicate the security of your account. This is likely an online rumor.
+1505 :  The growth environment of mushrooms does not necessarily determine their toxicity, but they do require a higher degree of environmental humidity and tend to grow in "dark and damp" areas.
+2467 :  There is no evidence to support the claim that there was a riot in Philly or that Kawakami was on the move.
+4833 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+7268 :  The Covaxin vaccine produced in India uses the serum of newborn calves to nurture Vero cells, but the final product does not contain the serum of newborn calves. Other COVID-19 vaccines such as AZ, Pfizer, and Moderna do not contain animal components.
+7174 :  There is no evidence to support the claim that mackerel water cures the new coronavirus.
+3158 :  There is no evidence provided to support the original claim that pets are taste resistant to cancer.
+1392 :  The claim that the reincarnation drug can change the sex of the foetus is false and unsupported by evidence. The sex of the foetus is determined at fertilization and cannot be changed. Additionally, the sale of drugs claiming to regulate the birth of boys and girls is illegal.
+5528 :  Contrary to false information, an old identity card or a consolidated county or city system does not necessarily prevent one from voting, as long as the new identity card has been obtained before the election day.
+3070 :  There is no evidence to support the original claim that the number of votes cast in the 2016 presidential vote, the smaller population with fewer children, and the number of votes cast by two and a half million people due to illness or accidental natural deaths, is not fair enough.
+5593 :  No claim can be made based on the provided evidence as it does not support the original claim.
+6481 :  No modified claim can be made as there is no evidence provided to support or refute the original claim.
+7084 :  There is no evidence to support the claim that passengers should take a photo of their luggage before the boarding ceremony.
+2635 :  There is no evidence to support the claim that the MRNA vaccine of Pfizer and Modena poses a high risk of fatality.
+1517 :  There is no clear evidence provided to support the original claim.
+5505 :  No claim can be made as there is no evidence provided to support it.
+703 :  There is no evidence provided to support the original claim.
+6660 :  The claim that Ivesin is a special medicine for the new coronary pneumonia is not supported by the evidence provided. In fact, the evidence suggests that using drugs that are not approved by the FDA or authorized for emergency use to prevent or treat COVID-19 can be dangerous, and Ivesin has not been shown to be safe for these purposes.
+293 :  The ethanol gasoline has a security period of only 15 days, and if it is not used within that time frame, it may pose a fire hazard.
+3121 :  There is no evidence to support the claim that the Juice King has seven health benefits, including reducing the heart disease rate by 49%.
+2068 :  There is no evidence to support the original claim.
+2605 :  There is no evidence to support the claim of a latest fraud involving sending money and asking for personal data. Law scholars have pointed out that such deception cannot be justified and there have been no recent cases reported by the police.
+2069 :  There was no case of new coronary pneumonia in the north of Guangxipur in September 2020, as all suspected cases were excluded through negative nucleic acid test results.
+5708 :  No claim can be made as there is no evidence to support it.
+4550 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence only lists foods that are believed to have anti-cancer properties, but does not mention anything about their effect on sleep or physical activity.
+2929 :  The claim that 30,000 subsidies were embezzled from the worker's own payback is not supported by the evidence provided. The subsidies were part of a budget of 15 billion US dollars from the administration's alternative budget for the Ministry of Labour, and were intended for self-employed workers and workers without a certain amount of employers.
+1847 :  No modified claim can be made based on the provided evidence as it does not support the original claim. The evidence only provides information about the incident but does not mention anything about the woman being ordered to die.
+1815 :  There is no evidence to support the original claim that the third airport in Shanghai was selected in September 2019.
+6936 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+443 :  The claim cannot be rewritten based on the provided evidence as the evidence contradicts the original claim. The evidence states that the rumors of food cut-off in a small area near the new site were false and that volunteers sent food to the area. There is no mention of a total closure resulting in the loss of water and food.
+4644 :  There is no scientific evidence to support the claim that potato juice cures cancer.
+6098 :  Hot springs can be beneficial for men suffering from prostate hyperplasia and prostate inflammation, while cold temperatures can cause pelvic muscle contraction and pressure on the prostate, potentially inducing prostate inflammation. The claim that fathers with long bicycles are prone to prostate disease is not supported by the evidence provided.
+7100 :  There is no evidence to support the claim that the film featured Chinese actress Fifi and that many scenes, costumes, and accessories appeared in her personal tweets and tremors.
+4777 :  There is no evidence to support the claim that putting a skinless onion in a room can protect against the flu.
+4874 :  No claim can be made as there is no evidence provided to support the original claim.
+4775 :  It is possible to receive free road rescue services under certain conditions, such as holding specific credit cards or meeting certain spending requirements.
+2846 :  There is no evidence to support the claim that the photo was taken by a young human being who was said to be the treasure of the palace, and that a Frenchman gave flowers to the flower shop owner as a gift.
+2250 :  There is no evidence to support the claim that the Lord of Mercy will not wear black clothes or that he fears being sidelined due to his love for black. Additionally, there is no basis for the belief that the plague God likes black or that the plague is attracted to black.
+2516 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+2762 :  There is no evidence to support the claim that the president of the Democratic People's Republic of Korea, Mrs. Kim Jong-un, sings in Chinese.
+6508 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+6752 :  No claim can be made based on the provided evidence as it contradicts the original claim.
+1071 :  There is no evidence to support the claim that one cannot drink ice water in summer.
+2030 :  There is no evidence to support the claim that Fukuda District, Shenzhen found cases confirmed from Beijing in June 2020.
+7002 :  The claim that police university students were found to be drug-addicted and expelled from school for 20 years is false. Only one student was suspected of drug trafficking and has been removed from school. Additionally, the claim that three officers were expelled from school and sentenced to 20 years in prison is also false.
+839 :  The claim that the Brazilian team was thrown with tomatoes and stinking eggs by fans after the 2018 World Cup is false, as confirmed by several media reports. In reality, the team received a warm welcome from fans upon their return home.
+5955 :  There is no evidence to support the claim that 46 malls in Nanjing were suspended on 26 July 2021. The circulating photo is an old one from February 2020.
+2318 :  The technique of "push brakes" in high-speed traffic, which imitates the car's A.B.S. system, is not recommended by experts as it can cause the car to get out of control. Instead, drivers are advised to lighten their footsteps and move the steering wheel to stop the car safely.
+7132 :  There is no evidence to support the claim that on September 15, 2021, at 10 a.m., the U.S. Department of Defense requested all military personnel to receive a vaccine, or to go to the military court, which led to the resignation of the U.S. Air Force pilots.
+4302 :  No claim can be made as there is no evidence provided to support the original claim.
+2696 :  There is no evidence to support the original claim that Merkel's farewell speech criticized China and the United States.
+1808 :  There is no evidence to support the original claim that individuals who had entered the country fled the Chongqing quarantine point in Shanghai in April 2020.
+2872 :  There is no evidence to support the claim that the Ministry of Education implemented a policy of providing $3,000 at a time and $9,000 at a time for three months to college students affected by the epidemic. However, the Ministry of Education does offer support programs for vulnerable students and student assistance in higher education.
+1014 :  There is no evidence provided to support the original claim that a hot cup that can be sucked in with a magnet is a good one.
+7368 :  No claim can be made as there is no evidence to support the original claim.
+4933 :  No claim can be made as there is no evidence to support or refute the original claim.
+2127 :  There is no evidence to support the original claim.
+1044 :  There is no evidence to support the claim that China's lice sugar has been added to industrial acid.
+4259 :  No claim can be made as there is no evidence provided to support the original claim.
+466 :  There is no evidence to support the claim that China has concealed the epidemic and is responsible for the global spread of the virus. In fact, China has taken effective measures to slow the spread of the epidemic and disrupt the spread of the virus, which has helped to avoid or delay hundreds of thousands of new cases.
+218 :  Improving hygiene and sanitation can help reduce the spread of disease, but vaccinations are still necessary to prevent the re-emergence of infectious diseases.
+6175 :  There is evidence to suggest that prolonged exposure to computer screens may cause eye strain and discomfort, but it is not accurate to say that it "hurts the child's eyes" or that it "doesn't look good." The optical lens system of the eye is constantly moving, which can affect the accuracy of photometry measurements, but this does not necessarily mean that looking at a computer screen is harmful to the eyes.
+4719 :  There is a circulating message from the Police Department recommending eight points of protection against fraud, which should be viewed by the public as a point of protection against fraud by the relevant Chinese units, coupled with their own observations, and the non-police agency's anti-fraud propaganda.
+6943 :  There is no evidence to support the claim that inoculation of the new crown will result in the death of anesthetic.
+1794 :  No claim can be made based on the provided evidence as it does not support the original claim.
+6613 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+961 :  There is no evidence provided to support the claim that "the humidifier is the interior fog machine."
+838 :  No modified claim can be made based on the provided evidence as it does not support the original claim. The evidence only mentions a rumour reported by a football website and does not provide any information about the Royal Air Force or their actions after the 2018 World Cup.
+1991 :  There is no evidence to support the original claim about Longsa rents being available for purchase at a low price with a degree.
+7410 :  No claim can be made as there is no evidence to support the original claim.
+1414 :  Prevention of near-sightedness should start at the pre-primary stage, according to Prof. Yeung Xiao, Central Mountain Eye Center, Nakayama University, as this can help postpone the onset of near-sightedness, slow its rate of deepening, and reduce its incidence.
+351 :  There is no evidence to support the claim that there were 65.4 million vacant houses in the country in 2020.
+2440 :  There is no evidence to support the claim that the newly appointed trade representative of Biden, Dayki, is a great-granddaughter of Dayding.
+2556 :  There is no evidence to support the claim that tribes in the Ulya region will begin to block roads and ban all tourists from entering the country.
+7503 :  No claim can be made as there is no evidence to support the original claim.
+5038 :  There is no evidence to support the claim that the iPhone video competition was taken by a monkey in 2019.
+4951 :  There is no evidence to support the original claim.
+2090 :  There is no evidence to support the claim that Hainan will be upgraded to a Central Special Administrative Region in January 2020 to quickly buy a house. The original claim is a web-based rumor disseminated by a salesman from a building in Haiguchi.
+7456 :  No evidence was provided to support the claim that many Air Force pilots left because of the government's compulsory vaccinations.
+2125 :  There is no evidence to support the original claim.
+7101 :  The film has different length versions, but some scenes in the web-based video have been modified and are not real images, according to weather experts and professional photographers who have viewed the footage. Similar content is shown on super-famous screens, but the authenticity of the scenes in the web-based video is questionable.
+4050 :  Stomach cancer symptoms are often mistaken for common stomach ailments, such as stomach ache, stomach swollen, stomach acid, and nausea, and should not be ignored.
+5415 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+11 :  Since June 2020, according to a report by RecordedFuture, hacker organizations funded by the Government of China have been carrying out attacks on Indian power plants and ports.
+2600 :  No evidence is provided to support the original claim, therefore it cannot be rewritten based on the evidence.
+5042 :  No new claim can be made as there is no evidence provided to support or modify the original claim.
+358 :  The claim that Einstein wasn't good at math in high school is not supported by the evidence. In fact, Einstein's grades were outstanding in high school, and he was a master of learning from an early age.
+2427 :  There is no scientific evidence to support the claim that taste is a carcinogen or that oil bars are the tenth place on a list of carcinogens. Additionally, there is no evidence to support the claim that there is a list of about ten cancer-causing foods that includes blacklisted items.
+5536 :  There is no evidence provided to support a modified claim.
+3 :  There is no evidence to support the claim that China's intervention in the work of the Group of Experts of the World Health Organization led to a lack of independence, professionalism and transparency on the part of the Group.
+4185 :  There is no evidence to support the claim that fumigation of sulfuric acid evaporates man-to-man water vapour.
+3020 :  No new claim can be made based on the provided evidence as it does not support or relate to the original claim.
+7086 :  It is currently unknown who the next CEO of the World Health Organization (WHO) will be, as the envelope containing the decision remains sealed until after October 29 and member states are expected to publish a nomination list by the end of September. Therefore, it cannot be confirmed that Tandessai will be re-elected.
+1256 :  The claim that high iron radiation in China causes serious infertility is misleading as the non-ionising radiation emitted by high-voltage electrical equipment in this frequency band, known as "extremely low-frequency electromagnetic radiation," does not have an effect on women's fertility.
+7305 :  The original claim cannot be rewritten based on the provided evidence as it does not support or refute the claim.
+5454 :  No new claim can be made based on the provided evidence as it only addresses a rumor and does not provide any evidence to support or refute the original claim.
+7035 :  The claim that Somali's bananas produce fungus worms that cause death within 12 hours is false and unsupported by evidence. The white spirals in the video are not worms and there is no such thing as "circle fungus."
+1161 :  There is no evidence to support the claim that the use of depressants increases the risk of contracting new coronary viruses.
+4321 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+2744 :  There is no evidence to support the claim that the US Post Office lost 300,000 votes in Pennsylvania and that the Pennsylvania court ordered the counting to be suspended until Friday.
+6485 :  Contrary to popular belief, day-to-day contact such as talking, shaking hands, and using public facilities with people living with HIV/AIDS does not cause HIV infection.
+3248 :  There is no evidence provided to support the original claim that opposition to anti-nuclear protests started as a result of a reduction in the amount of money made available to the people of Lantern.
+1317 :  There is no evidence to support the claim that wireless headphones cause cancer.
+1149 :  There is no evidence to support the claim that the new coronavirus will disappear on its own during the summer.
+2869 :  The claim that onions cannot be eaten with fish, shrimp, seaweed, and honey is not supported by evidence. Onions are low-grass-acid foods and can be consumed with fish, shrimp, and seaweed without causing indigestion or producing stones. There is also no evidence to suggest that onions cause blindness.
+731 :  The claim that the cloud of Xinjiang fell on the ground and the vehicle could not be driven is a rumor. The phenomenon was actually a sandstorm, not a cloudy water gas that falls to the ground.
+1109 :  No new claim can be made based on the provided evidence as it does not support the original claim. The original claim is not clear and lacks context.
+117 :  There is no evidence to support the original claim, therefore it cannot be rewritten based on evidence.
+2352 :  The claim that pure honey can be stored in the refrigerator without spoiling is false. Additionally, the claim that pure honey can last for 10 years at room temperature and that it does not attract ants is not supported by evidence. The claim that drinking pure honey and tea together can create cardiovascular benefits is not supported by conclusive evidence.
+2242 :  No new claim can be made based on the provided evidence as it does not support the original claim.
+6991 :  The original claim is not supported by the evidence provided. The evidence states that the online video referred to in the claim has nothing to do with the Tsimmy step-father child abuse case or any related incidents of violence. Therefore, no new claim can be made based on this evidence.
+5139 :  No claim can be made as there is no evidence to support the original claim.
+1073 :  There is no evidence to support the claim that sugar-free drinks can cause cancer.
+4817 :  No new claim can be made as there is no evidence provided to support the original claim.
+1553 :  There is no evidence to support the claim that slate blue root or fungi can prevent children from contracting colds. In fact, it is stated that panlan root and vitamins cannot directly prevent colds and may even be dangerous if consumed excessively.
+6943 :  There is no evidence to support the claim that vaccination against the new crown can be breast-breathing.
+950 :  There was a new strain of coronavirus detected in the country at the end of December 2020, but the transmission chain for these cases has been effectively cut off.
+7142 :  There is no evidence to support the claim that someone will suddenly transfer money to your bank account, buy you money through illegal channels, apply for a loan to transfer the wrong account, pay back the money, and then receive a call from the lending institution.
+7470 :  No claim can be made as there is no evidence provided to support the original claim.
+5486 :  There is no evidence to support the original claim.
+5548 :  There is no evidence to support the claim that Lee Jin Yong asked the printer to put wax on the stamp.
+652 :  There is no evidence to support the original claim.
+1774 :  There is no clear claim in the original statement as it is unclear what is meant by "the Heilongjiang family was diagnosed back to Silvergawa." Without further context or information, it is difficult to rewrite this claim based on the provided evidence.
+1846 :  There is no evidence to support the claim that a senior secondary student was killed by a flashlight in November 2018.
+1386 :  The claim that egg yolk increases fattening is not supported by the evidence provided. While egg yolks do contain cholesterol and have a high caloric content, they are also a food of high nutritional value and can be consumed in moderation without significant impact on weight gain.
+6163 :  The statement that vaccines are no longer free after June 9, 2021 is incorrect. The new coronary virus extinction vaccine (Vero cell) currently used in Guangzhou City is free of charge for the entire population, at no cost to individuals and at no cost to the population.
+4050 :  No modified claim can be made based on the provided evidence as there is no clear connection between the evidence and the original claim. The original claim appears to be unrelated to the evidence provided.
+1118 :  During the epidemic, contact lenses can still be worn as long as people practice good hand hygiene and follow appropriate clothing and care methods, and there is no scientific evidence that wearing contact lenses increases the risk of exposure to COVID-19 compared to frame glasses.
+5661 :  The Goo-Yung City Fire Department has been accused of providing false documents and offering safety training or introducing a product that could block the source of fire, claiming to be a firefighter or a related manufacturer.
+182 :  There is no scientific evidence to support the claim that tea smoke can help quit smoking, and there is no evidence that the effective composition of tea can be absorbed by the human body through smoking.
+4337 :  No claim can be made as there is no evidence to support or refute the original claim.
+7179 :  The claim about a new fraud during the epidemic involving a phone call asking if the recipient had hit one and didn't press two is not supported by the evidence provided. Experts point out that entering numbers on the line does not lead to the hacking of a cell phone, and warn about other types of fraud involving impersonation of bankers or telecom operators.
+6809 :  There is no evidence to support the claim that Wuhan returned to Won-sang Temple with a monthly salary of 15,000 to recruit monks, as the Temple has denied the existence of such recruitment and called it a rumor.
+2132 :  There is no evidence to support the claim that Sichuanda County will build urban orbital transport in July 2020.
+317 :  The number of antennas on a router does not necessarily determine the strength of the signal, as it depends on various factors.
+5316 :  There is no evidence to support the claim that eating a bag of Taiwanese brussels requires 32 days of liver detoxification.
+5712 :  There is no evidence to support the claim that grapes are strongly coloured using a catalytic agent.
+2835 :  There is no evidence to support the claim that shutting down television plants and buying new 5G technology cell phones is a solution to avoid changing the size of the TV or buying a projector.
+2298 :  There is no evidence to support the original claim as the mentioned cities are not included in the provided evidence.
+1902 :  There is no evidence to support the claim that the city of Xiamen will cease to collect tolls for vehicles entering and leaving the island in January 2019.
+5473 :  There is no evidence to suggest that the cloud belt virus is contagious.
+3238 :  The polling stations will not close at 4 p.m. and voters who have arrived at the polling stations or are in line before 4 p.m. will still be able to vote, as stated in Article 19 of the Elections Act.
+1726 :  No new claim can be made based on the provided evidence as it does not support or provide any information related to the original claim.
+2916 :  There is no evidence to support the original claim.
+7126 :  No new claim can be made based on the evidence provided as it refutes the original claim.
+4432 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+1819 :  The incident of a child feeling afraid and sending a message to their friend's circle occurred in Changtai Square in December 2018, following a dispute between the child's guardian and a security guard over the placement of an electric bicycle.
+1142 :  There is no evidence to support the claim that the city of Hubei was re-enclosed with the states in March 2020.
+964 :  No new claim can be made based on the provided evidence as there is no clear evidence to support or refute the original claim.
+4426 :  There is no evidence to support the claim that influenza weakens the immune response of the organism in a few years.
+5176 :  No claim can be made as there is no evidence to support the original claim.
+1834 :  There is no evidence to support the claim that serious drinking and driving attacks took place in Yangzhou in August 2020.
+5009 :  There is no evidence to support the claim that the former president of the Communist Party, Jiang Zemin, died yesterday early in the morning.
+1918 :  There was no second transfer made in August 2020 to the General Higher School in Jiangxi Province, as the province-wide admission process for the general college promotion in 2020 was strictly organized in accordance with the Department-wide circular for the promotion of students to the general college entrance examination in 2020.
+2883 :  No supported claim can be made based on the evidence provided as it does not provide any information about Yang Mae's treatment or recovery from herpes.
+6469 :  It is unlikely for there to be worms in mineral water due to the strict safety standards and production processes that ensure the absence of micro-organisms.
+1085 :  The claim that alcohol wipes corrode screens on mobile phones and computers is not supported by evidence. Alcohol is not corrosive, but soluble, and may react with metal compounds in an acid solution.
+295 :  The evidence provided does not support a modified claim.
+7183 :  There is no evidence to support the claim that the PNP government requires 300,000 teachers across Taiwan to be vaccinated before school starts, or they can't go to school. The Ministry of Education's quarantine guidelines only require unvaccinated employees below the secondary school level to provide proof of antigen fast or nucleic acid testing for three days and be re-tested every seven days. There is no provision for teachers who do not receive the vaccine to be denied access to the school grounds.
+5379 :  No claim can be made as there is no evidence to support the original claim.
+6201 :  The claim that China is on the verge of its first population decline since 1949 is not supported by the evidence provided, as the seventh national census shows an increase in population compared to the previous census in 2010.
+5050 :  There is no evidence to support the claim that Russian President Vladimir Putin has spoken in the Pravda that China will be the poorest country in the world in the next 20 years.
+2620 :  The claim that pure honey can be stored in the refrigerator without fermentation is false. Additionally, the claim that pure honey can last for 10 years at room temperature and that it does not attract ants is not supported by evidence. Finally, the claim that drinking pure honey and tea together can create cardiovascular benefits is not substantiated by scientific research.
+884 :  Quantum computers can complement classic computers by narrowing down the range of possible input variables and problem solutions, and providing a direct answer that can be added to the classic computer. However, they cannot completely replace classic computers.
+5697 :  No claim can be made as there is no evidence to support or refute the original claim.
+7086 :  There is no evidence to support the claim that China has withdrawn from the World Health Organization and withdrawn 3 billion dollars in aid.
+5630 :  No new claim can be made based on the provided evidence as it does not support or relate to the original claim.
+1709 :  There is no evidence to support the claim that instruments, massages, acupunctures, or treatment of nearsightedness can be accompanied by intellectual development. Additionally, the evidence provided contradicts the claim that treatment of nearsightedness can be cured through these methods.
+1367 :  There is no evidence to support the claim that the yellower the eggs, the better they are. The color of the eggshell does not affect the nutritional value of the egg.
+2322 :  The claim that a certain dish will cause cancer is not supported by scientific evidence, and experts warn against consuming unidentified herbs that may be toxic.
+4095 :  No modified claim can be made as there is no evidence provided to support or refute the original claim.
+1365 :  The claim that soy oil is very unhealthy due to its high omega-6 content is not supported by the evidence provided. The evidence suggests that both omega-6 and omega-3 fatty acids are necessary for human health and should be consumed in a reasonable proportion.
+4397 :  There is no evidence to support the original claim. It appears to be based on a Facebook post with no verifiable source or evidence.
+5982 :  There is no evidence to support the claim that Jung-ju is on the operational level of the disaster.
+2449 :  There is no supported claim based on the provided evidence. The evidence only mentions a rumor that has been debunked by a verification organization.
+2908 :  No new claim can be made as the original claim is not supported by the evidence provided. The evidence shows that the video is from 2016 and does not provide any information about a recent protest or call for the fall of the presidential palace.
+2459 :  The claim about people in the city of Gao-Hung using business cards with blades to cut faces and rob individuals is a long-standing rumour and has been debunked by local authorities.
+580 :  No new claim can be made based on the provided evidence as it does not support the original claim. The evidence suggests that the child was not abducted but taken by their father during a family dispute.
+4712 :  The white substance found in shrimp is not a parasite, but rather the reproductive gland of the male shrimp, which is edible and considered a delicacy.
+1998 :  There is no evidence to support the original claim that two cases of suspected non-symptomatic infections were detected in the city's Twin Peaks in April 2020.
+6596 :  No claim can be made as there is no evidence provided to support or modify the original claim.
+2934 :  The claim that a nurse showed there was still a virus on his face under the ultraviolet light is not supported by evidence, as ultraviolet light cannot detect the virus. The white points exposed in the pictures are not confirmed to be related to the presence of the virus.
+4331 :  There is no evidence to support the claim that three liars in a bus accused someone of being a cell phone thief.
+2314 :  There is no evidence to support the claim that the number of registered votes in violation of the voting rules and the law in Arizona has reached a total of 25,4722 votes.
+1672 :  The claim that moles should be removed to prevent cancer is not supported by the evidence, which suggests that reducing physical or chemical irritants that stimulate moles is important to prevent chromosomal malformations.
+800 :  There is no clear claim to rewrite as the original claim is incomplete and lacks context.
+7552 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+5712 :  No claim can be made as there is no evidence to support or refute the original claim.
+311 :  There is no evidence provided to support the original claim that global warming accelerates the release of harmful gases. The evidence provided discusses claims about geothermal energy and its potential to emit harmful gases, but does not directly relate to global warming. Therefore, the original claim cannot be rewritten based on this evidence.
+7320 :  There is no evidence to support the claim that paprika baths, baths, or feet can reduce breast cancer tumors.
+1287 :  Blood donation is regulated and operated in such a way as to prevent the transmission of diseases, including hepatitis and AIDS.
+7540 :  No claim can be made as there is no evidence provided to support any claim.
+4703 :  No claim can be made as there is no evidence provided to support or refute the original claim.
+2222 :  There is no reliable information available on the promotion rate in Sinakawa as of March 2021.
+7082 :  There is no evidence to support the claim that a pregnant woman with a mRNA vaccine gives birth to an abnormal birth.
+822 :  There is no evidence to support the claim that white feather chickens have many legs on their wings, and it is likely a false rumor.
+2683 :  The claim that the beginning of the number on the fruit tag is eight, which indicates genetically modified fruit, is not supported by the evidence. The "8" code was previously used to indicate genetically modified crops, but it has since been changed to represent traditional farming practices. Additionally, Taiwan does not allow for the planting or import of genetically modified fruit.

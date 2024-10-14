@@ -15,10 +15,10 @@
                 // "--batch_size", "5",
                 // "--epoch_num", "4",
                 // "--num_sample", "10",
-                "--mode", "test"
+                // "--mode", "test"
             ],
             "env": {
-                "CUDA_VISIBLE_DEVICES": "7"
+                "CUDA_VISIBLE_DEVICES": "1"
             }
         }
     ]
