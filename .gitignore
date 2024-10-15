@@ -32,3 +32,5 @@
 /.vscode
 /save_models
 /save_logs
+/ablation/logs
+/ablation/models
